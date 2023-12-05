@@ -12,5 +12,11 @@ namespace SOSFashion
         public string Username { get; set; }
         public DateTime Placedtime  { get; set; }
         List<Item> Items { get; set; }
+
+        public Order(string username, List<Item> items)
+        {
+            Username = username;
+            Items = items;
+        }
     }
 }

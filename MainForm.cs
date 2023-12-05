@@ -28,5 +28,10 @@ namespace SOSFashion
             LogInForm logInForm = new LogInForm();
             logInForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

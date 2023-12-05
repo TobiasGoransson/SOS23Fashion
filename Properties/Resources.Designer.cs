@@ -159,5 +159,15 @@ namespace SOSFashion.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Skärmbild_2023_12_05_144420 {
+            get {
+                object obj = ResourceManager.GetObject("Skärmbild 2023-12-05 144420", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
