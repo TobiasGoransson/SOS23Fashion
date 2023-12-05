@@ -73,6 +73,16 @@ namespace SOSFashion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BlackGreyShoes {
+            get {
+                object obj = ResourceManager.GetObject("BlackGreyShoes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap d09f4a7e4a332c15adbf979676747605 {
             get {
                 object obj = ResourceManager.GetObject("d09f4a7e4a332c15adbf979676747605", resourceCulture);
