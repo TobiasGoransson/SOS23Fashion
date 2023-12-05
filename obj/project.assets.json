@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hugob\\source\\repos\\SOSFASHION\\SOS23Fashion\\SOSFashion.csproj",
+      "projectUniqueName": "C:\\Users\\hugob\\source\\repos\\1\\SOS23Fashion\\SOSFashion.csproj",
       "projectName": "SOSFashion",
-      "projectPath": "C:\\Users\\hugob\\source\\repos\\SOSFASHION\\SOS23Fashion\\SOSFashion.csproj",
+      "projectPath": "C:\\Users\\hugob\\source\\repos\\1\\SOS23Fashion\\SOSFashion.csproj",
       "packagesPath": "C:\\Users\\hugob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hugob\\source\\repos\\SOSFASHION\\SOS23Fashion\\obj\\",
+      "outputPath": "C:\\Users\\hugob\\source\\repos\\1\\SOS23Fashion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hugob\\AppData\\Roaming\\NuGet\\NuGet.Config",

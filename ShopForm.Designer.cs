@@ -29,17 +29,6 @@
         private void InitializeComponent()
         {
             mainPanel = new Panel();
-            hatPanel = new Panel();
-            greyWomanCapAddButton = new Button();
-            label51 = new Label();
-            label52 = new Label();
-            label53 = new Label();
-            label54 = new Label();
-            pictureBox12 = new PictureBox();
-            label55 = new Label();
-            label56 = new Label();
-            blackHatAddButton = new Button();
-            pictureBox13 = new PictureBox();
             shoePanel = new Panel();
             SizeButton39 = new Button();
             label50 = new Label();
@@ -158,6 +147,17 @@
             label48 = new Label();
             navyCoatAddButton = new Button();
             pictureBox11 = new PictureBox();
+            hatPanel = new Panel();
+            greyWomanCapAddButton = new Button();
+            label51 = new Label();
+            label52 = new Label();
+            label53 = new Label();
+            label54 = new Label();
+            pictureBox12 = new PictureBox();
+            label55 = new Label();
+            label56 = new Label();
+            blackHatAddButton = new Button();
+            pictureBox13 = new PictureBox();
             panel1 = new Panel();
             shoesLinkLabel = new LinkLabel();
             coatsLinkLabel = new LinkLabel();
@@ -171,9 +171,6 @@
             vestLinkLabel = new LinkLabel();
             capLinkLabel = new LinkLabel();
             mainPanel.SuspendLayout();
-            hatPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             shoePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             dressPanel.SuspendLayout();
@@ -195,6 +192,9 @@
             coatPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            hatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -214,122 +214,6 @@
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(482, 347);
             mainPanel.TabIndex = 2;
-            // 
-            // hatPanel
-            // 
-            hatPanel.Controls.Add(greyWomanCapAddButton);
-            hatPanel.Controls.Add(label51);
-            hatPanel.Controls.Add(label52);
-            hatPanel.Controls.Add(label53);
-            hatPanel.Controls.Add(label54);
-            hatPanel.Controls.Add(pictureBox12);
-            hatPanel.Controls.Add(label55);
-            hatPanel.Controls.Add(label56);
-            hatPanel.Controls.Add(blackHatAddButton);
-            hatPanel.Controls.Add(pictureBox13);
-            hatPanel.Dock = DockStyle.Fill;
-            hatPanel.Location = new Point(0, 0);
-            hatPanel.Name = "hatPanel";
-            hatPanel.Size = new Size(480, 345);
-            hatPanel.TabIndex = 6;
-            // 
-            // greyWomanCapAddButton
-            // 
-            greyWomanCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            greyWomanCapAddButton.Location = new Point(370, 309);
-            greyWomanCapAddButton.Name = "greyWomanCapAddButton";
-            greyWomanCapAddButton.Size = new Size(100, 22);
-            greyWomanCapAddButton.TabIndex = 7;
-            greyWomanCapAddButton.Text = "Add to cart";
-            greyWomanCapAddButton.UseVisualStyleBackColor = true;
-            // 
-            // label51
-            // 
-            label51.AutoSize = true;
-            label51.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label51.Location = new Point(250, 308);
-            label51.Name = "label51";
-            label51.Size = new Size(92, 21);
-            label51.TabIndex = 4;
-            label51.Text = "Price: 399kr";
-            // 
-            // label52
-            // 
-            label52.AutoSize = true;
-            label52.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label52.Location = new Point(71, 273);
-            label52.Name = "label52";
-            label52.Size = new Size(100, 21);
-            label52.TabIndex = 6;
-            label52.Text = "Ribbon Black";
-            // 
-            // label53
-            // 
-            label53.AutoSize = true;
-            label53.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label53.Location = new Point(334, 273);
-            label53.Name = "label53";
-            label53.Size = new Size(43, 21);
-            label53.TabIndex = 6;
-            label53.Text = "Grey";
-            // 
-            // label54
-            // 
-            label54.AutoSize = true;
-            label54.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label54.Location = new Point(71, 252);
-            label54.Name = "label54";
-            label54.Size = new Size(101, 21);
-            label54.TabIndex = 5;
-            label54.Text = "One-Size Hat";
-            // 
-            // pictureBox12
-            // 
-            pictureBox12.Location = new Point(3, 3);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(219, 246);
-            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox12.TabIndex = 2;
-            pictureBox12.TabStop = false;
-            // 
-            // label55
-            // 
-            label55.AutoSize = true;
-            label55.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label55.Location = new Point(3, 308);
-            label55.Name = "label55";
-            label55.Size = new Size(92, 21);
-            label55.TabIndex = 4;
-            label55.Text = "Price: 299kr";
-            // 
-            // label56
-            // 
-            label56.AutoSize = true;
-            label56.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label56.Location = new Point(304, 252);
-            label56.Name = "label56";
-            label56.Size = new Size(104, 21);
-            label56.TabIndex = 5;
-            label56.Text = "One-Size Cap";
-            // 
-            // blackHatAddButton
-            // 
-            blackHatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            blackHatAddButton.Location = new Point(125, 309);
-            blackHatAddButton.Name = "blackHatAddButton";
-            blackHatAddButton.Size = new Size(100, 22);
-            blackHatAddButton.TabIndex = 3;
-            blackHatAddButton.Text = "Add to cart";
-            blackHatAddButton.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.Location = new Point(250, 3);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(219, 246);
-            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox13.TabIndex = 2;
-            pictureBox13.TabStop = false;
             // 
             // shoePanel
             // 
@@ -433,6 +317,7 @@
             // 
             // pictureBox14
             // 
+            pictureBox14.Image = Properties.Resources.BlackGreyShoes;
             pictureBox14.Location = new Point(62, 3);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(320, 221);
@@ -1697,6 +1582,122 @@
             pictureBox11.TabIndex = 2;
             pictureBox11.TabStop = false;
             // 
+            // hatPanel
+            // 
+            hatPanel.Controls.Add(greyWomanCapAddButton);
+            hatPanel.Controls.Add(label51);
+            hatPanel.Controls.Add(label52);
+            hatPanel.Controls.Add(label53);
+            hatPanel.Controls.Add(label54);
+            hatPanel.Controls.Add(pictureBox12);
+            hatPanel.Controls.Add(label55);
+            hatPanel.Controls.Add(label56);
+            hatPanel.Controls.Add(blackHatAddButton);
+            hatPanel.Controls.Add(pictureBox13);
+            hatPanel.Dock = DockStyle.Fill;
+            hatPanel.Location = new Point(0, 0);
+            hatPanel.Name = "hatPanel";
+            hatPanel.Size = new Size(480, 345);
+            hatPanel.TabIndex = 6;
+            // 
+            // greyWomanCapAddButton
+            // 
+            greyWomanCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            greyWomanCapAddButton.Location = new Point(370, 309);
+            greyWomanCapAddButton.Name = "greyWomanCapAddButton";
+            greyWomanCapAddButton.Size = new Size(100, 22);
+            greyWomanCapAddButton.TabIndex = 7;
+            greyWomanCapAddButton.Text = "Add to cart";
+            greyWomanCapAddButton.UseVisualStyleBackColor = true;
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label51.Location = new Point(250, 308);
+            label51.Name = "label51";
+            label51.Size = new Size(92, 21);
+            label51.TabIndex = 4;
+            label51.Text = "Price: 399kr";
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label52.Location = new Point(71, 273);
+            label52.Name = "label52";
+            label52.Size = new Size(100, 21);
+            label52.TabIndex = 6;
+            label52.Text = "Ribbon Black";
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label53.Location = new Point(334, 273);
+            label53.Name = "label53";
+            label53.Size = new Size(43, 21);
+            label53.TabIndex = 6;
+            label53.Text = "Grey";
+            // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label54.Location = new Point(71, 252);
+            label54.Name = "label54";
+            label54.Size = new Size(101, 21);
+            label54.TabIndex = 5;
+            label54.Text = "One-Size Hat";
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Location = new Point(3, 3);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(219, 246);
+            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox12.TabIndex = 2;
+            pictureBox12.TabStop = false;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label55.Location = new Point(3, 308);
+            label55.Name = "label55";
+            label55.Size = new Size(92, 21);
+            label55.TabIndex = 4;
+            label55.Text = "Price: 299kr";
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label56.Location = new Point(304, 252);
+            label56.Name = "label56";
+            label56.Size = new Size(104, 21);
+            label56.TabIndex = 5;
+            label56.Text = "One-Size Cap";
+            // 
+            // blackHatAddButton
+            // 
+            blackHatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            blackHatAddButton.Location = new Point(125, 309);
+            blackHatAddButton.Name = "blackHatAddButton";
+            blackHatAddButton.Size = new Size(100, 22);
+            blackHatAddButton.TabIndex = 3;
+            blackHatAddButton.Text = "Add to cart";
+            blackHatAddButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.Location = new Point(250, 3);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(219, 246);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 2;
+            pictureBox13.TabStop = false;
+            // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
@@ -1855,10 +1856,6 @@
             Name = "ShopForm";
             Text = "ShopForm";
             mainPanel.ResumeLayout(false);
-            hatPanel.ResumeLayout(false);
-            hatPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             shoePanel.ResumeLayout(false);
             shoePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
@@ -1888,6 +1885,10 @@
             coatPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            hatPanel.ResumeLayout(false);
+            hatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
