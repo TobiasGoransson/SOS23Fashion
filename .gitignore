@@ -23,7 +23,6 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
-bin/
 obj/
 TestResults/
 ###################
@@ -82,7 +81,6 @@ x64/
 x86/
 build/
 bld/
-[Bb]in/
 [Oo]bj/
 
 # Visual Studo 2015 cache/options directory
