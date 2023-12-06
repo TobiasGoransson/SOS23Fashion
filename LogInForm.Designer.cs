@@ -31,7 +31,10 @@
             LogInPanel = new Panel();
             registerNewUserButton = new Button();
             logInButton = new Button();
-            textBox2 = new TextBox();
+            passwordTextBox = new TextBox();
+            UserNameTextBox = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
             chooseUserNamePasswordPanel = new Panel();
             registerNewUserNameTextBox = new TextBox();
             verifyNewPasswordTextBox = new TextBox();
@@ -41,9 +44,6 @@
             registerNewPasswordTextBox = new TextBox();
             label12 = new Label();
             label13 = new Label();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
             registerNewUserPanel = new Panel();
             newUserNameLable = new Label();
@@ -72,8 +72,8 @@
             LogInPanel.BackColor = Color.Transparent;
             LogInPanel.Controls.Add(registerNewUserButton);
             LogInPanel.Controls.Add(logInButton);
-            LogInPanel.Controls.Add(textBox2);
-            LogInPanel.Controls.Add(textBox1);
+            LogInPanel.Controls.Add(passwordTextBox);
+            LogInPanel.Controls.Add(UserNameTextBox);
             LogInPanel.Controls.Add(label3);
             LogInPanel.Controls.Add(label2);
             LogInPanel.Location = new Point(297, 150);
@@ -103,16 +103,49 @@
             logInButton.TabIndex = 3;
             logInButton.Text = "Log In";
             logInButton.UseVisualStyleBackColor = false;
+            logInButton.Click += logInButton_Click;
             // 
-            // textBox2
+            // passwordTextBox
             // 
-            textBox2.BackColor = SystemColors.Control;
-            textBox2.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(123, 56);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(152, 30);
-            textBox2.TabIndex = 2;
+            passwordTextBox.BackColor = SystemColors.Control;
+            passwordTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordTextBox.Location = new Point(123, 56);
+            passwordTextBox.Multiline = true;
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(152, 30);
+            passwordTextBox.TabIndex = 2;
+            // 
+            // UserNameTextBox
+            // 
+            UserNameTextBox.BackColor = SystemColors.Control;
+            UserNameTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            UserNameTextBox.Location = new Point(123, 11);
+            UserNameTextBox.Multiline = true;
+            UserNameTextBox.Name = "UserNameTextBox";
+            UserNameTextBox.Size = new Size(152, 30);
+            UserNameTextBox.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.BackColor = SystemColors.Control;
+            label3.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(14, 56);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 30);
+            label3.TabIndex = 1;
+            label3.Text = "Password";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            label2.BackColor = SystemColors.Control;
+            label2.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(14, 11);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 30);
+            label2.TabIndex = 0;
+            label2.Text = "User Name";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // chooseUserNamePasswordPanel
             // 
@@ -219,38 +252,6 @@
             label13.TabIndex = 0;
             label13.Text = "User Name";
             label13.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(123, 11);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(152, 30);
-            textBox1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.BackColor = SystemColors.Control;
-            label3.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(14, 56);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 30);
-            label3.TabIndex = 1;
-            label3.Text = "Password";
-            label3.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            label2.BackColor = SystemColors.Control;
-            label2.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(14, 11);
-            label2.Name = "label2";
-            label2.Size = new Size(103, 30);
-            label2.TabIndex = 0;
-            label2.Text = "User Name";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -469,13 +470,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.AV_PB4;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(989, 558);
             Controls.Add(label1);
-            Controls.Add(LogInPanel);
             Controls.Add(registerNewUserPanel);
             Controls.Add(chooseUserNamePasswordPanel);
+            Controls.Add(LogInPanel);
             Name = "LogInForm";
             Text = "LogInForm";
             LogInPanel.ResumeLayout(false);
@@ -493,8 +493,8 @@
         private Panel LogInPanel;
         private Button registerNewUserButton;
         private Button logInButton;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox passwordTextBox;
+        private TextBox UserNameTextBox;
         private Label label3;
         private Label label2;
         private Label label1;

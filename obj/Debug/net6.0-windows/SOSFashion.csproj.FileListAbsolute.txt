@@ -18,3 +18,4 @@ C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Deb
 C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.LogInForm.resources
 C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.MainForm.resources
 C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.ShopForm.resources
+C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.UserPage.resources

@@ -1,12 +1,16 @@
+using Microsoft.VisualBasic.ApplicationServices;
+
 namespace SOSFashion
 {
     public partial class LogInForm : Form
     {
         UserManager userManager = new UserManager();
+        List<User> users;
         public LogInForm()
         {
             InitializeComponent();
             LogInPanel.BringToFront();
+            this.BackgroundImage = Image.FromFile("Pics/LogIn.jpg");
 
         }
 
@@ -92,6 +96,38 @@ namespace SOSFashion
             return true;
         }
 
+        public User CheckLoggIn()
+        {
+            users = userManager.CreateUserList();
+            foreach (User user in users)
+            {
+                if (UserNameTextBox.Text == user.UserName && passwordTextBox.Text == user.Password)
+                {
+                    return user;
+                    break;
+                }
+            }
+            return null;
+        }
 
+        private void logInButton_Click(object sender, EventArgs e)
+        {
+            User user = CheckLoggIn();
+            if (user == null)
+            {
+                MessageBox.Show("Invali UserId / Password");
+                passwordTextBox.Clear();
+            }
+            else
+            {
+                UserNameTextBox.Clear();
+                passwordTextBox.Clear();
+                this.Hide();
+                UserPage userPage = new UserPage(user);
+                userPage.Show();
+
+            }
+        }
     }
+
 }

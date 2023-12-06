@@ -65,7 +65,7 @@
         }
 
         #endregion
-        private Button mainLogInButton;
+        public Button mainLogInButton;
         private Button button1;
     }
 }
