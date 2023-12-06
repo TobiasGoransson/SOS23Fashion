@@ -29,30 +29,9 @@
         private void InitializeComponent()
         {
             mainPanel = new Panel();
-            shoePanel = new Panel();
-            SizeButton39 = new Button();
-            label50 = new Label();
-            SizeButton38 = new Button();
-            SizeButton37 = new Button();
-            SizeButton36 = new Button();
-            label57 = new Label();
-            label58 = new Label();
-            pictureBox14 = new PictureBox();
-            label59 = new Label();
-            greyShoeAddButton = new Button();
-            dressPanel = new Panel();
-            label35 = new Label();
-            lGreyDressButton = new Button();
-            mGreyDressButton = new Button();
-            sGreyDressButton = new Button();
-            label38 = new Label();
-            label39 = new Label();
-            pictureBox9 = new PictureBox();
-            label40 = new Label();
-            greyDressAddButton = new Button();
             shirtPanel = new Panel();
             label32 = new Label();
-            LWhiteShirtButton = new Button();
+            lWhiteShirtButton = new Button();
             mWhiteShirtButton = new Button();
             sWhiteShirtButton = new Button();
             label34 = new Label();
@@ -158,6 +137,26 @@
             label56 = new Label();
             blackHatAddButton = new Button();
             pictureBox13 = new PictureBox();
+            shoePanel = new Panel();
+            label50 = new Label();
+            SizeButton38 = new Button();
+            SizeButton37 = new Button();
+            SizeButton36 = new Button();
+            label57 = new Label();
+            label58 = new Label();
+            pictureBox14 = new PictureBox();
+            label59 = new Label();
+            greyShoeAddButton = new Button();
+            dressPanel = new Panel();
+            label35 = new Label();
+            lGreyDressButton = new Button();
+            mGreyDressButton = new Button();
+            sGreyDressButton = new Button();
+            label38 = new Label();
+            label39 = new Label();
+            pictureBox9 = new PictureBox();
+            label40 = new Label();
+            greyDressAddButton = new Button();
             panel1 = new Panel();
             shoesLinkLabel = new LinkLabel();
             coatsLinkLabel = new LinkLabel();
@@ -170,11 +169,10 @@
             blazerLinkLabel = new LinkLabel();
             vestLinkLabel = new LinkLabel();
             capLinkLabel = new LinkLabel();
+            kundvagnButton = new Button();
+            kundvagnListBox = new ListBox();
+            removeKundvagnButton = new Button();
             mainPanel.SuspendLayout();
-            shoePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            dressPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             shirtPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             pantsPanel.SuspendLayout();
@@ -195,274 +193,34 @@
             hatPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            shoePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            dressPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // mainPanel
             // 
             mainPanel.BorderStyle = BorderStyle.FixedSingle;
-            mainPanel.Controls.Add(shoePanel);
-            mainPanel.Controls.Add(dressPanel);
-            mainPanel.Controls.Add(shirtPanel);
             mainPanel.Controls.Add(pantsPanel);
             mainPanel.Controls.Add(blazerPanel);
             mainPanel.Controls.Add(vestPanel);
             mainPanel.Controls.Add(capPanel);
             mainPanel.Controls.Add(coatPanel);
             mainPanel.Controls.Add(hatPanel);
+            mainPanel.Controls.Add(shoePanel);
+            mainPanel.Controls.Add(dressPanel);
+            mainPanel.Controls.Add(shirtPanel);
             mainPanel.Location = new Point(251, 107);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(482, 347);
             mainPanel.TabIndex = 2;
             // 
-            // shoePanel
-            // 
-            shoePanel.Controls.Add(SizeButton39);
-            shoePanel.Controls.Add(label50);
-            shoePanel.Controls.Add(SizeButton38);
-            shoePanel.Controls.Add(SizeButton37);
-            shoePanel.Controls.Add(SizeButton36);
-            shoePanel.Controls.Add(label57);
-            shoePanel.Controls.Add(label58);
-            shoePanel.Controls.Add(pictureBox14);
-            shoePanel.Controls.Add(label59);
-            shoePanel.Controls.Add(greyShoeAddButton);
-            shoePanel.Location = new Point(3, 2);
-            shoePanel.Name = "shoePanel";
-            shoePanel.Size = new Size(472, 334);
-            shoePanel.TabIndex = 8;
-            // 
-            // SizeButton39
-            // 
-            SizeButton39.FlatAppearance.BorderColor = Color.Black;
-            SizeButton39.FlatAppearance.BorderSize = 2;
-            SizeButton39.FlatStyle = FlatStyle.Popup;
-            SizeButton39.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SizeButton39.Location = new Point(345, 225);
-            SizeButton39.Name = "SizeButton39";
-            SizeButton39.Size = new Size(29, 23);
-            SizeButton39.TabIndex = 11;
-            SizeButton39.Text = "39";
-            SizeButton39.UseVisualStyleBackColor = true;
-            // 
-            // label50
-            // 
-            label50.AutoSize = true;
-            label50.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label50.Location = new Point(111, 227);
-            label50.Name = "label50";
-            label50.Size = new Size(52, 21);
-            label50.TabIndex = 10;
-            label50.Text = "Sizes: ";
-            // 
-            // SizeButton38
-            // 
-            SizeButton38.FlatAppearance.BorderColor = Color.Black;
-            SizeButton38.FlatAppearance.BorderSize = 2;
-            SizeButton38.FlatStyle = FlatStyle.Popup;
-            SizeButton38.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SizeButton38.Location = new Point(314, 225);
-            SizeButton38.Name = "SizeButton38";
-            SizeButton38.Size = new Size(29, 23);
-            SizeButton38.TabIndex = 8;
-            SizeButton38.Text = "38";
-            SizeButton38.UseVisualStyleBackColor = true;
-            // 
-            // SizeButton37
-            // 
-            SizeButton37.FlatAppearance.BorderColor = Color.Black;
-            SizeButton37.FlatAppearance.BorderSize = 2;
-            SizeButton37.FlatStyle = FlatStyle.Popup;
-            SizeButton37.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SizeButton37.Location = new Point(282, 225);
-            SizeButton37.Name = "SizeButton37";
-            SizeButton37.Size = new Size(29, 23);
-            SizeButton37.TabIndex = 9;
-            SizeButton37.Text = "37";
-            SizeButton37.UseVisualStyleBackColor = true;
-            // 
-            // SizeButton36
-            // 
-            SizeButton36.BackColor = Color.Olive;
-            SizeButton36.FlatAppearance.BorderColor = Color.Black;
-            SizeButton36.FlatAppearance.BorderSize = 2;
-            SizeButton36.FlatStyle = FlatStyle.Popup;
-            SizeButton36.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SizeButton36.Location = new Point(249, 225);
-            SizeButton36.Name = "SizeButton36";
-            SizeButton36.Size = new Size(29, 23);
-            SizeButton36.TabIndex = 7;
-            SizeButton36.Text = "36";
-            SizeButton36.UseVisualStyleBackColor = false;
-            // 
-            // label57
-            // 
-            label57.AutoSize = true;
-            label57.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label57.Location = new Point(187, 277);
-            label57.Name = "label57";
-            label57.Size = new Size(59, 21);
-            label57.TabIndex = 6;
-            label57.Text = "Striped";
-            // 
-            // label58
-            // 
-            label58.AutoSize = true;
-            label58.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label58.Location = new Point(160, 255);
-            label58.Name = "label58";
-            label58.Size = new Size(124, 21);
-            label58.TabIndex = 5;
-            label58.Text = "Short-Heel Shoe";
-            // 
-            // pictureBox14
-            // 
-            pictureBox14.Location = new Point(62, 3);
-            pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(320, 221);
-            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox14.TabIndex = 2;
-            pictureBox14.TabStop = false;
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label59.Location = new Point(101, 308);
-            label59.Name = "label59";
-            label59.Size = new Size(92, 21);
-            label59.TabIndex = 4;
-            label59.Text = "Price: 959kr";
-            // 
-            // greyShoeAddButton
-            // 
-            greyShoeAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            greyShoeAddButton.Location = new Point(256, 309);
-            greyShoeAddButton.Name = "greyShoeAddButton";
-            greyShoeAddButton.Size = new Size(100, 22);
-            greyShoeAddButton.TabIndex = 3;
-            greyShoeAddButton.Text = "Add to cart";
-            greyShoeAddButton.UseVisualStyleBackColor = true;
-            // 
-            // dressPanel
-            // 
-            dressPanel.Controls.Add(label35);
-            dressPanel.Controls.Add(lGreyDressButton);
-            dressPanel.Controls.Add(mGreyDressButton);
-            dressPanel.Controls.Add(sGreyDressButton);
-            dressPanel.Controls.Add(label38);
-            dressPanel.Controls.Add(label39);
-            dressPanel.Controls.Add(pictureBox9);
-            dressPanel.Controls.Add(label40);
-            dressPanel.Controls.Add(greyDressAddButton);
-            dressPanel.Location = new Point(1, 1);
-            dressPanel.Name = "dressPanel";
-            dressPanel.Size = new Size(472, 334);
-            dressPanel.TabIndex = 7;
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(111, 227);
-            label35.Name = "label35";
-            label35.Size = new Size(52, 21);
-            label35.TabIndex = 10;
-            label35.Text = "Sizes: ";
-            // 
-            // lGreyDressButton
-            // 
-            lGreyDressButton.FlatAppearance.BorderColor = Color.Black;
-            lGreyDressButton.FlatAppearance.BorderSize = 2;
-            lGreyDressButton.FlatStyle = FlatStyle.Popup;
-            lGreyDressButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lGreyDressButton.Location = new Point(327, 227);
-            lGreyDressButton.Name = "lGreyDressButton";
-            lGreyDressButton.Size = new Size(29, 23);
-            lGreyDressButton.TabIndex = 8;
-            lGreyDressButton.Text = "L";
-            lGreyDressButton.UseVisualStyleBackColor = true;
-            // 
-            // mGreyDressButton
-            // 
-            mGreyDressButton.FlatAppearance.BorderColor = Color.Black;
-            mGreyDressButton.FlatAppearance.BorderSize = 2;
-            mGreyDressButton.FlatStyle = FlatStyle.Popup;
-            mGreyDressButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            mGreyDressButton.Location = new Point(295, 227);
-            mGreyDressButton.Name = "mGreyDressButton";
-            mGreyDressButton.Size = new Size(29, 23);
-            mGreyDressButton.TabIndex = 9;
-            mGreyDressButton.Text = "M";
-            mGreyDressButton.UseVisualStyleBackColor = true;
-            // 
-            // sGreyDressButton
-            // 
-            sGreyDressButton.BackColor = Color.Olive;
-            sGreyDressButton.FlatAppearance.BorderColor = Color.Black;
-            sGreyDressButton.FlatAppearance.BorderSize = 2;
-            sGreyDressButton.FlatStyle = FlatStyle.Popup;
-            sGreyDressButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sGreyDressButton.Location = new Point(260, 227);
-            sGreyDressButton.Name = "sGreyDressButton";
-            sGreyDressButton.Size = new Size(29, 23);
-            sGreyDressButton.TabIndex = 7;
-            sGreyDressButton.Text = "S";
-            sGreyDressButton.UseVisualStyleBackColor = false;
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.Location = new Point(192, 275);
-            label38.Name = "label38";
-            label38.Size = new Size(43, 21);
-            label38.TabIndex = 6;
-            label38.Text = "Grey";
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label39.Location = new Point(139, 253);
-            label39.Name = "label39";
-            label39.Size = new Size(151, 21);
-            label39.TabIndex = 5;
-            label39.Text = "Short-Sleeved Dress";
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Location = new Point(62, 3);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(320, 221);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 2;
-            pictureBox9.TabStop = false;
-            // 
-            // label40
-            // 
-            label40.AutoSize = true;
-            label40.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label40.Location = new Point(101, 308);
-            label40.Name = "label40";
-            label40.Size = new Size(92, 21);
-            label40.TabIndex = 4;
-            label40.Text = "Price: 699kr";
-            // 
-            // greyDressAddButton
-            // 
-            greyDressAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            greyDressAddButton.Location = new Point(256, 309);
-            greyDressAddButton.Name = "greyDressAddButton";
-            greyDressAddButton.Size = new Size(100, 22);
-            greyDressAddButton.TabIndex = 3;
-            greyDressAddButton.Text = "Add to cart";
-            greyDressAddButton.UseVisualStyleBackColor = true;
-            // 
             // shirtPanel
             // 
             shirtPanel.Controls.Add(label32);
-            shirtPanel.Controls.Add(LWhiteShirtButton);
+            shirtPanel.Controls.Add(lWhiteShirtButton);
             shirtPanel.Controls.Add(mWhiteShirtButton);
             shirtPanel.Controls.Add(sWhiteShirtButton);
             shirtPanel.Controls.Add(label34);
@@ -485,21 +243,24 @@
             label32.TabIndex = 10;
             label32.Text = "Sizes: ";
             // 
-            // LWhiteShirtButton
+            // lWhiteShirtButton
             // 
-            LWhiteShirtButton.FlatAppearance.BorderColor = Color.Black;
-            LWhiteShirtButton.FlatAppearance.BorderSize = 2;
-            LWhiteShirtButton.FlatStyle = FlatStyle.Popup;
-            LWhiteShirtButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            LWhiteShirtButton.Location = new Point(327, 227);
-            LWhiteShirtButton.Name = "LWhiteShirtButton";
-            LWhiteShirtButton.Size = new Size(29, 23);
-            LWhiteShirtButton.TabIndex = 8;
-            LWhiteShirtButton.Text = "L";
-            LWhiteShirtButton.UseVisualStyleBackColor = true;
+            lWhiteShirtButton.BackColor = Color.White;
+            lWhiteShirtButton.FlatAppearance.BorderColor = Color.Black;
+            lWhiteShirtButton.FlatAppearance.BorderSize = 2;
+            lWhiteShirtButton.FlatStyle = FlatStyle.Popup;
+            lWhiteShirtButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lWhiteShirtButton.Location = new Point(327, 227);
+            lWhiteShirtButton.Name = "lWhiteShirtButton";
+            lWhiteShirtButton.Size = new Size(29, 23);
+            lWhiteShirtButton.TabIndex = 8;
+            lWhiteShirtButton.Text = "L";
+            lWhiteShirtButton.UseVisualStyleBackColor = false;
+            lWhiteShirtButton.Click += LWhiteShirtButton_Click;
             // 
             // mWhiteShirtButton
             // 
+            mWhiteShirtButton.BackColor = Color.White;
             mWhiteShirtButton.FlatAppearance.BorderColor = Color.Black;
             mWhiteShirtButton.FlatAppearance.BorderSize = 2;
             mWhiteShirtButton.FlatStyle = FlatStyle.Popup;
@@ -509,11 +270,12 @@
             mWhiteShirtButton.Size = new Size(29, 23);
             mWhiteShirtButton.TabIndex = 9;
             mWhiteShirtButton.Text = "M";
-            mWhiteShirtButton.UseVisualStyleBackColor = true;
+            mWhiteShirtButton.UseVisualStyleBackColor = false;
+            mWhiteShirtButton.Click += mWhiteShirtButton_Click;
             // 
             // sWhiteShirtButton
             // 
-            sWhiteShirtButton.BackColor = Color.Olive;
+            sWhiteShirtButton.BackColor = Color.White;
             sWhiteShirtButton.FlatAppearance.BorderColor = Color.Black;
             sWhiteShirtButton.FlatAppearance.BorderSize = 2;
             sWhiteShirtButton.FlatStyle = FlatStyle.Popup;
@@ -524,6 +286,7 @@
             sWhiteShirtButton.TabIndex = 7;
             sWhiteShirtButton.Text = "S";
             sWhiteShirtButton.UseVisualStyleBackColor = false;
+            sWhiteShirtButton.Click += sWhiteShirtButton_Click;
             // 
             // label34
             // 
@@ -573,6 +336,7 @@
             whiteShirtAddButton.TabIndex = 3;
             whiteShirtAddButton.Text = "Add to cart";
             whiteShirtAddButton.UseVisualStyleBackColor = true;
+            whiteShirtAddButton.Click += whiteShirtAddButton_Click;
             // 
             // pantsPanel
             // 
@@ -611,6 +375,7 @@
             // 
             // lGreyPantsButton
             // 
+            lGreyPantsButton.BackColor = Color.White;
             lGreyPantsButton.FlatAppearance.BorderColor = Color.Black;
             lGreyPantsButton.FlatAppearance.BorderSize = 2;
             lGreyPantsButton.FlatStyle = FlatStyle.Popup;
@@ -620,7 +385,8 @@
             lGreyPantsButton.Size = new Size(29, 23);
             lGreyPantsButton.TabIndex = 11;
             lGreyPantsButton.Text = "L";
-            lGreyPantsButton.UseVisualStyleBackColor = true;
+            lGreyPantsButton.UseVisualStyleBackColor = false;
+            lGreyPantsButton.Click += lGreyPantsButton_Click;
             // 
             // label24
             // 
@@ -634,6 +400,7 @@
             // 
             // mGreyPantsButton
             // 
+            mGreyPantsButton.BackColor = Color.White;
             mGreyPantsButton.FlatAppearance.BorderColor = Color.Black;
             mGreyPantsButton.FlatAppearance.BorderSize = 2;
             mGreyPantsButton.FlatStyle = FlatStyle.Popup;
@@ -643,11 +410,12 @@
             mGreyPantsButton.Size = new Size(29, 23);
             mGreyPantsButton.TabIndex = 12;
             mGreyPantsButton.Text = "M";
-            mGreyPantsButton.UseVisualStyleBackColor = true;
+            mGreyPantsButton.UseVisualStyleBackColor = false;
+            mGreyPantsButton.Click += mGreyPantsButton_Click;
             // 
             // sGreyPantsButton
             // 
-            sGreyPantsButton.BackColor = Color.Olive;
+            sGreyPantsButton.BackColor = Color.White;
             sGreyPantsButton.FlatAppearance.BorderColor = Color.Black;
             sGreyPantsButton.FlatAppearance.BorderSize = 2;
             sGreyPantsButton.FlatStyle = FlatStyle.Popup;
@@ -658,9 +426,11 @@
             sGreyPantsButton.TabIndex = 10;
             sGreyPantsButton.Text = "S";
             sGreyPantsButton.UseVisualStyleBackColor = false;
+            sGreyPantsButton.Click += sGreyPantsButton_Click;
             // 
             // lNavyPantsButton
             // 
+            lNavyPantsButton.BackColor = Color.White;
             lNavyPantsButton.FlatAppearance.BorderColor = Color.Black;
             lNavyPantsButton.FlatAppearance.BorderSize = 2;
             lNavyPantsButton.FlatStyle = FlatStyle.Popup;
@@ -670,10 +440,12 @@
             lNavyPantsButton.Size = new Size(29, 23);
             lNavyPantsButton.TabIndex = 8;
             lNavyPantsButton.Text = "L";
-            lNavyPantsButton.UseVisualStyleBackColor = true;
+            lNavyPantsButton.UseVisualStyleBackColor = false;
+            lNavyPantsButton.Click += lNavyPantsButton_Click;
             // 
             // mNavyPantsButton
             // 
+            mNavyPantsButton.BackColor = Color.White;
             mNavyPantsButton.FlatAppearance.BorderColor = Color.Black;
             mNavyPantsButton.FlatAppearance.BorderSize = 2;
             mNavyPantsButton.FlatStyle = FlatStyle.Popup;
@@ -683,11 +455,12 @@
             mNavyPantsButton.Size = new Size(29, 23);
             mNavyPantsButton.TabIndex = 9;
             mNavyPantsButton.Text = "M";
-            mNavyPantsButton.UseVisualStyleBackColor = true;
+            mNavyPantsButton.UseVisualStyleBackColor = false;
+            mNavyPantsButton.Click += mNavyPantsButton_Click;
             // 
             // sNavyPantsButton
             // 
-            sNavyPantsButton.BackColor = Color.Olive;
+            sNavyPantsButton.BackColor = Color.White;
             sNavyPantsButton.FlatAppearance.BorderColor = Color.Black;
             sNavyPantsButton.FlatAppearance.BorderSize = 2;
             sNavyPantsButton.FlatStyle = FlatStyle.Popup;
@@ -698,6 +471,7 @@
             sNavyPantsButton.TabIndex = 7;
             sNavyPantsButton.Text = "S";
             sNavyPantsButton.UseVisualStyleBackColor = false;
+            sNavyPantsButton.Click += sNavyPantsButton_Click;
             // 
             // greyPantsAddButton
             // 
@@ -708,6 +482,7 @@
             greyPantsAddButton.TabIndex = 3;
             greyPantsAddButton.Text = "Add to cart";
             greyPantsAddButton.UseVisualStyleBackColor = true;
+            greyPantsAddButton.Click += greyPantsAddButton_Click;
             // 
             // label25
             // 
@@ -787,6 +562,7 @@
             navyPantsAddButton.TabIndex = 3;
             navyPantsAddButton.Text = "Add to cart";
             navyPantsAddButton.UseVisualStyleBackColor = true;
+            navyPantsAddButton.Click += navyPantsAddButton_Click;
             // 
             // pictureBox7
             // 
@@ -1697,6 +1473,244 @@
             pictureBox13.TabIndex = 2;
             pictureBox13.TabStop = false;
             // 
+            // shoePanel
+            // 
+            shoePanel.Controls.Add(label50);
+            shoePanel.Controls.Add(SizeButton38);
+            shoePanel.Controls.Add(SizeButton37);
+            shoePanel.Controls.Add(SizeButton36);
+            shoePanel.Controls.Add(label57);
+            shoePanel.Controls.Add(label58);
+            shoePanel.Controls.Add(pictureBox14);
+            shoePanel.Controls.Add(label59);
+            shoePanel.Controls.Add(greyShoeAddButton);
+            shoePanel.Location = new Point(3, 2);
+            shoePanel.Name = "shoePanel";
+            shoePanel.Size = new Size(472, 334);
+            shoePanel.TabIndex = 8;
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label50.Location = new Point(111, 227);
+            label50.Name = "label50";
+            label50.Size = new Size(52, 21);
+            label50.TabIndex = 10;
+            label50.Text = "Sizes: ";
+            // 
+            // SizeButton38
+            // 
+            SizeButton38.FlatAppearance.BorderColor = Color.Black;
+            SizeButton38.FlatAppearance.BorderSize = 2;
+            SizeButton38.FlatStyle = FlatStyle.Popup;
+            SizeButton38.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SizeButton38.Location = new Point(353, 225);
+            SizeButton38.Name = "SizeButton38";
+            SizeButton38.Size = new Size(29, 23);
+            SizeButton38.TabIndex = 8;
+            SizeButton38.Text = "L";
+            SizeButton38.UseVisualStyleBackColor = true;
+            SizeButton38.Click += SizeButton38_Click;
+            // 
+            // SizeButton37
+            // 
+            SizeButton37.FlatAppearance.BorderColor = Color.Black;
+            SizeButton37.FlatAppearance.BorderSize = 2;
+            SizeButton37.FlatStyle = FlatStyle.Popup;
+            SizeButton37.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SizeButton37.Location = new Point(322, 225);
+            SizeButton37.Name = "SizeButton37";
+            SizeButton37.Size = new Size(29, 23);
+            SizeButton37.TabIndex = 9;
+            SizeButton37.Text = "M";
+            SizeButton37.UseVisualStyleBackColor = true;
+            SizeButton37.Click += SizeButton37_Click;
+            // 
+            // SizeButton36
+            // 
+            SizeButton36.BackColor = SystemColors.Control;
+            SizeButton36.FlatAppearance.BorderColor = Color.Black;
+            SizeButton36.FlatAppearance.BorderSize = 2;
+            SizeButton36.FlatStyle = FlatStyle.Popup;
+            SizeButton36.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SizeButton36.Location = new Point(290, 225);
+            SizeButton36.Name = "SizeButton36";
+            SizeButton36.Size = new Size(29, 23);
+            SizeButton36.TabIndex = 7;
+            SizeButton36.Text = "S";
+            SizeButton36.UseVisualStyleBackColor = false;
+            SizeButton36.Click += SizeButton36_Click;
+            // 
+            // label57
+            // 
+            label57.AutoSize = true;
+            label57.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label57.Location = new Point(187, 277);
+            label57.Name = "label57";
+            label57.Size = new Size(59, 21);
+            label57.TabIndex = 6;
+            label57.Text = "Striped";
+            // 
+            // label58
+            // 
+            label58.AutoSize = true;
+            label58.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label58.Location = new Point(160, 255);
+            label58.Name = "label58";
+            label58.Size = new Size(124, 21);
+            label58.TabIndex = 5;
+            label58.Text = "Short-Heel Shoe";
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Location = new Point(62, 3);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(320, 221);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox14.TabIndex = 2;
+            pictureBox14.TabStop = false;
+            // 
+            // label59
+            // 
+            label59.AutoSize = true;
+            label59.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label59.Location = new Point(101, 308);
+            label59.Name = "label59";
+            label59.Size = new Size(92, 21);
+            label59.TabIndex = 4;
+            label59.Text = "Price: 959kr";
+            // 
+            // greyShoeAddButton
+            // 
+            greyShoeAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            greyShoeAddButton.Location = new Point(256, 309);
+            greyShoeAddButton.Name = "greyShoeAddButton";
+            greyShoeAddButton.Size = new Size(100, 22);
+            greyShoeAddButton.TabIndex = 3;
+            greyShoeAddButton.Text = "Add to cart";
+            greyShoeAddButton.UseVisualStyleBackColor = true;
+            greyShoeAddButton.Click += greyShoeAddButton_Click;
+            // 
+            // dressPanel
+            // 
+            dressPanel.Controls.Add(label35);
+            dressPanel.Controls.Add(lGreyDressButton);
+            dressPanel.Controls.Add(mGreyDressButton);
+            dressPanel.Controls.Add(sGreyDressButton);
+            dressPanel.Controls.Add(label38);
+            dressPanel.Controls.Add(label39);
+            dressPanel.Controls.Add(pictureBox9);
+            dressPanel.Controls.Add(label40);
+            dressPanel.Controls.Add(greyDressAddButton);
+            dressPanel.Location = new Point(1, 1);
+            dressPanel.Name = "dressPanel";
+            dressPanel.Size = new Size(472, 334);
+            dressPanel.TabIndex = 7;
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label35.Location = new Point(111, 227);
+            label35.Name = "label35";
+            label35.Size = new Size(52, 21);
+            label35.TabIndex = 10;
+            label35.Text = "Sizes: ";
+            // 
+            // lGreyDressButton
+            // 
+            lGreyDressButton.FlatAppearance.BorderColor = Color.Black;
+            lGreyDressButton.FlatAppearance.BorderSize = 2;
+            lGreyDressButton.FlatStyle = FlatStyle.Popup;
+            lGreyDressButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lGreyDressButton.Location = new Point(327, 227);
+            lGreyDressButton.Name = "lGreyDressButton";
+            lGreyDressButton.Size = new Size(29, 23);
+            lGreyDressButton.TabIndex = 8;
+            lGreyDressButton.Text = "L";
+            lGreyDressButton.UseVisualStyleBackColor = true;
+            lGreyDressButton.Click += lGreyDressButton_Click;
+            // 
+            // mGreyDressButton
+            // 
+            mGreyDressButton.FlatAppearance.BorderColor = Color.Black;
+            mGreyDressButton.FlatAppearance.BorderSize = 2;
+            mGreyDressButton.FlatStyle = FlatStyle.Popup;
+            mGreyDressButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            mGreyDressButton.Location = new Point(295, 227);
+            mGreyDressButton.Name = "mGreyDressButton";
+            mGreyDressButton.Size = new Size(29, 23);
+            mGreyDressButton.TabIndex = 9;
+            mGreyDressButton.Text = "M";
+            mGreyDressButton.UseVisualStyleBackColor = true;
+            mGreyDressButton.Click += mGreyDressButton_Click;
+            // 
+            // sGreyDressButton
+            // 
+            sGreyDressButton.BackColor = SystemColors.Control;
+            sGreyDressButton.FlatAppearance.BorderColor = Color.Black;
+            sGreyDressButton.FlatAppearance.BorderSize = 2;
+            sGreyDressButton.FlatStyle = FlatStyle.Popup;
+            sGreyDressButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sGreyDressButton.Location = new Point(260, 227);
+            sGreyDressButton.Name = "sGreyDressButton";
+            sGreyDressButton.Size = new Size(29, 23);
+            sGreyDressButton.TabIndex = 7;
+            sGreyDressButton.Text = "S";
+            sGreyDressButton.UseVisualStyleBackColor = false;
+            sGreyDressButton.Click += sGreyDressButton_Click;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label38.Location = new Point(192, 275);
+            label38.Name = "label38";
+            label38.Size = new Size(43, 21);
+            label38.TabIndex = 6;
+            label38.Text = "Grey";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label39.Location = new Point(139, 253);
+            label39.Name = "label39";
+            label39.Size = new Size(151, 21);
+            label39.TabIndex = 5;
+            label39.Text = "Short-Sleeved Dress";
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Location = new Point(62, 3);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(320, 221);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 2;
+            pictureBox9.TabStop = false;
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label40.Location = new Point(101, 308);
+            label40.Name = "label40";
+            label40.Size = new Size(92, 21);
+            label40.TabIndex = 4;
+            label40.Text = "Price: 699kr";
+            // 
+            // greyDressAddButton
+            // 
+            greyDressAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            greyDressAddButton.Location = new Point(256, 309);
+            greyDressAddButton.Name = "greyDressAddButton";
+            greyDressAddButton.Size = new Size(100, 22);
+            greyDressAddButton.TabIndex = 3;
+            greyDressAddButton.Text = "Add to cart";
+            greyDressAddButton.UseVisualStyleBackColor = true;
+            greyDressAddButton.Click += greyDressAddButton_Click;
+            // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
@@ -1727,6 +1741,7 @@
             shoesLinkLabel.TabIndex = 10;
             shoesLinkLabel.TabStop = true;
             shoesLinkLabel.Text = "Shoes";
+            shoesLinkLabel.LinkClicked += shoesLinkLabel_LinkClicked;
             // 
             // coatsLinkLabel
             // 
@@ -1739,6 +1754,7 @@
             coatsLinkLabel.TabIndex = 9;
             coatsLinkLabel.TabStop = true;
             coatsLinkLabel.Text = "Coats";
+            coatsLinkLabel.LinkClicked += coatsLinkLabel_LinkClicked;
             // 
             // hatsLinkLabel
             // 
@@ -1751,6 +1767,7 @@
             hatsLinkLabel.TabIndex = 9;
             hatsLinkLabel.TabStop = true;
             hatsLinkLabel.Text = "Hats";
+            hatsLinkLabel.LinkClicked += hatsLinkLabel_LinkClicked;
             // 
             // dressLinkLabel
             // 
@@ -1763,6 +1780,7 @@
             dressLinkLabel.TabIndex = 8;
             dressLinkLabel.TabStop = true;
             dressLinkLabel.Text = "Dresses";
+            dressLinkLabel.LinkClicked += dressLinkLabel_LinkClicked;
             // 
             // label33
             // 
@@ -1795,6 +1813,7 @@
             shirtsLinkLabel.TabIndex = 6;
             shirtsLinkLabel.TabStop = true;
             shirtsLinkLabel.Text = "Shirts";
+            shirtsLinkLabel.LinkClicked += shirtsLinkLabel_LinkClicked;
             // 
             // pantsLinkLabel
             // 
@@ -1807,6 +1826,7 @@
             pantsLinkLabel.TabIndex = 5;
             pantsLinkLabel.TabStop = true;
             pantsLinkLabel.Text = "Pants";
+            pantsLinkLabel.LinkClicked += pantsLinkLabel_LinkClicked;
             // 
             // blazerLinkLabel
             // 
@@ -1819,6 +1839,7 @@
             blazerLinkLabel.TabIndex = 4;
             blazerLinkLabel.TabStop = true;
             blazerLinkLabel.Text = "Blazers";
+            blazerLinkLabel.LinkClicked += blazerLinkLabel_LinkClicked;
             // 
             // vestLinkLabel
             // 
@@ -1831,6 +1852,7 @@
             vestLinkLabel.TabIndex = 3;
             vestLinkLabel.TabStop = true;
             vestLinkLabel.Text = "Vests";
+            vestLinkLabel.LinkClicked += vestLinkLabel_LinkClicked;
             // 
             // capLinkLabel
             // 
@@ -1845,22 +1867,51 @@
             capLinkLabel.Text = "Caps";
             capLinkLabel.LinkClicked += capLinkLabel_LinkClicked;
             // 
+            // kundvagnButton
+            // 
+            kundvagnButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kundvagnButton.Location = new Point(761, 12);
+            kundvagnButton.Name = "kundvagnButton";
+            kundvagnButton.Size = new Size(211, 42);
+            kundvagnButton.TabIndex = 4;
+            kundvagnButton.Text = "Visa/Dölj kundvagn";
+            kundvagnButton.UseVisualStyleBackColor = true;
+            kundvagnButton.Click += kundvagnButton_Click;
+            // 
+            // kundvagnListBox
+            // 
+            kundvagnListBox.FormattingEnabled = true;
+            kundvagnListBox.ItemHeight = 15;
+            kundvagnListBox.Location = new Point(747, 67);
+            kundvagnListBox.Name = "kundvagnListBox";
+            kundvagnListBox.Size = new Size(225, 409);
+            kundvagnListBox.TabIndex = 5;
+            kundvagnListBox.Visible = false;
+            // 
+            // removeKundvagnButton
+            // 
+            removeKundvagnButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            removeKundvagnButton.Location = new Point(747, 488);
+            removeKundvagnButton.Name = "removeKundvagnButton";
+            removeKundvagnButton.Size = new Size(225, 41);
+            removeKundvagnButton.TabIndex = 6;
+            removeKundvagnButton.Text = "Ta bort vald vara";
+            removeKundvagnButton.UseVisualStyleBackColor = true;
+            removeKundvagnButton.Click += removeKundvagnButton_Click;
+            // 
             // ShopForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 561);
+            Controls.Add(removeKundvagnButton);
+            Controls.Add(kundvagnListBox);
+            Controls.Add(kundvagnButton);
             Controls.Add(panel1);
             Controls.Add(mainPanel);
             Name = "ShopForm";
             Text = "ShopForm";
             mainPanel.ResumeLayout(false);
-            shoePanel.ResumeLayout(false);
-            shoePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            dressPanel.ResumeLayout(false);
-            dressPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             shirtPanel.ResumeLayout(false);
             shirtPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -1888,6 +1939,12 @@
             hatPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            shoePanel.ResumeLayout(false);
+            shoePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            dressPanel.ResumeLayout(false);
+            dressPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -1897,7 +1954,6 @@
 
         private Panel mainPanel;
         private Panel shoePanel;
-        private Button SizeButton39;
         private Label label50;
         private Button SizeButton38;
         private Button SizeButton37;
@@ -1919,7 +1975,7 @@
         private Button greyDressAddButton;
         private Panel shirtPanel;
         private Label label32;
-        private Button LWhiteShirtButton;
+        private Button lWhiteShirtButton;
         private Button mWhiteShirtButton;
         private Button sWhiteShirtButton;
         private Label label34;
@@ -2037,5 +2093,8 @@
         private LinkLabel blazerLinkLabel;
         private LinkLabel vestLinkLabel;
         private LinkLabel capLinkLabel;
+        private Button kundvagnButton;
+        private ListBox kundvagnListBox;
+        private Button removeKundvagnButton;
     }
 }
