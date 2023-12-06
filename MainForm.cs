@@ -12,9 +12,13 @@ namespace SOSFashion
 {
     public partial class MainForm : Form
     {
+
+
         public MainForm()
         {
             InitializeComponent();
+            this.BackgroundImage = Image.FromFile("Pics/EnLL5-EXMAABrTn.jpg");
+            button1.Image = Image.FromFile("Pics/Assortment.png");
         }
 
         private void AssortmentPanel_Click(object sender, EventArgs e)

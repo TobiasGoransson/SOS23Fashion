@@ -317,7 +317,6 @@
             // 
             // pictureBox14
             // 
-            pictureBox14.Image = Properties.Resources.BlackGreyShoes;
             pictureBox14.Location = new Point(62, 3);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(320, 221);

@@ -45,12 +45,10 @@
             // 
             // button1
             // 
-            button1.Image = Properties.Resources.Skärmbild_2023_12_05_144420;
             button1.Location = new Point(357, 422);
             button1.Name = "button1";
-            button1.Size = new Size(313, 431);
+            button1.Size = new Size(360, 478);
             button1.TabIndex = 4;
-            button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -58,7 +56,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.EnLL5_EXMAABrTn1;
             ClientSize = new Size(1024, 1024);
             Controls.Add(button1);
             Controls.Add(mainLogInButton);
