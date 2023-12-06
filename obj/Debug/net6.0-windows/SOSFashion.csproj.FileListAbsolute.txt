@@ -18,7 +18,9 @@ C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Deb
 C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.LogInForm.resources
 C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.MainForm.resources
 C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.ShopForm.resources
+<<<<<<< Updated upstream
 C:\Users\tobia\OneDrive - Handelsakademin\Dokument\prog intro\SOSFashion\obj\Debug\net6.0-windows\SOSFashion.UserPage.resources
+<<<<<<< HEAD
 C:\Users\Noha Q\OneDrive\Skrivbord\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.exe
 C:\Users\Noha Q\OneDrive\Skrivbord\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.deps.json
 C:\Users\Noha Q\OneDrive\Skrivbord\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.runtimeconfig.json
@@ -39,3 +41,25 @@ C:\Users\Noha Q\OneDrive\Skrivbord\SOS23Fashion\obj\Debug\net6.0-windows\refint\
 C:\Users\Noha Q\OneDrive\Skrivbord\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.pdb
 C:\Users\Noha Q\OneDrive\Skrivbord\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.genruntimeconfig.cache
 C:\Users\Noha Q\OneDrive\Skrivbord\SOS23Fashion\obj\Debug\net6.0-windows\ref\SOSFashion.dll
+=======
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.LogInForm.resources
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.MainForm.resources
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.ShopForm.resources
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.csproj.GenerateResource.cache
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.dll
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\refint\SOSFashion.dll
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.pdb
+C:\Users\hugob\source\repos\2\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.exe
+C:\Users\hugob\source\repos\2\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.deps.json
+C:\Users\hugob\source\repos\2\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.runtimeconfig.json
+C:\Users\hugob\source\repos\2\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.dll
+C:\Users\hugob\source\repos\2\SOS23Fashion\bin\Debug\net6.0-windows\SOSFashion.pdb
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.Properties.Resources.resources
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.AssemblyInfoInputs.cache
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.AssemblyInfo.cs
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.csproj.CoreCompileInputs.cache
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\SOSFashion.genruntimeconfig.cache
+C:\Users\hugob\source\repos\2\SOS23Fashion\obj\Debug\net6.0-windows\ref\SOSFashion.dll
+>>>>>>> Stashed changes
+>>>>>>> 9c9a93bfee2136ad333a567e3aa6ffa1dfc0d2b7

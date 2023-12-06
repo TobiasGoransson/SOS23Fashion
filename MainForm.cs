@@ -13,12 +13,12 @@ namespace SOSFashion
 {
     public partial class MainForm : Form
     {
-        
+
 
         public MainForm()
         {
             InitializeComponent();
-            
+
             this.BackgroundImage = Image.FromFile("Pics/EnLL5-EXMAABrTn.jpg");
             button1.Image = Image.FromFile("Pics/Assortment.png");
         }
@@ -27,10 +27,10 @@ namespace SOSFashion
         public void mainLogInButton_Click(object sender, EventArgs e)
         {
 
-                this.Hide();
-                LogInForm logInForm = new LogInForm();
-                logInForm.Show();
-           
+            this.Hide();
+            LogInForm logInForm = new LogInForm();
+            logInForm.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
