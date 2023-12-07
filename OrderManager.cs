@@ -33,7 +33,6 @@ namespace SOSFashion
 
                     nextLine = sr.ReadLine();
                 }
-
             }
             return orders;
         }
@@ -60,7 +59,6 @@ namespace SOSFashion
             Order newOrder = new Order(newOrderNumber, user.UserName, DateTime.Now);
             allOrders.Add(newOrder);
             RegisterNewOrder(newOrder, "AllOrders");
-
 
             List<Order> accounts = new List<Order>();
             allOrders.Add(newOrder);

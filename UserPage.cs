@@ -62,7 +62,7 @@ namespace SOSFashion
             this.Close();
             MainForm mainForm = new MainForm();
             mainForm.Show();
-            mainForm.mainLogInButton.Text = "User Page";
+            mainForm.mainLogInButton.Text = User.UserName;
         }
         
     }

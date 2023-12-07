@@ -11,8 +11,10 @@ namespace SOSFashion
 {
     public class UserManager
     {
+        public bool isloggedin=false;
         List<User> users = new List<User>();
         string userFilePath = "Users/Users.csv";
+        
 
         public UserManager() 
         {
@@ -43,6 +45,10 @@ namespace SOSFashion
             {
                 sw.WriteLine(user.GetCSV());
             }
+        }
+        public bool Isloggedin()
+        {
+            return isloggedin = true;
         }
     }
 }
