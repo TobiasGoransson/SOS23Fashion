@@ -96,7 +96,7 @@ namespace SOSFashion
             return true;
         }
 
-<<<<<<< Updated upstream
+
         public User CheckLoggIn()
         {
             users = userManager.CreateUserList();
@@ -128,11 +128,7 @@ namespace SOSFashion
                 userPage.Show();
 
             }
-=======
-        private void LogInForm_Load(object sender, EventArgs e)
-        {
 
->>>>>>> Stashed changes
         }
     }
 
