@@ -13,8 +13,9 @@ namespace SOSFashion
 {
     public partial class MainForm : Form
     {
-
-
+        User User { get; set; }
+        public bool isloggedin = false;
+        UserManager userManager = new UserManager();
         public MainForm()
         {
             InitializeComponent();
@@ -26,10 +27,28 @@ namespace SOSFashion
 
         public void mainLogInButton_Click(object sender, EventArgs e)
         {
+            if (mainLogInButton.Text == "Log In")
+            {
+                this.Hide();
+                LogInForm logInForm = new LogInForm();
+                logInForm.Show();
+            }
+            else
+            {
+                List<User> users = userManager.CreateUserList();
 
-            this.Hide();
-            LogInForm logInForm = new LogInForm();
-            logInForm.Show();
+                foreach (User user in users)
+                {
+                    if (user.UserName == mainLogInButton.Text)
+                    {
+                        this.Hide();
+                        UserPage userPage = new UserPage(user);
+                        userPage.Show();
+                    }
+                }
+
+            }
+
 
         }
 
