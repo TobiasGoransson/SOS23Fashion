@@ -31,13 +31,10 @@
             LogInPanel = new Panel();
             registerNewUserButton = new Button();
             logInButton = new Button();
-<<<<<<< Updated upstream
+
             passwordTextBox = new TextBox();
             UserNameTextBox = new TextBox();
-=======
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
->>>>>>> Stashed changes
+
             label3 = new Label();
             label2 = new Label();
             chooseUserNamePasswordPanel = new Panel();
@@ -151,16 +148,6 @@
             label2.TabIndex = 0;
             label2.Text = "User Name";
             label2.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(123, 11);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(152, 30);
-            textBox1.TabIndex = 1;
             // 
             // label3
             // 
@@ -515,7 +502,6 @@
             Controls.Add(LogInPanel);
             Name = "LogInForm";
             Text = "LogInForm";
-            Load += LogInForm_Load;
             LogInPanel.ResumeLayout(false);
             LogInPanel.PerformLayout();
             chooseUserNamePasswordPanel.ResumeLayout(false);
