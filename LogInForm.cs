@@ -96,6 +96,7 @@ namespace SOSFashion
             return true;
         }
 
+
         public User CheckLoggIn()
         {
             users = userManager.CreateUserList();
@@ -127,6 +128,7 @@ namespace SOSFashion
                 userPage.Show();
 
             }
+
         }
     }
 

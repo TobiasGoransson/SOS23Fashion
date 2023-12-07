@@ -35,9 +35,10 @@
             // mainLogInButton
             // 
             mainLogInButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            mainLogInButton.Location = new Point(920, 12);
+            mainLogInButton.Location = new Point(1314, 20);
+            mainLogInButton.Margin = new Padding(4, 5, 4, 5);
             mainLogInButton.Name = "mainLogInButton";
-            mainLogInButton.Size = new Size(92, 33);
+            mainLogInButton.Size = new Size(131, 55);
             mainLogInButton.TabIndex = 3;
             mainLogInButton.Text = "Log In";
             mainLogInButton.UseVisualStyleBackColor = true;
@@ -45,20 +46,22 @@
             // 
             // button1
             // 
-            button1.Location = new Point(357, 422);
+            button1.Location = new Point(497, 207);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(360, 478);
+            button1.Size = new Size(514, 797);
             button1.TabIndex = 4;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 1024);
+            ClientSize = new Size(1463, 1050);
             Controls.Add(button1);
             Controls.Add(mainLogInButton);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "MainForm";
             Text = "MainForm";
             ResumeLayout(false);
