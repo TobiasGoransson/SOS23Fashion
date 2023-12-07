@@ -12,6 +12,7 @@ namespace SOSFashion
     internal class OrderManager
     {
         public string OrderFilePath;
+        
 
         public List<Order> GetOrders(string UserName)
         {
@@ -70,13 +71,27 @@ namespace SOSFashion
 
         public void RegisterNewOrder(Order order, string UserName)
         {
-            OrderFilePath = "UserAccounts/" + UserName + ".csv";
+            OrderFilePath = "OrderLists/" + UserName + ".csv";
 
             using (StreamWriter sw = File.AppendText(OrderFilePath))
             {
                 sw.WriteLine(order.GetOrderCSV());
             }
 
+        }
+
+        public void CreateItemList (int OrderNo, List<Item> cart) 
+        {
+            OrderFilePath = "OrderLists/OrderDetail" + OrderNo + ".csv";
+
+            foreach (Item item in cart)
+            {
+                using (StreamWriter sw = File.AppendText(OrderFilePath))
+                {
+                    sw.WriteLine(item.GetCSV());
+                }
+            }
+            
         }
     }
 }
