@@ -58,5 +58,11 @@ namespace SOSFashion
             ShopForm shopForm = new ShopForm();
             shopForm.Show();
         }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainLogInButton.Text = "Log In";
+        }
     }
 }
