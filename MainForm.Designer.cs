@@ -30,6 +30,7 @@
         {
             mainLogInButton = new Button();
             button1 = new Button();
+            logOutButton = new Button();
             SuspendLayout();
             // 
             // mainLogInButton
@@ -52,12 +53,25 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // logOutButton
+            // 
+            logOutButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            logOutButton.Location = new Point(853, 51);
+            logOutButton.Name = "logOutButton";
+            logOutButton.Size = new Size(159, 33);
+            logOutButton.TabIndex = 5;
+            logOutButton.Text = "Log out";
+            logOutButton.UseVisualStyleBackColor = true;
+            logOutButton.Visible = false;
+            logOutButton.Click += logOutButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.EnLL5_EXMAABrTn;
             ClientSize = new Size(1024, 936);
+            Controls.Add(logOutButton);
             Controls.Add(button1);
             Controls.Add(mainLogInButton);
             Name = "MainForm";
@@ -68,5 +82,6 @@
         #endregion
         public Button mainLogInButton;
         private Button button1;
+        public Button logOutButton;
     }
 }

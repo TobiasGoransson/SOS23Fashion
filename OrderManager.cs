@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -12,7 +13,7 @@ namespace SOSFashion
     internal class OrderManager
     {
         public string OrderFilePath;
-        
+        UserManager userManager = new UserManager();
 
         public List<Order> GetOrders(string UserName)
         {
@@ -36,6 +37,30 @@ namespace SOSFashion
             }
             return orders;
         }
+        public List<Item> GetItems(int OrderNo)
+        {
+
+            OrderFilePath = "OrderLists/OrderDetail" + OrderNo + ".csv";
+            List<Item> items = new List<Item>();
+            using (StreamReader sr = new StreamReader(OrderFilePath))
+            {
+
+                string nextLine = sr.ReadLine();
+                while (nextLine != null)
+                {
+                    string[] variables = nextLine.Split(';');
+                    int Price = int.Parse(variables[1]);
+                    int Quantity = int.Parse(variables[2]);
+                    int SoldTotal = int.Parse(variables[5]);
+
+                    Item item = new Item(variables[0], Price, Quantity, variables[3], variables[4], SoldTotal);
+                    items.Add(item);
+
+                    nextLine = sr.ReadLine();
+                }
+            }
+            return items;
+        }   
 
         public List<Order> GetAllOrders()
         {

@@ -48,7 +48,6 @@
             showPasswordButton = new Button();
             leaveUserPageButton = new Button();
             orderDetailsListBox = new ListBox();
-            button1 = new Button();
             SuspendLayout();
             // 
             // newUserNameLable
@@ -270,22 +269,11 @@
             orderDetailsListBox.Size = new Size(300, 328);
             orderDetailsListBox.TabIndex = 46;
             // 
-            // button1
-            // 
-            button1.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(431, 387);
-            button1.Name = "button1";
-            button1.Size = new Size(208, 32);
-            button1.TabIndex = 47;
-            button1.Text = "Show Orderdetails";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // UserPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1141, 450);
-            Controls.Add(button1);
             Controls.Add(orderDetailsListBox);
             Controls.Add(leaveUserPageButton);
             Controls.Add(showPasswordButton);
@@ -333,6 +321,5 @@
         private Button showPasswordButton;
         private Button leaveUserPageButton;
         private ListBox orderDetailsListBox;
-        private Button button1;
     }
 }

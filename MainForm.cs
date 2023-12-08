@@ -14,7 +14,6 @@ namespace SOSFashion
     public partial class MainForm : Form
     {
         User User { get; set; }
-        public bool isloggedin = false;
         UserManager userManager = new UserManager();
         public MainForm()
         {
@@ -57,6 +56,12 @@ namespace SOSFashion
             this.Hide();
             ShopForm shopForm = new ShopForm();
             shopForm.Show();
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            logOutButton.Hide();
+            mainLogInButton.Text = "Log In";
         }
     }
 }

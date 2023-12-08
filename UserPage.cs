@@ -61,8 +61,32 @@ namespace SOSFashion
         {
             this.Close();
             MainForm mainForm = new MainForm();
-            mainForm.Show();
             mainForm.mainLogInButton.Text = User.UserName;
+            mainForm.logOutButton.Show();
+            ShopForm shopForm = new ShopForm();
+            shopForm.Show();
+            shopForm.logInButton.Text = User.UserName;
         }
+
+        private void OrderHistory_MouseDown(object sender, MouseEventArgs e)
+        {
+            int index = OrderHistory.IndexFromPoint(e.Location);
+
+            if (index != ListBox.NoMatches)
+            {
+                OrderHistory.SelectedIndex = index;
+                List<Order> orders = orderManager.GetOrders(User.UserName);
+                for (int i = 0; i < orders.Count; i++)
+                {
+                    if (index == i)
+                    {
+                        List<Item> items = orderManager.GetItems(orders[i].OrderNo);
+                    }
+                }
+            }
+
+        }
+
+
     }
 }
