@@ -554,5 +554,15 @@ namespace SOSFashion
             string choice = "Women Cap";
             AddToCart(choice);
         }
+
+        private void logInButton_Click(object sender, EventArgs e)
+        {
+            if (logInButton.Text == "Log In")
+            {
+                LogInForm logInForm = new LogInForm();
+                logInForm.Show();
+                this.Close();
+            }
+        }
     }
 }

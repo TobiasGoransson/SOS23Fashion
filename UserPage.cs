@@ -64,6 +64,5 @@ namespace SOSFashion
             mainForm.Show();
             mainForm.mainLogInButton.Text = User.UserName;
         }
-        
     }
 }
