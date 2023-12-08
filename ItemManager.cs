@@ -28,9 +28,9 @@ namespace SOSFashion
                         string size = strings[3];
                         string color = strings[4];
                         int amountSold = Convert.ToInt32(strings[5]);
+                        string category = strings[6];
 
-
-                        items.Add(new Item(name, price, amountStock, size, color, amountSold));
+                        items.Add(new Item(name, price, amountStock, size, color, amountSold, category));
                         line = reader.ReadLine();
                     }
                     catch (Exception ex)
@@ -41,7 +41,7 @@ namespace SOSFashion
             }
             return items;
         }
-        public void RegisterNewItem( )
+        public void RegisterNewItem( Item item)
         {
                 using (StreamWriter sw = File.AppendText(itemsFilePath))
                 {

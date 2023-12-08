@@ -30,14 +30,19 @@
         {
             adminListBox1 = new ListBox();
             panel1 = new Panel();
+            logOutAdminLable = new LinkLabel();
             label31 = new Label();
-            pantsLinkLabel = new LinkLabel();
+            registerNewItemkLabel = new LinkLabel();
             costumorLabel = new LinkLabel();
             placedOrdersLabel = new LinkLabel();
-            roductlistLable = new LinkLabel();
+            productlistLable = new LinkLabel();
             mainPanel = new Panel();
-            registerNewUserPanel = new Panel();
-            categoryTextBox = new TextBox();
+            registerNewItemPanel = new Panel();
+            accessoriesCheckBox = new CheckBox();
+            suitsCheckBox = new CheckBox();
+            coatsCheckBox = new CheckBox();
+            dressesCheckBox = new CheckBox();
+            hatCheckBox = new CheckBox();
             categoryLable = new Label();
             LargeCheckBox = new CheckBox();
             smallCheckBox = new CheckBox();
@@ -51,12 +56,10 @@
             sizeLable = new Label();
             priceTextBox = new TextBox();
             itemPriceLable = new Label();
-            quantityTextBox = new TextBox();
-            quantityLable = new Label();
             itemNamelable = new Label();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
-            registerNewUserPanel.SuspendLayout();
+            registerNewItemPanel.SuspendLayout();
             SuspendLayout();
             // 
             // adminListBox1
@@ -71,15 +74,28 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(logOutAdminLable);
             panel1.Controls.Add(label31);
-            panel1.Controls.Add(pantsLinkLabel);
+            panel1.Controls.Add(registerNewItemkLabel);
             panel1.Controls.Add(costumorLabel);
             panel1.Controls.Add(placedOrdersLabel);
-            panel1.Controls.Add(roductlistLable);
+            panel1.Controls.Add(productlistLable);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(158, 451);
             panel1.TabIndex = 4;
+            // 
+            // logOutAdminLable
+            // 
+            logOutAdminLable.AutoSize = true;
+            logOutAdminLable.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            logOutAdminLable.LinkColor = Color.Black;
+            logOutAdminLable.Location = new Point(3, 213);
+            logOutAdminLable.Name = "logOutAdminLable";
+            logOutAdminLable.Size = new Size(113, 21);
+            logOutAdminLable.TabIndex = 6;
+            logOutAdminLable.TabStop = true;
+            logOutAdminLable.Text = "Log out Admin";
             // 
             // label31
             // 
@@ -91,18 +107,18 @@
             label31.TabIndex = 3;
             label31.Text = "Meny";
             // 
-            // pantsLinkLabel
+            // registerNewItemkLabel
             // 
-            pantsLinkLabel.AutoSize = true;
-            pantsLinkLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pantsLinkLabel.LinkColor = Color.Black;
-            pantsLinkLabel.Location = new Point(3, 148);
-            pantsLinkLabel.Name = "pantsLinkLabel";
-            pantsLinkLabel.Size = new Size(138, 21);
-            pantsLinkLabel.TabIndex = 5;
-            pantsLinkLabel.TabStop = true;
-            pantsLinkLabel.Text = "Register New Item";
-            pantsLinkLabel.LinkClicked += pantsLinkLabel_LinkClicked;
+            registerNewItemkLabel.AutoSize = true;
+            registerNewItemkLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            registerNewItemkLabel.LinkColor = Color.Black;
+            registerNewItemkLabel.Location = new Point(3, 148);
+            registerNewItemkLabel.Name = "registerNewItemkLabel";
+            registerNewItemkLabel.Size = new Size(138, 21);
+            registerNewItemkLabel.TabIndex = 5;
+            registerNewItemkLabel.TabStop = true;
+            registerNewItemkLabel.Text = "Register New Item";
+            registerNewItemkLabel.LinkClicked += registerNewItemkLabel_LinkClicked;
             // 
             // costumorLabel
             // 
@@ -128,18 +144,17 @@
             placedOrdersLabel.TabStop = true;
             placedOrdersLabel.Text = "Placed orders";
             // 
-            // roductlistLable
+            // productlistLable
             // 
-            roductlistLable.AutoSize = true;
-            roductlistLable.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            roductlistLable.LinkColor = Color.Black;
-            roductlistLable.Location = new Point(3, 53);
-            roductlistLable.Name = "roductlistLable";
-            roductlistLable.Size = new Size(88, 21);
-            roductlistLable.TabIndex = 0;
-            roductlistLable.TabStop = true;
-            roductlistLable.Text = "Product list";
-            roductlistLable.LinkClicked += roductlistLable_LinkClicked;
+            productlistLable.AutoSize = true;
+            productlistLable.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            productlistLable.LinkColor = Color.Black;
+            productlistLable.Location = new Point(3, 53);
+            productlistLable.Name = "productlistLable";
+            productlistLable.Size = new Size(88, 21);
+            productlistLable.TabIndex = 0;
+            productlistLable.TabStop = true;
+            productlistLable.Text = "Product list";
             // 
             // mainPanel
             // 
@@ -149,47 +164,93 @@
             mainPanel.Size = new Size(380, 350);
             mainPanel.TabIndex = 6;
             // 
-            // registerNewUserPanel
+            // registerNewItemPanel
             // 
-            registerNewUserPanel.BackColor = Color.Transparent;
-            registerNewUserPanel.Controls.Add(categoryTextBox);
-            registerNewUserPanel.Controls.Add(categoryLable);
-            registerNewUserPanel.Controls.Add(LargeCheckBox);
-            registerNewUserPanel.Controls.Add(smallCheckBox);
-            registerNewUserPanel.Controls.Add(mediumCheckBox);
-            registerNewUserPanel.Controls.Add(oneSizeCheckBox);
-            registerNewUserPanel.Controls.Add(itemTextBox);
-            registerNewUserPanel.Controls.Add(cancelRegisterNewUserButton);
-            registerNewUserPanel.Controls.Add(confirmRegisterNewUserButton);
-            registerNewUserPanel.Controls.Add(colorTextBox);
-            registerNewUserPanel.Controls.Add(colorLable);
-            registerNewUserPanel.Controls.Add(sizeLable);
-            registerNewUserPanel.Controls.Add(priceTextBox);
-            registerNewUserPanel.Controls.Add(itemPriceLable);
-            registerNewUserPanel.Controls.Add(quantityTextBox);
-            registerNewUserPanel.Controls.Add(quantityLable);
-            registerNewUserPanel.Controls.Add(itemNamelable);
-            registerNewUserPanel.Location = new Point(164, 32);
-            registerNewUserPanel.Name = "registerNewUserPanel";
-            registerNewUserPanel.Size = new Size(380, 350);
-            registerNewUserPanel.TabIndex = 3;
+            registerNewItemPanel.BackColor = Color.Transparent;
+            registerNewItemPanel.Controls.Add(accessoriesCheckBox);
+            registerNewItemPanel.Controls.Add(suitsCheckBox);
+            registerNewItemPanel.Controls.Add(coatsCheckBox);
+            registerNewItemPanel.Controls.Add(dressesCheckBox);
+            registerNewItemPanel.Controls.Add(hatCheckBox);
+            registerNewItemPanel.Controls.Add(categoryLable);
+            registerNewItemPanel.Controls.Add(LargeCheckBox);
+            registerNewItemPanel.Controls.Add(smallCheckBox);
+            registerNewItemPanel.Controls.Add(mediumCheckBox);
+            registerNewItemPanel.Controls.Add(oneSizeCheckBox);
+            registerNewItemPanel.Controls.Add(itemTextBox);
+            registerNewItemPanel.Controls.Add(cancelRegisterNewUserButton);
+            registerNewItemPanel.Controls.Add(confirmRegisterNewUserButton);
+            registerNewItemPanel.Controls.Add(colorTextBox);
+            registerNewItemPanel.Controls.Add(colorLable);
+            registerNewItemPanel.Controls.Add(sizeLable);
+            registerNewItemPanel.Controls.Add(priceTextBox);
+            registerNewItemPanel.Controls.Add(itemPriceLable);
+            registerNewItemPanel.Controls.Add(itemNamelable);
+            registerNewItemPanel.Location = new Point(164, 32);
+            registerNewItemPanel.Name = "registerNewItemPanel";
+            registerNewItemPanel.Size = new Size(380, 350);
+            registerNewItemPanel.TabIndex = 3;
             // 
-            // categoryTextBox
+            // accessoriesCheckBox
             // 
-            categoryTextBox.BackColor = SystemColors.Control;
-            categoryTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            categoryTextBox.Location = new Point(138, 251);
-            categoryTextBox.Multiline = true;
-            categoryTextBox.Name = "categoryTextBox";
-            categoryTextBox.PlaceholderText = "Accerssories";
-            categoryTextBox.Size = new Size(152, 30);
-            categoryTextBox.TabIndex = 21;
+            accessoriesCheckBox.AutoSize = true;
+            accessoriesCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            accessoriesCheckBox.Location = new Point(111, 235);
+            accessoriesCheckBox.Name = "accessoriesCheckBox";
+            accessoriesCheckBox.Size = new Size(117, 25);
+            accessoriesCheckBox.TabIndex = 25;
+            accessoriesCheckBox.Text = "Accessories";
+            accessoriesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // suitsCheckBox
+            // 
+            suitsCheckBox.AutoSize = true;
+            suitsCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            suitsCheckBox.Location = new Point(222, 215);
+            suitsCheckBox.Name = "suitsCheckBox";
+            suitsCheckBox.Size = new Size(68, 25);
+            suitsCheckBox.TabIndex = 24;
+            suitsCheckBox.Text = "Suits";
+            suitsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // coatsCheckBox
+            // 
+            coatsCheckBox.AutoSize = true;
+            coatsCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            coatsCheckBox.Location = new Point(222, 195);
+            coatsCheckBox.Name = "coatsCheckBox";
+            coatsCheckBox.Size = new Size(70, 25);
+            coatsCheckBox.TabIndex = 23;
+            coatsCheckBox.Text = "Coats";
+            coatsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // dressesCheckBox
+            // 
+            dressesCheckBox.AutoSize = true;
+            dressesCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dressesCheckBox.Location = new Point(111, 215);
+            dressesCheckBox.Name = "dressesCheckBox";
+            dressesCheckBox.Size = new Size(87, 25);
+            dressesCheckBox.TabIndex = 22;
+            dressesCheckBox.Text = "Dresses";
+            dressesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // hatCheckBox
+            // 
+            hatCheckBox.AutoSize = true;
+            hatCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            hatCheckBox.Location = new Point(111, 194);
+            hatCheckBox.Name = "hatCheckBox";
+            hatCheckBox.Size = new Size(59, 25);
+            hatCheckBox.TabIndex = 21;
+            hatCheckBox.Text = "Hat";
+            hatCheckBox.UseVisualStyleBackColor = true;
             // 
             // categoryLable
             // 
             categoryLable.BackColor = SystemColors.Control;
             categoryLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            categoryLable.Location = new Point(20, 251);
+            categoryLable.Location = new Point(20, 194);
             categoryLable.Name = "categoryLable";
             categoryLable.Size = new Size(110, 30);
             categoryLable.TabIndex = 20;
@@ -200,7 +261,7 @@
             // 
             LargeCheckBox.AutoSize = true;
             LargeCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LargeCheckBox.Location = new Point(138, 187);
+            LargeCheckBox.Location = new Point(222, 106);
             LargeCheckBox.Name = "LargeCheckBox";
             LargeCheckBox.Size = new Size(74, 25);
             LargeCheckBox.TabIndex = 19;
@@ -211,7 +272,7 @@
             // 
             smallCheckBox.AutoSize = true;
             smallCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            smallCheckBox.Location = new Point(138, 141);
+            smallCheckBox.Location = new Point(222, 86);
             smallCheckBox.Name = "smallCheckBox";
             smallCheckBox.Size = new Size(74, 25);
             smallCheckBox.TabIndex = 18;
@@ -222,7 +283,7 @@
             // 
             mediumCheckBox.AutoSize = true;
             mediumCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            mediumCheckBox.Location = new Point(138, 164);
+            mediumCheckBox.Location = new Point(111, 106);
             mediumCheckBox.Name = "mediumCheckBox";
             mediumCheckBox.Size = new Size(92, 25);
             mediumCheckBox.TabIndex = 17;
@@ -233,12 +294,13 @@
             // 
             oneSizeCheckBox.AutoSize = true;
             oneSizeCheckBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            oneSizeCheckBox.Location = new Point(138, 116);
+            oneSizeCheckBox.Location = new Point(111, 85);
             oneSizeCheckBox.Name = "oneSizeCheckBox";
             oneSizeCheckBox.Size = new Size(96, 25);
             oneSizeCheckBox.TabIndex = 16;
             oneSizeCheckBox.Text = "One Size";
             oneSizeCheckBox.UseVisualStyleBackColor = true;
+            oneSizeCheckBox.CheckedChanged += oneSizeCheckBox_CheckedChanged;
             // 
             // itemTextBox
             // 
@@ -278,7 +340,7 @@
             // 
             colorTextBox.BackColor = SystemColors.Control;
             colorTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            colorTextBox.Location = new Point(138, 215);
+            colorTextBox.Location = new Point(138, 149);
             colorTextBox.Multiline = true;
             colorTextBox.Name = "colorTextBox";
             colorTextBox.PlaceholderText = "Black";
@@ -289,7 +351,7 @@
             // 
             colorLable.BackColor = SystemColors.Control;
             colorLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            colorLable.Location = new Point(20, 215);
+            colorLable.Location = new Point(20, 149);
             colorLable.Name = "colorLable";
             colorLable.Size = new Size(110, 30);
             colorLable.TabIndex = 14;
@@ -300,7 +362,7 @@
             // 
             sizeLable.BackColor = SystemColors.Control;
             sizeLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            sizeLable.Location = new Point(20, 120);
+            sizeLable.Location = new Point(20, 86);
             sizeLable.Name = "sizeLable";
             sizeLable.Size = new Size(110, 30);
             sizeLable.TabIndex = 12;
@@ -329,28 +391,6 @@
             itemPriceLable.Text = "Price";
             itemPriceLable.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // quantityTextBox
-            // 
-            quantityTextBox.BackColor = SystemColors.Control;
-            quantityTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            quantityTextBox.Location = new Point(138, 80);
-            quantityTextBox.Multiline = true;
-            quantityTextBox.Name = "quantityTextBox";
-            quantityTextBox.PlaceholderText = "0";
-            quantityTextBox.Size = new Size(152, 30);
-            quantityTextBox.TabIndex = 8;
-            // 
-            // quantityLable
-            // 
-            quantityLable.BackColor = SystemColors.Control;
-            quantityLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            quantityLable.Location = new Point(20, 80);
-            quantityLable.Name = "quantityLable";
-            quantityLable.Size = new Size(110, 30);
-            quantityLable.TabIndex = 5;
-            quantityLable.Text = "Quantity";
-            quantityLable.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // itemNamelable
             // 
             itemNamelable.BackColor = SystemColors.Control;
@@ -367,7 +407,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1205, 462);
-            Controls.Add(registerNewUserPanel);
+            Controls.Add(registerNewItemPanel);
             Controls.Add(mainPanel);
             Controls.Add(panel1);
             Name = "AdminForm";
@@ -375,8 +415,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             mainPanel.ResumeLayout(false);
-            registerNewUserPanel.ResumeLayout(false);
-            registerNewUserPanel.PerformLayout();
+            registerNewItemPanel.ResumeLayout(false);
+            registerNewItemPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -385,12 +425,12 @@
         private ListBox adminListBox1;
         private Panel panel1;
         private Label label31;
-        private LinkLabel pantsLinkLabel;
+        private LinkLabel registerNewItemkLabel;
         private LinkLabel costumorLabel;
         private LinkLabel placedOrdersLabel;
-        private LinkLabel roductlistLable;
+        private LinkLabel productlistLable;
         private Panel mainPanel;
-        private Panel registerNewUserPanel;
+        private Panel registerNewItemPanel;
         private Button cancelRegisterNewUserButton;
         private Button confirmRegisterNewUserButton;
         private TextBox colorTextBox;
@@ -398,15 +438,18 @@
         private Label sizeLable;
         private TextBox priceTextBox;
         private Label itemPriceLable;
-        private TextBox quantityTextBox;
-        private Label quantityLable;
         private Label itemNamelable;
         private CheckBox LargeCheckBox;
         private CheckBox smallCheckBox;
         private CheckBox mediumCheckBox;
         private CheckBox oneSizeCheckBox;
         private TextBox itemTextBox;
-        private TextBox categoryTextBox;
         private Label categoryLable;
+        private LinkLabel logOutAdminLable;
+        private CheckBox accessoriesCheckBox;
+        private CheckBox suitsCheckBox;
+        private CheckBox coatsCheckBox;
+        private CheckBox dressesCheckBox;
+        private CheckBox hatCheckBox;
     }
 }

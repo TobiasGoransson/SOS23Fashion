@@ -120,6 +120,14 @@ namespace SOSFashion
                 MessageBox.Show("Invali UserId / Password");
                 passwordTextBox.Clear();
             }
+            else if (user.FirstName == "Admin")
+            {
+                UserNameTextBox.Clear();
+                passwordTextBox.Clear();
+                this.Hide();
+                AdminForm form = new AdminForm();
+                form.Show();
+            }
             else
             {
                 UserNameTextBox.Clear();

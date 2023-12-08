@@ -35,7 +35,7 @@ namespace SOSFashion
                     {
                         string[] strings = line.Split(";");
                         string name = strings[0];
-                        int price = Convert.ToInt32(strings[1]);
+                        double price = Convert.ToInt32(strings[1]);
                         int amountStock = Convert.ToInt32(strings[2]);
                         string size = strings[3];
                         string color = strings[4];
@@ -109,7 +109,7 @@ namespace SOSFashion
                 {
                     if (item.Size == size)
                     {
-                       LinkLabelLinkClickedEventArgs.text = "Price" + item.Price;
+                       
                         break;
                     }
                 }
@@ -124,9 +124,9 @@ namespace SOSFashion
             totalcostlabel.Text = $"Total Cost: {totalCost} kr";
         }
 
-        private int CalculateTotalCost()
+        private double CalculateTotalCost()
         {
-            int totalCost = 0;
+            double totalCost = 0;
             foreach (Item item in kundvagnList)
             {
                 totalCost += item.Price;

@@ -9,7 +9,7 @@ namespace SOSFashion
     public class Item
     {
         public string ItemName { get; set; }
-        public int Price { get; set; }
+        public double Price { get; set; }
         public int Quantity { get; set; }
         public string Size { get; set; }
         public string Color { get; set; }
@@ -17,7 +17,7 @@ namespace SOSFashion
         public string Category { get; set; }
 
 
-        public Item(string itemName, int price, int quantity, string size, string color, int soldTotal, string category)
+        public Item(string itemName, double price, int quantity, string size, string color, int soldTotal, string category)
         {
             ItemName = itemName;
             Price = price;
@@ -27,7 +27,7 @@ namespace SOSFashion
             SoldTotal = soldTotal;
             Category = category;
         }
-        public Item(string itemName, int price, int quantity, string size, string color, string category)
+        public Item(string itemName, double price, int quantity, string size, string color, string category)
         {
             ItemName = itemName;
             Price = price;

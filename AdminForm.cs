@@ -2,81 +2,94 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using CheckBox = System.Windows.Forms.CheckBox;
 
 namespace SOSFashion
 {
     public partial class AdminForm : Form
     {
+        ItemManager ItemManager = new ItemManager();
         List<Item> items = new List<Item>();
         string itemsFilePath = "Items/Items.csv";
+        private List<CheckBox> checkBoxes;
         public AdminForm()
         {
             InitializeComponent();
+            checkBoxes = new List<CheckBox> { hatCheckBox, coatsCheckBox, dressesCheckBox, suitsCheckBox, accessoriesCheckBox };
         }
 
-        private void roductlistLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            CheckBox currentCheckBox = sender as CheckBox;
 
-        }
-
-        public List<Item> GetItemList()
-        {
-            using (StreamReader reader = new StreamReader(itemsFilePath))
+            if (currentCheckBox.Checked)
             {
-                string line = reader.ReadLine();
-                while (line != null)
+                foreach (var checkBox in checkBoxes)
                 {
-                    try
+                    if (checkBox != currentCheckBox)
                     {
-                        string[] strings = line.Split(";");
-                        string name = strings[0];
-                        int price = Convert.ToInt32(strings[1]);
-                        int amountStock = Convert.ToInt32(strings[2]);
-                        string size = strings[3];
-                        string color = strings[4];
-                        int amountSold = Convert.ToInt32(strings[5]);
-
-
-                        items.Add(new Item(name, price, amountStock, size, color, amountSold));
-                        line = reader.ReadLine();
-                    }
-                    catch (Exception ex)
-                    {
-
+                        checkBox.Checked = false;
                     }
                 }
             }
-            return items;
         }
 
-        private void pantsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public string CheckCategory()
         {
-            registerNewUserPanel.BringToFront();
+            if (hatCheckBox.Checked) { return "Hat"; }
+            else if (coatsCheckBox.Checked) { return "Coats"; }
+            else if (dressesCheckBox.Checked) { return "Dresses"; }
+            else if (suitsCheckBox.Checked) { return "Suits"; }
+            else if (accessoriesCheckBox.Checked) { return "Accessories"; }
+            return null;
         }
-
         private void confirmRegisterNewUserButton_Click(object sender, EventArgs e)
         {
 
-            string size;
+            string Category = CheckCategory();
+            string Size;
             string ItemName = itemTextBox.Text;
-            int Price = Convert.ToInt32(priceTextBox.Text);
-            int Quantity = Convert.ToInt32(quantityTextBox.Text);   
+            double Price = Convert.ToInt32(priceTextBox.Text);
+            int Quantity = 0;
             string Color = colorTextBox.Text;
-            string Category = quantityTextBox.Text;
-            if (OneSize()  == true)
-            {
-                size = "One Size";
 
+
+            if (OneSize() == true)
+            {
+                Size = "One Size";
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
+                ItemManager.RegisterNewItem(item);
             }
+            if (smallCheckBox.Checked)
+            {
+                Size = "S";
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
+                ItemManager.RegisterNewItem(item);
+            }
+            if (mediumCheckBox.Checked)
+            {
+                Size = "M";
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
+                ItemManager.RegisterNewItem(item);
+            }
+            if (LargeCheckBox.Checked)
+            {
+                Size = "L";
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
+                ItemManager.RegisterNewItem(item);
+            }
+
         }
         public bool OneSize()
         {
-            
+
             if (oneSizeCheckBox.Checked)
             {
                 smallCheckBox.Hide();
@@ -85,7 +98,24 @@ namespace SOSFashion
 
                 return true;
             }
+            if (oneSizeCheckBox.Checked == false)
+            {
+                smallCheckBox.Show();
+                mediumCheckBox.Show();
+                LargeCheckBox.Show();
+
+            }
             return false;
+        }
+
+        private void registerNewItemkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            registerNewItemPanel.Show();
+        }
+
+        private void oneSizeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            OneSize();
         }
     }
 }
