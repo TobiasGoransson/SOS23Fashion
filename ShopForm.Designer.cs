@@ -29,73 +29,13 @@
         private void InitializeComponent()
         {
             mainPanel = new Panel();
-            vestPanel = new Panel();
-            label14 = new Label();
-            lGreyVestButton = new Button();
-            label13 = new Label();
-            mGreyVestButton = new Button();
-            sGreyVestButton = new Button();
-            lNavyVestButton = new Button();
-            mNavyVestButton = new Button();
-            sNavyVestButton = new Button();
-            greyVestAddButton = new Button();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            pictureBox2 = new PictureBox();
-            label11 = new Label();
-            label12 = new Label();
-            navyVestAddButton = new Button();
-            pictureBox3 = new PictureBox();
-            capPanel = new Panel();
-            blackCapAddButton = new Button();
-            label6 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label2 = new Label();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label5 = new Label();
-            brownCapAddButton = new Button();
-            capPictureBox = new PictureBox();
-            coatPanel = new Panel();
-            label41 = new Label();
-            lBlackFurCoatButton = new Button();
-            label42 = new Label();
-            mBlackFurCoatButton = new Button();
-            sBlackFurCoatButton = new Button();
-            lNavyCoatButton = new Button();
-            mNavyCoatButton = new Button();
-            sNavyCoatButton = new Button();
-            blackFurCoatAddButton = new Button();
-            label43 = new Label();
-            label44 = new Label();
-            label45 = new Label();
-            label46 = new Label();
-            pictureBox10 = new PictureBox();
-            label47 = new Label();
-            label48 = new Label();
-            navyCoatAddButton = new Button();
-            pictureBox11 = new PictureBox();
-            hatPanel = new Panel();
-            greyWomanCapAddButton = new Button();
-            label51 = new Label();
-            label52 = new Label();
-            label53 = new Label();
-            label54 = new Label();
-            pictureBox12 = new PictureBox();
-            label55 = new Label();
-            label56 = new Label();
-            blackHatAddButton = new Button();
-            pictureBox13 = new PictureBox();
             shoePanel = new Panel();
             label50 = new Label();
             SizeButton38 = new Button();
             SizeButton37 = new Button();
             SizeButton36 = new Button();
-            label57 = new Label();
-            label58 = new Label();
+            shoeColorLabel = new Label();
+            shoeNameLabel = new Label();
             pictureBox14 = new PictureBox();
             label59 = new Label();
             greyShoeAddButton = new Button();
@@ -157,6 +97,66 @@
             label22 = new Label();
             navyBlazerAddButton = new Button();
             pictureBox5 = new PictureBox();
+            vestPanel = new Panel();
+            label14 = new Label();
+            lGreyVestButton = new Button();
+            label13 = new Label();
+            mGreyVestButton = new Button();
+            sGreyVestButton = new Button();
+            lNavyVestButton = new Button();
+            mNavyVestButton = new Button();
+            sNavyVestButton = new Button();
+            greyVestAddButton = new Button();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            pictureBox2 = new PictureBox();
+            label11 = new Label();
+            label12 = new Label();
+            navyVestAddButton = new Button();
+            pictureBox3 = new PictureBox();
+            capPanel = new Panel();
+            blackCapAddButton = new Button();
+            label6 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            label5 = new Label();
+            brownCapAddButton = new Button();
+            capPictureBox = new PictureBox();
+            coatPanel = new Panel();
+            label41 = new Label();
+            lBlackFurCoatButton = new Button();
+            label42 = new Label();
+            mBlackFurCoatButton = new Button();
+            sBlackFurCoatButton = new Button();
+            lNavyCoatButton = new Button();
+            mNavyCoatButton = new Button();
+            sNavyCoatButton = new Button();
+            blackFurCoatAddButton = new Button();
+            label43 = new Label();
+            label44 = new Label();
+            label45 = new Label();
+            label46 = new Label();
+            pictureBox10 = new PictureBox();
+            label47 = new Label();
+            label48 = new Label();
+            navyCoatAddButton = new Button();
+            pictureBox11 = new PictureBox();
+            hatPanel = new Panel();
+            greyWomanCapAddButton = new Button();
+            label51 = new Label();
+            label52 = new Label();
+            label53 = new Label();
+            label54 = new Label();
+            pictureBox12 = new PictureBox();
+            label55 = new Label();
+            label56 = new Label();
+            blackHatAddButton = new Button();
+            pictureBox13 = new PictureBox();
             panel1 = new Panel();
             shoesLinkLabel = new LinkLabel();
             coatsLinkLabel = new LinkLabel();
@@ -174,19 +174,9 @@
             removeKundvagnButton = new Button();
             totalcostlabel = new Label();
             logInButton = new Button();
+            logOutButton = new Button();
+            backButton = new Button();
             mainPanel.SuspendLayout();
-            vestPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            capPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)capPictureBox).BeginInit();
-            coatPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            hatPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             shoePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             dressPanel.SuspendLayout();
@@ -199,730 +189,37 @@
             blazerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            vestPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            capPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)capPictureBox).BeginInit();
+            coatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            hatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // mainPanel
             // 
             mainPanel.BorderStyle = BorderStyle.FixedSingle;
-            mainPanel.Controls.Add(vestPanel);
-            mainPanel.Controls.Add(capPanel);
-            mainPanel.Controls.Add(coatPanel);
-            mainPanel.Controls.Add(hatPanel);
             mainPanel.Controls.Add(shoePanel);
             mainPanel.Controls.Add(dressPanel);
             mainPanel.Controls.Add(shirtPanel);
             mainPanel.Controls.Add(pantsPanel);
             mainPanel.Controls.Add(blazerPanel);
+            mainPanel.Controls.Add(vestPanel);
+            mainPanel.Controls.Add(capPanel);
+            mainPanel.Controls.Add(coatPanel);
+            mainPanel.Controls.Add(hatPanel);
             mainPanel.Location = new Point(251, 107);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(482, 347);
             mainPanel.TabIndex = 2;
-            // 
-            // vestPanel
-            // 
-            vestPanel.Controls.Add(label14);
-            vestPanel.Controls.Add(lGreyVestButton);
-            vestPanel.Controls.Add(label13);
-            vestPanel.Controls.Add(mGreyVestButton);
-            vestPanel.Controls.Add(sGreyVestButton);
-            vestPanel.Controls.Add(lNavyVestButton);
-            vestPanel.Controls.Add(mNavyVestButton);
-            vestPanel.Controls.Add(sNavyVestButton);
-            vestPanel.Controls.Add(greyVestAddButton);
-            vestPanel.Controls.Add(label7);
-            vestPanel.Controls.Add(label8);
-            vestPanel.Controls.Add(label9);
-            vestPanel.Controls.Add(label10);
-            vestPanel.Controls.Add(pictureBox2);
-            vestPanel.Controls.Add(label11);
-            vestPanel.Controls.Add(label12);
-            vestPanel.Controls.Add(navyVestAddButton);
-            vestPanel.Controls.Add(pictureBox3);
-            vestPanel.Location = new Point(3, 3);
-            vestPanel.Name = "vestPanel";
-            vestPanel.Size = new Size(472, 334);
-            vestPanel.TabIndex = 3;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(250, 227);
-            label14.Name = "label14";
-            label14.Size = new Size(52, 21);
-            label14.TabIndex = 11;
-            label14.Text = "Sizes: ";
-            // 
-            // lGreyVestButton
-            // 
-            lGreyVestButton.BackColor = Color.White;
-            lGreyVestButton.FlatAppearance.BorderColor = Color.Black;
-            lGreyVestButton.FlatAppearance.BorderSize = 2;
-            lGreyVestButton.FlatStyle = FlatStyle.Popup;
-            lGreyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lGreyVestButton.Location = new Point(440, 226);
-            lGreyVestButton.Name = "lGreyVestButton";
-            lGreyVestButton.Size = new Size(29, 23);
-            lGreyVestButton.TabIndex = 11;
-            lGreyVestButton.Text = "L";
-            lGreyVestButton.UseVisualStyleBackColor = false;
-            lGreyVestButton.Click += lGreyVestButton_Click;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(3, 227);
-            label13.Name = "label13";
-            label13.Size = new Size(52, 21);
-            label13.TabIndex = 10;
-            label13.Text = "Sizes: ";
-            // 
-            // mGreyVestButton
-            // 
-            mGreyVestButton.BackColor = Color.White;
-            mGreyVestButton.FlatAppearance.BorderColor = Color.Black;
-            mGreyVestButton.FlatAppearance.BorderSize = 2;
-            mGreyVestButton.FlatStyle = FlatStyle.Popup;
-            mGreyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            mGreyVestButton.Location = new Point(405, 226);
-            mGreyVestButton.Name = "mGreyVestButton";
-            mGreyVestButton.Size = new Size(29, 23);
-            mGreyVestButton.TabIndex = 12;
-            mGreyVestButton.Text = "M";
-            mGreyVestButton.UseVisualStyleBackColor = false;
-            mGreyVestButton.Click += mGreyVestButton_Click;
-            // 
-            // sGreyVestButton
-            // 
-            sGreyVestButton.BackColor = Color.White;
-            sGreyVestButton.FlatAppearance.BorderColor = Color.Black;
-            sGreyVestButton.FlatAppearance.BorderSize = 2;
-            sGreyVestButton.FlatStyle = FlatStyle.Popup;
-            sGreyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sGreyVestButton.Location = new Point(372, 226);
-            sGreyVestButton.Name = "sGreyVestButton";
-            sGreyVestButton.Size = new Size(29, 23);
-            sGreyVestButton.TabIndex = 10;
-            sGreyVestButton.Text = "S";
-            sGreyVestButton.UseVisualStyleBackColor = false;
-            sGreyVestButton.Click += sGreyVestButton_Click;
-            // 
-            // lNavyVestButton
-            // 
-            lNavyVestButton.BackColor = Color.White;
-            lNavyVestButton.FlatAppearance.BorderColor = Color.Black;
-            lNavyVestButton.FlatAppearance.BorderSize = 2;
-            lNavyVestButton.FlatStyle = FlatStyle.Popup;
-            lNavyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lNavyVestButton.Location = new Point(193, 226);
-            lNavyVestButton.Name = "lNavyVestButton";
-            lNavyVestButton.Size = new Size(29, 23);
-            lNavyVestButton.TabIndex = 8;
-            lNavyVestButton.Text = "L";
-            lNavyVestButton.UseVisualStyleBackColor = false;
-            lNavyVestButton.Click += lNavyVestButton_Click;
-            // 
-            // mNavyVestButton
-            // 
-            mNavyVestButton.BackColor = Color.White;
-            mNavyVestButton.FlatAppearance.BorderColor = Color.Black;
-            mNavyVestButton.FlatAppearance.BorderSize = 2;
-            mNavyVestButton.FlatStyle = FlatStyle.Popup;
-            mNavyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            mNavyVestButton.Location = new Point(158, 226);
-            mNavyVestButton.Name = "mNavyVestButton";
-            mNavyVestButton.Size = new Size(29, 23);
-            mNavyVestButton.TabIndex = 9;
-            mNavyVestButton.Text = "M";
-            mNavyVestButton.UseVisualStyleBackColor = false;
-            mNavyVestButton.Click += mNavyVestButton_Click;
-            // 
-            // sNavyVestButton
-            // 
-            sNavyVestButton.BackColor = Color.White;
-            sNavyVestButton.FlatAppearance.BorderColor = Color.Black;
-            sNavyVestButton.FlatAppearance.BorderSize = 2;
-            sNavyVestButton.FlatStyle = FlatStyle.Popup;
-            sNavyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sNavyVestButton.Location = new Point(125, 226);
-            sNavyVestButton.Name = "sNavyVestButton";
-            sNavyVestButton.Size = new Size(29, 23);
-            sNavyVestButton.TabIndex = 7;
-            sNavyVestButton.Text = "S";
-            sNavyVestButton.UseVisualStyleBackColor = false;
-            sNavyVestButton.Click += sNavyVestButton_Click;
-            // 
-            // greyVestAddButton
-            // 
-            greyVestAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            greyVestAddButton.Location = new Point(369, 307);
-            greyVestAddButton.Name = "greyVestAddButton";
-            greyVestAddButton.Size = new Size(100, 22);
-            greyVestAddButton.TabIndex = 3;
-            greyVestAddButton.Text = "Add to cart";
-            greyVestAddButton.UseVisualStyleBackColor = true;
-            greyVestAddButton.Click += greyVestAddButton_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(250, 308);
-            label7.Name = "label7";
-            label7.Size = new Size(92, 21);
-            label7.TabIndex = 4;
-            label7.Text = "Price: 569kr";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(43, 273);
-            label8.Name = "label8";
-            label8.Size = new Size(133, 21);
-            label8.TabIndex = 6;
-            label8.Text = "Striped Navy Blue";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(304, 273);
-            label9.Name = "label9";
-            label9.Size = new Size(103, 21);
-            label9.TabIndex = 6;
-            label9.Text = "Original Grey";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(68, 252);
-            label10.Name = "label10";
-            label10.Size = new Size(72, 21);
-            label10.TabIndex = 5;
-            label10.Text = "Suit-Vest";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(3, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(219, 221);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(3, 308);
-            label11.Name = "label11";
-            label11.Size = new Size(92, 21);
-            label11.TabIndex = 4;
-            label11.Text = "Price: 569kr";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(319, 252);
-            label12.Name = "label12";
-            label12.Size = new Size(72, 21);
-            label12.TabIndex = 5;
-            label12.Text = "Suit-Vest";
-            // 
-            // navyVestAddButton
-            // 
-            navyVestAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            navyVestAddButton.Location = new Point(125, 309);
-            navyVestAddButton.Name = "navyVestAddButton";
-            navyVestAddButton.Size = new Size(100, 22);
-            navyVestAddButton.TabIndex = 3;
-            navyVestAddButton.Text = "Add to cart";
-            navyVestAddButton.UseVisualStyleBackColor = true;
-            navyVestAddButton.Click += navyVestAddButton_Click;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Location = new Point(250, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(219, 221);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            // 
-            // capPanel
-            // 
-            capPanel.Controls.Add(blackCapAddButton);
-            capPanel.Controls.Add(label6);
-            capPanel.Controls.Add(label3);
-            capPanel.Controls.Add(label4);
-            capPanel.Controls.Add(label2);
-            capPanel.Controls.Add(pictureBox1);
-            capPanel.Controls.Add(label1);
-            capPanel.Controls.Add(label5);
-            capPanel.Controls.Add(brownCapAddButton);
-            capPanel.Controls.Add(capPictureBox);
-            capPanel.Location = new Point(3, 3);
-            capPanel.Name = "capPanel";
-            capPanel.Size = new Size(472, 334);
-            capPanel.TabIndex = 2;
-            // 
-            // blackCapAddButton
-            // 
-            blackCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            blackCapAddButton.Location = new Point(369, 307);
-            blackCapAddButton.Name = "blackCapAddButton";
-            blackCapAddButton.Size = new Size(100, 22);
-            blackCapAddButton.TabIndex = 3;
-            blackCapAddButton.Text = "Add to cart";
-            blackCapAddButton.UseVisualStyleBackColor = true;
-            blackCapAddButton.Click += blackCapAddButton_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(250, 308);
-            label6.Name = "label6";
-            label6.Size = new Size(92, 21);
-            label6.TabIndex = 4;
-            label6.Text = "Price: 159kr";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(85, 273);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 21);
-            label3.TabIndex = 6;
-            label3.Text = "Brown";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(334, 273);
-            label4.Name = "label4";
-            label4.Size = new Size(46, 21);
-            label4.TabIndex = 6;
-            label4.Text = "Black";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(63, 252);
-            label2.Name = "label2";
-            label2.Size = new Size(99, 21);
-            label2.TabIndex = 5;
-            label2.Text = "One-size cap";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(219, 246);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(3, 308);
-            label1.Name = "label1";
-            label1.Size = new Size(92, 21);
-            label1.TabIndex = 4;
-            label1.Text = "Price: 159kr";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(308, 252);
-            label5.Name = "label5";
-            label5.Size = new Size(99, 21);
-            label5.TabIndex = 5;
-            label5.Text = "One-size cap";
-            // 
-            // brownCapAddButton
-            // 
-            brownCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            brownCapAddButton.Location = new Point(125, 309);
-            brownCapAddButton.Name = "brownCapAddButton";
-            brownCapAddButton.Size = new Size(100, 22);
-            brownCapAddButton.TabIndex = 3;
-            brownCapAddButton.Text = "Add to cart";
-            brownCapAddButton.UseVisualStyleBackColor = true;
-            brownCapAddButton.Click += brownCapAddButton_Click;
-            // 
-            // capPictureBox
-            // 
-            capPictureBox.Location = new Point(250, 3);
-            capPictureBox.Name = "capPictureBox";
-            capPictureBox.Size = new Size(219, 246);
-            capPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            capPictureBox.TabIndex = 2;
-            capPictureBox.TabStop = false;
-            // 
-            // coatPanel
-            // 
-            coatPanel.Controls.Add(label41);
-            coatPanel.Controls.Add(lBlackFurCoatButton);
-            coatPanel.Controls.Add(label42);
-            coatPanel.Controls.Add(mBlackFurCoatButton);
-            coatPanel.Controls.Add(sBlackFurCoatButton);
-            coatPanel.Controls.Add(lNavyCoatButton);
-            coatPanel.Controls.Add(mNavyCoatButton);
-            coatPanel.Controls.Add(sNavyCoatButton);
-            coatPanel.Controls.Add(blackFurCoatAddButton);
-            coatPanel.Controls.Add(label43);
-            coatPanel.Controls.Add(label44);
-            coatPanel.Controls.Add(label45);
-            coatPanel.Controls.Add(label46);
-            coatPanel.Controls.Add(pictureBox10);
-            coatPanel.Controls.Add(label47);
-            coatPanel.Controls.Add(label48);
-            coatPanel.Controls.Add(navyCoatAddButton);
-            coatPanel.Controls.Add(pictureBox11);
-            coatPanel.Location = new Point(1, 1);
-            coatPanel.Name = "coatPanel";
-            coatPanel.Size = new Size(472, 334);
-            coatPanel.TabIndex = 7;
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label41.Location = new Point(250, 227);
-            label41.Name = "label41";
-            label41.Size = new Size(52, 21);
-            label41.TabIndex = 11;
-            label41.Text = "Sizes: ";
-            // 
-            // lBlackFurCoatButton
-            // 
-            lBlackFurCoatButton.BackColor = Color.White;
-            lBlackFurCoatButton.FlatAppearance.BorderColor = Color.Black;
-            lBlackFurCoatButton.FlatAppearance.BorderSize = 2;
-            lBlackFurCoatButton.FlatStyle = FlatStyle.Popup;
-            lBlackFurCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lBlackFurCoatButton.Location = new Point(440, 226);
-            lBlackFurCoatButton.Name = "lBlackFurCoatButton";
-            lBlackFurCoatButton.Size = new Size(29, 23);
-            lBlackFurCoatButton.TabIndex = 11;
-            lBlackFurCoatButton.Text = "L";
-            lBlackFurCoatButton.UseVisualStyleBackColor = false;
-            lBlackFurCoatButton.Click += lBlackFurCoatButton_Click;
-            // 
-            // label42
-            // 
-            label42.AutoSize = true;
-            label42.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label42.Location = new Point(3, 227);
-            label42.Name = "label42";
-            label42.Size = new Size(52, 21);
-            label42.TabIndex = 10;
-            label42.Text = "Sizes: ";
-            // 
-            // mBlackFurCoatButton
-            // 
-            mBlackFurCoatButton.BackColor = Color.White;
-            mBlackFurCoatButton.FlatAppearance.BorderColor = Color.Black;
-            mBlackFurCoatButton.FlatAppearance.BorderSize = 2;
-            mBlackFurCoatButton.FlatStyle = FlatStyle.Popup;
-            mBlackFurCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            mBlackFurCoatButton.Location = new Point(405, 226);
-            mBlackFurCoatButton.Name = "mBlackFurCoatButton";
-            mBlackFurCoatButton.Size = new Size(29, 23);
-            mBlackFurCoatButton.TabIndex = 12;
-            mBlackFurCoatButton.Text = "M";
-            mBlackFurCoatButton.UseVisualStyleBackColor = false;
-            mBlackFurCoatButton.Click += mBlackFurCoatButton_Click;
-            // 
-            // sBlackFurCoatButton
-            // 
-            sBlackFurCoatButton.BackColor = Color.White;
-            sBlackFurCoatButton.FlatAppearance.BorderColor = Color.Black;
-            sBlackFurCoatButton.FlatAppearance.BorderSize = 2;
-            sBlackFurCoatButton.FlatStyle = FlatStyle.Popup;
-            sBlackFurCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sBlackFurCoatButton.Location = new Point(372, 226);
-            sBlackFurCoatButton.Name = "sBlackFurCoatButton";
-            sBlackFurCoatButton.Size = new Size(29, 23);
-            sBlackFurCoatButton.TabIndex = 10;
-            sBlackFurCoatButton.Text = "S";
-            sBlackFurCoatButton.UseVisualStyleBackColor = false;
-            sBlackFurCoatButton.Click += sBlackFurCoatButton_Click;
-            // 
-            // lNavyCoatButton
-            // 
-            lNavyCoatButton.BackColor = Color.White;
-            lNavyCoatButton.FlatAppearance.BorderColor = Color.Black;
-            lNavyCoatButton.FlatAppearance.BorderSize = 2;
-            lNavyCoatButton.FlatStyle = FlatStyle.Popup;
-            lNavyCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lNavyCoatButton.Location = new Point(193, 226);
-            lNavyCoatButton.Name = "lNavyCoatButton";
-            lNavyCoatButton.Size = new Size(29, 23);
-            lNavyCoatButton.TabIndex = 8;
-            lNavyCoatButton.Text = "L";
-            lNavyCoatButton.UseVisualStyleBackColor = false;
-            lNavyCoatButton.Click += lNavyCoatButton_Click;
-            // 
-            // mNavyCoatButton
-            // 
-            mNavyCoatButton.BackColor = Color.White;
-            mNavyCoatButton.FlatAppearance.BorderColor = Color.Black;
-            mNavyCoatButton.FlatAppearance.BorderSize = 2;
-            mNavyCoatButton.FlatStyle = FlatStyle.Popup;
-            mNavyCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            mNavyCoatButton.Location = new Point(158, 226);
-            mNavyCoatButton.Name = "mNavyCoatButton";
-            mNavyCoatButton.Size = new Size(29, 23);
-            mNavyCoatButton.TabIndex = 9;
-            mNavyCoatButton.Text = "M";
-            mNavyCoatButton.UseVisualStyleBackColor = false;
-            mNavyCoatButton.Click += mNavyCoatButton_Click;
-            // 
-            // sNavyCoatButton
-            // 
-            sNavyCoatButton.BackColor = Color.White;
-            sNavyCoatButton.FlatAppearance.BorderColor = Color.Black;
-            sNavyCoatButton.FlatAppearance.BorderSize = 2;
-            sNavyCoatButton.FlatStyle = FlatStyle.Popup;
-            sNavyCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sNavyCoatButton.Location = new Point(125, 226);
-            sNavyCoatButton.Name = "sNavyCoatButton";
-            sNavyCoatButton.Size = new Size(29, 23);
-            sNavyCoatButton.TabIndex = 7;
-            sNavyCoatButton.Text = "S";
-            sNavyCoatButton.UseVisualStyleBackColor = false;
-            sNavyCoatButton.Click += sNavyCoatButton_Click;
-            // 
-            // blackFurCoatAddButton
-            // 
-            blackFurCoatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            blackFurCoatAddButton.Location = new Point(369, 307);
-            blackFurCoatAddButton.Name = "blackFurCoatAddButton";
-            blackFurCoatAddButton.Size = new Size(100, 22);
-            blackFurCoatAddButton.TabIndex = 3;
-            blackFurCoatAddButton.Text = "Add to cart";
-            blackFurCoatAddButton.UseVisualStyleBackColor = true;
-            blackFurCoatAddButton.Click += blackFurCoatAddButton_Click;
-            // 
-            // label43
-            // 
-            label43.AutoSize = true;
-            label43.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label43.Location = new Point(250, 308);
-            label43.Name = "label43";
-            label43.Size = new Size(101, 21);
-            label43.TabIndex = 4;
-            label43.Text = "Price: 1699kr";
-            // 
-            // label44
-            // 
-            label44.AutoSize = true;
-            label44.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label44.Location = new Point(73, 273);
-            label44.Name = "label44";
-            label44.Size = new Size(80, 21);
-            label44.TabIndex = 6;
-            label44.Text = "Navy Blue";
-            // 
-            // label45
-            // 
-            label45.AutoSize = true;
-            label45.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label45.Location = new Point(338, 278);
-            label45.Name = "label45";
-            label45.Size = new Size(46, 21);
-            label45.TabIndex = 6;
-            label45.Text = "Black";
-            // 
-            // label46
-            // 
-            label46.AutoSize = true;
-            label46.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label46.Location = new Point(62, 252);
-            label46.Name = "label46";
-            label46.Size = new Size(116, 21);
-            label46.TabIndex = 5;
-            label46.Text = "Outlander Coat";
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.Location = new Point(3, 3);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(219, 221);
-            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox10.TabIndex = 2;
-            pictureBox10.TabStop = false;
-            // 
-            // label47
-            // 
-            label47.AutoSize = true;
-            label47.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label47.Location = new Point(3, 308);
-            label47.Name = "label47";
-            label47.Size = new Size(101, 21);
-            label47.TabIndex = 4;
-            label47.Text = "Price: 1899kr";
-            // 
-            // label48
-            // 
-            label48.AutoSize = true;
-            label48.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label48.Location = new Point(332, 255);
-            label48.Name = "label48";
-            label48.Size = new Size(69, 21);
-            label48.TabIndex = 5;
-            label48.Text = "Fur Coat";
-            // 
-            // navyCoatAddButton
-            // 
-            navyCoatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            navyCoatAddButton.Location = new Point(125, 309);
-            navyCoatAddButton.Name = "navyCoatAddButton";
-            navyCoatAddButton.Size = new Size(100, 22);
-            navyCoatAddButton.TabIndex = 3;
-            navyCoatAddButton.Text = "Add to cart";
-            navyCoatAddButton.UseVisualStyleBackColor = true;
-            navyCoatAddButton.Click += navyCoatAddButton_Click;
-            // 
-            // pictureBox11
-            // 
-            pictureBox11.Location = new Point(250, 3);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(219, 221);
-            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox11.TabIndex = 2;
-            pictureBox11.TabStop = false;
-            // 
-            // hatPanel
-            // 
-            hatPanel.Controls.Add(greyWomanCapAddButton);
-            hatPanel.Controls.Add(label51);
-            hatPanel.Controls.Add(label52);
-            hatPanel.Controls.Add(label53);
-            hatPanel.Controls.Add(label54);
-            hatPanel.Controls.Add(pictureBox12);
-            hatPanel.Controls.Add(label55);
-            hatPanel.Controls.Add(label56);
-            hatPanel.Controls.Add(blackHatAddButton);
-            hatPanel.Controls.Add(pictureBox13);
-            hatPanel.Dock = DockStyle.Fill;
-            hatPanel.Location = new Point(0, 0);
-            hatPanel.Name = "hatPanel";
-            hatPanel.Size = new Size(480, 345);
-            hatPanel.TabIndex = 6;
-            // 
-            // greyWomanCapAddButton
-            // 
-            greyWomanCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            greyWomanCapAddButton.Location = new Point(370, 309);
-            greyWomanCapAddButton.Name = "greyWomanCapAddButton";
-            greyWomanCapAddButton.Size = new Size(100, 22);
-            greyWomanCapAddButton.TabIndex = 7;
-            greyWomanCapAddButton.Text = "Add to cart";
-            greyWomanCapAddButton.UseVisualStyleBackColor = true;
-            greyWomanCapAddButton.Click += greyWomanCapAddButton_Click;
-            // 
-            // label51
-            // 
-            label51.AutoSize = true;
-            label51.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label51.Location = new Point(250, 308);
-            label51.Name = "label51";
-            label51.Size = new Size(92, 21);
-            label51.TabIndex = 4;
-            label51.Text = "Price: 399kr";
-            // 
-            // label52
-            // 
-            label52.AutoSize = true;
-            label52.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label52.Location = new Point(71, 273);
-            label52.Name = "label52";
-            label52.Size = new Size(100, 21);
-            label52.TabIndex = 6;
-            label52.Text = "Ribbon Black";
-            // 
-            // label53
-            // 
-            label53.AutoSize = true;
-            label53.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label53.Location = new Point(334, 273);
-            label53.Name = "label53";
-            label53.Size = new Size(43, 21);
-            label53.TabIndex = 6;
-            label53.Text = "Grey";
-            // 
-            // label54
-            // 
-            label54.AutoSize = true;
-            label54.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label54.Location = new Point(71, 252);
-            label54.Name = "label54";
-            label54.Size = new Size(101, 21);
-            label54.TabIndex = 5;
-            label54.Text = "One-Size Hat";
-            // 
-            // pictureBox12
-            // 
-            pictureBox12.Location = new Point(3, 3);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(219, 246);
-            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox12.TabIndex = 2;
-            pictureBox12.TabStop = false;
-            // 
-            // label55
-            // 
-            label55.AutoSize = true;
-            label55.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label55.Location = new Point(3, 308);
-            label55.Name = "label55";
-            label55.Size = new Size(92, 21);
-            label55.TabIndex = 4;
-            label55.Text = "Price: 299kr";
-            // 
-            // label56
-            // 
-            label56.AutoSize = true;
-            label56.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label56.Location = new Point(304, 252);
-            label56.Name = "label56";
-            label56.Size = new Size(104, 21);
-            label56.TabIndex = 5;
-            label56.Text = "One-Size Cap";
-            // 
-            // blackHatAddButton
-            // 
-            blackHatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            blackHatAddButton.Location = new Point(125, 309);
-            blackHatAddButton.Name = "blackHatAddButton";
-            blackHatAddButton.Size = new Size(100, 22);
-            blackHatAddButton.TabIndex = 3;
-            blackHatAddButton.Text = "Add to cart";
-            blackHatAddButton.UseVisualStyleBackColor = true;
-            blackHatAddButton.Click += blackHatAddButton_Click;
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.Location = new Point(250, 3);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(219, 246);
-            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox13.TabIndex = 2;
-            pictureBox13.TabStop = false;
             // 
             // shoePanel
             // 
@@ -930,8 +227,8 @@
             shoePanel.Controls.Add(SizeButton38);
             shoePanel.Controls.Add(SizeButton37);
             shoePanel.Controls.Add(SizeButton36);
-            shoePanel.Controls.Add(label57);
-            shoePanel.Controls.Add(label58);
+            shoePanel.Controls.Add(shoeColorLabel);
+            shoePanel.Controls.Add(shoeNameLabel);
             shoePanel.Controls.Add(pictureBox14);
             shoePanel.Controls.Add(label59);
             shoePanel.Controls.Add(greyShoeAddButton);
@@ -993,25 +290,25 @@
             SizeButton36.UseVisualStyleBackColor = false;
             SizeButton36.Click += SizeButton36_Click;
             // 
-            // label57
+            // shoeColorLabel
             // 
-            label57.AutoSize = true;
-            label57.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label57.Location = new Point(187, 277);
-            label57.Name = "label57";
-            label57.Size = new Size(59, 21);
-            label57.TabIndex = 6;
-            label57.Text = "Striped";
+            shoeColorLabel.AutoSize = true;
+            shoeColorLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            shoeColorLabel.Location = new Point(187, 277);
+            shoeColorLabel.Name = "shoeColorLabel";
+            shoeColorLabel.Size = new Size(59, 21);
+            shoeColorLabel.TabIndex = 6;
+            shoeColorLabel.Text = "Striped";
             // 
-            // label58
+            // shoeNameLabel
             // 
-            label58.AutoSize = true;
-            label58.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label58.Location = new Point(160, 255);
-            label58.Name = "label58";
-            label58.Size = new Size(124, 21);
-            label58.TabIndex = 5;
-            label58.Text = "Short-Heel Shoe";
+            shoeNameLabel.AutoSize = true;
+            shoeNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            shoeNameLabel.Location = new Point(160, 255);
+            shoeNameLabel.Name = "shoeNameLabel";
+            shoeNameLabel.Size = new Size(124, 21);
+            shoeNameLabel.TabIndex = 5;
+            shoeNameLabel.Text = "Short-Heel Shoe";
             // 
             // pictureBox14
             // 
@@ -1753,6 +1050,711 @@
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
             // 
+            // vestPanel
+            // 
+            vestPanel.Controls.Add(label14);
+            vestPanel.Controls.Add(lGreyVestButton);
+            vestPanel.Controls.Add(label13);
+            vestPanel.Controls.Add(mGreyVestButton);
+            vestPanel.Controls.Add(sGreyVestButton);
+            vestPanel.Controls.Add(lNavyVestButton);
+            vestPanel.Controls.Add(mNavyVestButton);
+            vestPanel.Controls.Add(sNavyVestButton);
+            vestPanel.Controls.Add(greyVestAddButton);
+            vestPanel.Controls.Add(label7);
+            vestPanel.Controls.Add(label8);
+            vestPanel.Controls.Add(label9);
+            vestPanel.Controls.Add(label10);
+            vestPanel.Controls.Add(pictureBox2);
+            vestPanel.Controls.Add(label11);
+            vestPanel.Controls.Add(label12);
+            vestPanel.Controls.Add(navyVestAddButton);
+            vestPanel.Controls.Add(pictureBox3);
+            vestPanel.Location = new Point(3, 3);
+            vestPanel.Name = "vestPanel";
+            vestPanel.Size = new Size(472, 334);
+            vestPanel.TabIndex = 3;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(250, 227);
+            label14.Name = "label14";
+            label14.Size = new Size(52, 21);
+            label14.TabIndex = 11;
+            label14.Text = "Sizes: ";
+            // 
+            // lGreyVestButton
+            // 
+            lGreyVestButton.BackColor = Color.White;
+            lGreyVestButton.FlatAppearance.BorderColor = Color.Black;
+            lGreyVestButton.FlatAppearance.BorderSize = 2;
+            lGreyVestButton.FlatStyle = FlatStyle.Popup;
+            lGreyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lGreyVestButton.Location = new Point(440, 226);
+            lGreyVestButton.Name = "lGreyVestButton";
+            lGreyVestButton.Size = new Size(29, 23);
+            lGreyVestButton.TabIndex = 11;
+            lGreyVestButton.Text = "L";
+            lGreyVestButton.UseVisualStyleBackColor = false;
+            lGreyVestButton.Click += lGreyVestButton_Click;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(3, 227);
+            label13.Name = "label13";
+            label13.Size = new Size(52, 21);
+            label13.TabIndex = 10;
+            label13.Text = "Sizes: ";
+            // 
+            // mGreyVestButton
+            // 
+            mGreyVestButton.BackColor = Color.White;
+            mGreyVestButton.FlatAppearance.BorderColor = Color.Black;
+            mGreyVestButton.FlatAppearance.BorderSize = 2;
+            mGreyVestButton.FlatStyle = FlatStyle.Popup;
+            mGreyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            mGreyVestButton.Location = new Point(405, 226);
+            mGreyVestButton.Name = "mGreyVestButton";
+            mGreyVestButton.Size = new Size(29, 23);
+            mGreyVestButton.TabIndex = 12;
+            mGreyVestButton.Text = "M";
+            mGreyVestButton.UseVisualStyleBackColor = false;
+            mGreyVestButton.Click += mGreyVestButton_Click;
+            // 
+            // sGreyVestButton
+            // 
+            sGreyVestButton.BackColor = Color.White;
+            sGreyVestButton.FlatAppearance.BorderColor = Color.Black;
+            sGreyVestButton.FlatAppearance.BorderSize = 2;
+            sGreyVestButton.FlatStyle = FlatStyle.Popup;
+            sGreyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sGreyVestButton.Location = new Point(372, 226);
+            sGreyVestButton.Name = "sGreyVestButton";
+            sGreyVestButton.Size = new Size(29, 23);
+            sGreyVestButton.TabIndex = 10;
+            sGreyVestButton.Text = "S";
+            sGreyVestButton.UseVisualStyleBackColor = false;
+            sGreyVestButton.Click += sGreyVestButton_Click;
+            // 
+            // lNavyVestButton
+            // 
+            lNavyVestButton.BackColor = Color.White;
+            lNavyVestButton.FlatAppearance.BorderColor = Color.Black;
+            lNavyVestButton.FlatAppearance.BorderSize = 2;
+            lNavyVestButton.FlatStyle = FlatStyle.Popup;
+            lNavyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lNavyVestButton.Location = new Point(193, 226);
+            lNavyVestButton.Name = "lNavyVestButton";
+            lNavyVestButton.Size = new Size(29, 23);
+            lNavyVestButton.TabIndex = 8;
+            lNavyVestButton.Text = "L";
+            lNavyVestButton.UseVisualStyleBackColor = false;
+            lNavyVestButton.Click += lNavyVestButton_Click;
+            // 
+            // mNavyVestButton
+            // 
+            mNavyVestButton.BackColor = Color.White;
+            mNavyVestButton.FlatAppearance.BorderColor = Color.Black;
+            mNavyVestButton.FlatAppearance.BorderSize = 2;
+            mNavyVestButton.FlatStyle = FlatStyle.Popup;
+            mNavyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            mNavyVestButton.Location = new Point(158, 226);
+            mNavyVestButton.Name = "mNavyVestButton";
+            mNavyVestButton.Size = new Size(29, 23);
+            mNavyVestButton.TabIndex = 9;
+            mNavyVestButton.Text = "M";
+            mNavyVestButton.UseVisualStyleBackColor = false;
+            mNavyVestButton.Click += mNavyVestButton_Click;
+            // 
+            // sNavyVestButton
+            // 
+            sNavyVestButton.BackColor = Color.White;
+            sNavyVestButton.FlatAppearance.BorderColor = Color.Black;
+            sNavyVestButton.FlatAppearance.BorderSize = 2;
+            sNavyVestButton.FlatStyle = FlatStyle.Popup;
+            sNavyVestButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sNavyVestButton.Location = new Point(125, 226);
+            sNavyVestButton.Name = "sNavyVestButton";
+            sNavyVestButton.Size = new Size(29, 23);
+            sNavyVestButton.TabIndex = 7;
+            sNavyVestButton.Text = "S";
+            sNavyVestButton.UseVisualStyleBackColor = false;
+            sNavyVestButton.Click += sNavyVestButton_Click;
+            // 
+            // greyVestAddButton
+            // 
+            greyVestAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            greyVestAddButton.Location = new Point(369, 307);
+            greyVestAddButton.Name = "greyVestAddButton";
+            greyVestAddButton.Size = new Size(100, 22);
+            greyVestAddButton.TabIndex = 3;
+            greyVestAddButton.Text = "Add to cart";
+            greyVestAddButton.UseVisualStyleBackColor = true;
+            greyVestAddButton.Click += greyVestAddButton_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(250, 308);
+            label7.Name = "label7";
+            label7.Size = new Size(92, 21);
+            label7.TabIndex = 4;
+            label7.Text = "Price: 569kr";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(43, 273);
+            label8.Name = "label8";
+            label8.Size = new Size(133, 21);
+            label8.TabIndex = 6;
+            label8.Text = "Striped Navy Blue";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(304, 273);
+            label9.Name = "label9";
+            label9.Size = new Size(103, 21);
+            label9.TabIndex = 6;
+            label9.Text = "Original Grey";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(68, 252);
+            label10.Name = "label10";
+            label10.Size = new Size(72, 21);
+            label10.TabIndex = 5;
+            label10.Text = "Suit-Vest";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(219, 221);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Location = new Point(3, 308);
+            label11.Name = "label11";
+            label11.Size = new Size(92, 21);
+            label11.TabIndex = 4;
+            label11.Text = "Price: 569kr";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(319, 252);
+            label12.Name = "label12";
+            label12.Size = new Size(72, 21);
+            label12.TabIndex = 5;
+            label12.Text = "Suit-Vest";
+            // 
+            // navyVestAddButton
+            // 
+            navyVestAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            navyVestAddButton.Location = new Point(125, 309);
+            navyVestAddButton.Name = "navyVestAddButton";
+            navyVestAddButton.Size = new Size(100, 22);
+            navyVestAddButton.TabIndex = 3;
+            navyVestAddButton.Text = "Add to cart";
+            navyVestAddButton.UseVisualStyleBackColor = true;
+            navyVestAddButton.Click += navyVestAddButton_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Location = new Point(250, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(219, 221);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            // 
+            // capPanel
+            // 
+            capPanel.Controls.Add(blackCapAddButton);
+            capPanel.Controls.Add(label6);
+            capPanel.Controls.Add(label3);
+            capPanel.Controls.Add(label4);
+            capPanel.Controls.Add(label2);
+            capPanel.Controls.Add(pictureBox1);
+            capPanel.Controls.Add(label1);
+            capPanel.Controls.Add(label5);
+            capPanel.Controls.Add(brownCapAddButton);
+            capPanel.Controls.Add(capPictureBox);
+            capPanel.Location = new Point(3, 3);
+            capPanel.Name = "capPanel";
+            capPanel.Size = new Size(472, 334);
+            capPanel.TabIndex = 2;
+            // 
+            // blackCapAddButton
+            // 
+            blackCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            blackCapAddButton.Location = new Point(369, 307);
+            blackCapAddButton.Name = "blackCapAddButton";
+            blackCapAddButton.Size = new Size(100, 22);
+            blackCapAddButton.TabIndex = 3;
+            blackCapAddButton.Text = "Add to cart";
+            blackCapAddButton.UseVisualStyleBackColor = true;
+            blackCapAddButton.Click += blackCapAddButton_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(250, 308);
+            label6.Name = "label6";
+            label6.Size = new Size(92, 21);
+            label6.TabIndex = 4;
+            label6.Text = "Price: 159kr";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(85, 273);
+            label3.Name = "label3";
+            label3.Size = new Size(55, 21);
+            label3.TabIndex = 6;
+            label3.Text = "Brown";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(334, 273);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 21);
+            label4.TabIndex = 6;
+            label4.Text = "Black";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(63, 252);
+            label2.Name = "label2";
+            label2.Size = new Size(99, 21);
+            label2.TabIndex = 5;
+            label2.Text = "One-size cap";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(219, 246);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(3, 308);
+            label1.Name = "label1";
+            label1.Size = new Size(92, 21);
+            label1.TabIndex = 4;
+            label1.Text = "Price: 159kr";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(308, 252);
+            label5.Name = "label5";
+            label5.Size = new Size(99, 21);
+            label5.TabIndex = 5;
+            label5.Text = "One-size cap";
+            // 
+            // brownCapAddButton
+            // 
+            brownCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            brownCapAddButton.Location = new Point(125, 309);
+            brownCapAddButton.Name = "brownCapAddButton";
+            brownCapAddButton.Size = new Size(100, 22);
+            brownCapAddButton.TabIndex = 3;
+            brownCapAddButton.Text = "Add to cart";
+            brownCapAddButton.UseVisualStyleBackColor = true;
+            brownCapAddButton.Click += brownCapAddButton_Click;
+            // 
+            // capPictureBox
+            // 
+            capPictureBox.Location = new Point(250, 3);
+            capPictureBox.Name = "capPictureBox";
+            capPictureBox.Size = new Size(219, 246);
+            capPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            capPictureBox.TabIndex = 2;
+            capPictureBox.TabStop = false;
+            // 
+            // coatPanel
+            // 
+            coatPanel.Controls.Add(label41);
+            coatPanel.Controls.Add(lBlackFurCoatButton);
+            coatPanel.Controls.Add(label42);
+            coatPanel.Controls.Add(mBlackFurCoatButton);
+            coatPanel.Controls.Add(sBlackFurCoatButton);
+            coatPanel.Controls.Add(lNavyCoatButton);
+            coatPanel.Controls.Add(mNavyCoatButton);
+            coatPanel.Controls.Add(sNavyCoatButton);
+            coatPanel.Controls.Add(blackFurCoatAddButton);
+            coatPanel.Controls.Add(label43);
+            coatPanel.Controls.Add(label44);
+            coatPanel.Controls.Add(label45);
+            coatPanel.Controls.Add(label46);
+            coatPanel.Controls.Add(pictureBox10);
+            coatPanel.Controls.Add(label47);
+            coatPanel.Controls.Add(label48);
+            coatPanel.Controls.Add(navyCoatAddButton);
+            coatPanel.Controls.Add(pictureBox11);
+            coatPanel.Location = new Point(1, 1);
+            coatPanel.Name = "coatPanel";
+            coatPanel.Size = new Size(472, 334);
+            coatPanel.TabIndex = 7;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label41.Location = new Point(250, 227);
+            label41.Name = "label41";
+            label41.Size = new Size(52, 21);
+            label41.TabIndex = 11;
+            label41.Text = "Sizes: ";
+            // 
+            // lBlackFurCoatButton
+            // 
+            lBlackFurCoatButton.BackColor = Color.White;
+            lBlackFurCoatButton.FlatAppearance.BorderColor = Color.Black;
+            lBlackFurCoatButton.FlatAppearance.BorderSize = 2;
+            lBlackFurCoatButton.FlatStyle = FlatStyle.Popup;
+            lBlackFurCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lBlackFurCoatButton.Location = new Point(440, 226);
+            lBlackFurCoatButton.Name = "lBlackFurCoatButton";
+            lBlackFurCoatButton.Size = new Size(29, 23);
+            lBlackFurCoatButton.TabIndex = 11;
+            lBlackFurCoatButton.Text = "L";
+            lBlackFurCoatButton.UseVisualStyleBackColor = false;
+            lBlackFurCoatButton.Click += lBlackFurCoatButton_Click;
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label42.Location = new Point(3, 227);
+            label42.Name = "label42";
+            label42.Size = new Size(52, 21);
+            label42.TabIndex = 10;
+            label42.Text = "Sizes: ";
+            // 
+            // mBlackFurCoatButton
+            // 
+            mBlackFurCoatButton.BackColor = Color.White;
+            mBlackFurCoatButton.FlatAppearance.BorderColor = Color.Black;
+            mBlackFurCoatButton.FlatAppearance.BorderSize = 2;
+            mBlackFurCoatButton.FlatStyle = FlatStyle.Popup;
+            mBlackFurCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            mBlackFurCoatButton.Location = new Point(405, 226);
+            mBlackFurCoatButton.Name = "mBlackFurCoatButton";
+            mBlackFurCoatButton.Size = new Size(29, 23);
+            mBlackFurCoatButton.TabIndex = 12;
+            mBlackFurCoatButton.Text = "M";
+            mBlackFurCoatButton.UseVisualStyleBackColor = false;
+            mBlackFurCoatButton.Click += mBlackFurCoatButton_Click;
+            // 
+            // sBlackFurCoatButton
+            // 
+            sBlackFurCoatButton.BackColor = Color.White;
+            sBlackFurCoatButton.FlatAppearance.BorderColor = Color.Black;
+            sBlackFurCoatButton.FlatAppearance.BorderSize = 2;
+            sBlackFurCoatButton.FlatStyle = FlatStyle.Popup;
+            sBlackFurCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sBlackFurCoatButton.Location = new Point(372, 226);
+            sBlackFurCoatButton.Name = "sBlackFurCoatButton";
+            sBlackFurCoatButton.Size = new Size(29, 23);
+            sBlackFurCoatButton.TabIndex = 10;
+            sBlackFurCoatButton.Text = "S";
+            sBlackFurCoatButton.UseVisualStyleBackColor = false;
+            sBlackFurCoatButton.Click += sBlackFurCoatButton_Click;
+            // 
+            // lNavyCoatButton
+            // 
+            lNavyCoatButton.BackColor = Color.White;
+            lNavyCoatButton.FlatAppearance.BorderColor = Color.Black;
+            lNavyCoatButton.FlatAppearance.BorderSize = 2;
+            lNavyCoatButton.FlatStyle = FlatStyle.Popup;
+            lNavyCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lNavyCoatButton.Location = new Point(193, 226);
+            lNavyCoatButton.Name = "lNavyCoatButton";
+            lNavyCoatButton.Size = new Size(29, 23);
+            lNavyCoatButton.TabIndex = 8;
+            lNavyCoatButton.Text = "L";
+            lNavyCoatButton.UseVisualStyleBackColor = false;
+            lNavyCoatButton.Click += lNavyCoatButton_Click;
+            // 
+            // mNavyCoatButton
+            // 
+            mNavyCoatButton.BackColor = Color.White;
+            mNavyCoatButton.FlatAppearance.BorderColor = Color.Black;
+            mNavyCoatButton.FlatAppearance.BorderSize = 2;
+            mNavyCoatButton.FlatStyle = FlatStyle.Popup;
+            mNavyCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            mNavyCoatButton.Location = new Point(158, 226);
+            mNavyCoatButton.Name = "mNavyCoatButton";
+            mNavyCoatButton.Size = new Size(29, 23);
+            mNavyCoatButton.TabIndex = 9;
+            mNavyCoatButton.Text = "M";
+            mNavyCoatButton.UseVisualStyleBackColor = false;
+            mNavyCoatButton.Click += mNavyCoatButton_Click;
+            // 
+            // sNavyCoatButton
+            // 
+            sNavyCoatButton.BackColor = Color.White;
+            sNavyCoatButton.FlatAppearance.BorderColor = Color.Black;
+            sNavyCoatButton.FlatAppearance.BorderSize = 2;
+            sNavyCoatButton.FlatStyle = FlatStyle.Popup;
+            sNavyCoatButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sNavyCoatButton.Location = new Point(125, 226);
+            sNavyCoatButton.Name = "sNavyCoatButton";
+            sNavyCoatButton.Size = new Size(29, 23);
+            sNavyCoatButton.TabIndex = 7;
+            sNavyCoatButton.Text = "S";
+            sNavyCoatButton.UseVisualStyleBackColor = false;
+            sNavyCoatButton.Click += sNavyCoatButton_Click;
+            // 
+            // blackFurCoatAddButton
+            // 
+            blackFurCoatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            blackFurCoatAddButton.Location = new Point(369, 307);
+            blackFurCoatAddButton.Name = "blackFurCoatAddButton";
+            blackFurCoatAddButton.Size = new Size(100, 22);
+            blackFurCoatAddButton.TabIndex = 3;
+            blackFurCoatAddButton.Text = "Add to cart";
+            blackFurCoatAddButton.UseVisualStyleBackColor = true;
+            blackFurCoatAddButton.Click += blackFurCoatAddButton_Click;
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label43.Location = new Point(250, 308);
+            label43.Name = "label43";
+            label43.Size = new Size(101, 21);
+            label43.TabIndex = 4;
+            label43.Text = "Price: 1699kr";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label44.Location = new Point(73, 273);
+            label44.Name = "label44";
+            label44.Size = new Size(80, 21);
+            label44.TabIndex = 6;
+            label44.Text = "Navy Blue";
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label45.Location = new Point(338, 278);
+            label45.Name = "label45";
+            label45.Size = new Size(46, 21);
+            label45.TabIndex = 6;
+            label45.Text = "Black";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label46.Location = new Point(62, 252);
+            label46.Name = "label46";
+            label46.Size = new Size(116, 21);
+            label46.TabIndex = 5;
+            label46.Text = "Outlander Coat";
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Location = new Point(3, 3);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(219, 221);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 2;
+            pictureBox10.TabStop = false;
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label47.Location = new Point(3, 308);
+            label47.Name = "label47";
+            label47.Size = new Size(101, 21);
+            label47.TabIndex = 4;
+            label47.Text = "Price: 1899kr";
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label48.Location = new Point(332, 255);
+            label48.Name = "label48";
+            label48.Size = new Size(69, 21);
+            label48.TabIndex = 5;
+            label48.Text = "Fur Coat";
+            // 
+            // navyCoatAddButton
+            // 
+            navyCoatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            navyCoatAddButton.Location = new Point(125, 309);
+            navyCoatAddButton.Name = "navyCoatAddButton";
+            navyCoatAddButton.Size = new Size(100, 22);
+            navyCoatAddButton.TabIndex = 3;
+            navyCoatAddButton.Text = "Add to cart";
+            navyCoatAddButton.UseVisualStyleBackColor = true;
+            navyCoatAddButton.Click += navyCoatAddButton_Click;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Location = new Point(250, 3);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(219, 221);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 2;
+            pictureBox11.TabStop = false;
+            // 
+            // hatPanel
+            // 
+            hatPanel.Controls.Add(greyWomanCapAddButton);
+            hatPanel.Controls.Add(label51);
+            hatPanel.Controls.Add(label52);
+            hatPanel.Controls.Add(label53);
+            hatPanel.Controls.Add(label54);
+            hatPanel.Controls.Add(pictureBox12);
+            hatPanel.Controls.Add(label55);
+            hatPanel.Controls.Add(label56);
+            hatPanel.Controls.Add(blackHatAddButton);
+            hatPanel.Controls.Add(pictureBox13);
+            hatPanel.Dock = DockStyle.Fill;
+            hatPanel.Location = new Point(0, 0);
+            hatPanel.Name = "hatPanel";
+            hatPanel.Size = new Size(480, 345);
+            hatPanel.TabIndex = 6;
+            // 
+            // greyWomanCapAddButton
+            // 
+            greyWomanCapAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            greyWomanCapAddButton.Location = new Point(370, 309);
+            greyWomanCapAddButton.Name = "greyWomanCapAddButton";
+            greyWomanCapAddButton.Size = new Size(100, 22);
+            greyWomanCapAddButton.TabIndex = 7;
+            greyWomanCapAddButton.Text = "Add to cart";
+            greyWomanCapAddButton.UseVisualStyleBackColor = true;
+            greyWomanCapAddButton.Click += greyWomanCapAddButton_Click;
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label51.Location = new Point(250, 308);
+            label51.Name = "label51";
+            label51.Size = new Size(92, 21);
+            label51.TabIndex = 4;
+            label51.Text = "Price: 399kr";
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label52.Location = new Point(71, 273);
+            label52.Name = "label52";
+            label52.Size = new Size(100, 21);
+            label52.TabIndex = 6;
+            label52.Text = "Ribbon Black";
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label53.Location = new Point(334, 273);
+            label53.Name = "label53";
+            label53.Size = new Size(43, 21);
+            label53.TabIndex = 6;
+            label53.Text = "Grey";
+            // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label54.Location = new Point(71, 252);
+            label54.Name = "label54";
+            label54.Size = new Size(101, 21);
+            label54.TabIndex = 5;
+            label54.Text = "One-Size Hat";
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Location = new Point(3, 3);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(219, 246);
+            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox12.TabIndex = 2;
+            pictureBox12.TabStop = false;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label55.Location = new Point(3, 308);
+            label55.Name = "label55";
+            label55.Size = new Size(92, 21);
+            label55.TabIndex = 4;
+            label55.Text = "Price: 299kr";
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label56.Location = new Point(304, 252);
+            label56.Name = "label56";
+            label56.Size = new Size(104, 21);
+            label56.TabIndex = 5;
+            label56.Text = "One-Size Cap";
+            // 
+            // blackHatAddButton
+            // 
+            blackHatAddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            blackHatAddButton.Location = new Point(125, 309);
+            blackHatAddButton.Name = "blackHatAddButton";
+            blackHatAddButton.Size = new Size(100, 22);
+            blackHatAddButton.TabIndex = 3;
+            blackHatAddButton.Text = "Add to cart";
+            blackHatAddButton.UseVisualStyleBackColor = true;
+            blackHatAddButton.Click += blackHatAddButton_Click;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.Location = new Point(250, 3);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(219, 246);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 2;
+            pictureBox13.TabStop = false;
+            // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
@@ -1926,14 +1928,14 @@
             kundvagnListBox.ItemHeight = 15;
             kundvagnListBox.Location = new Point(747, 67);
             kundvagnListBox.Name = "kundvagnListBox";
-            kundvagnListBox.Size = new Size(225, 409);
+            kundvagnListBox.Size = new Size(225, 349);
             kundvagnListBox.TabIndex = 5;
             kundvagnListBox.Visible = false;
             // 
             // removeKundvagnButton
             // 
             removeKundvagnButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            removeKundvagnButton.Location = new Point(629, 494);
+            removeKundvagnButton.Location = new Point(693, 484);
             removeKundvagnButton.Name = "removeKundvagnButton";
             removeKundvagnButton.Size = new Size(150, 27);
             removeKundvagnButton.TabIndex = 6;
@@ -1945,7 +1947,7 @@
             // 
             totalcostlabel.AutoSize = true;
             totalcostlabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            totalcostlabel.Location = new Point(824, 494);
+            totalcostlabel.Location = new Point(768, 429);
             totalcostlabel.Margin = new Padding(2, 0, 2, 0);
             totalcostlabel.Name = "totalcostlabel";
             totalcostlabel.Size = new Size(95, 25);
@@ -1954,20 +1956,45 @@
             // 
             // logInButton
             // 
-            logInButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            logInButton.Location = new Point(419, 12);
+            logInButton.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
+            logInButton.Location = new Point(392, 3);
             logInButton.Name = "logInButton";
-            logInButton.Size = new Size(155, 33);
+            logInButton.Size = new Size(185, 33);
             logInButton.TabIndex = 8;
             logInButton.Text = "Log In";
             logInButton.UseVisualStyleBackColor = true;
             logInButton.Click += logInButton_Click;
+            // 
+            // logOutButton
+            // 
+            logOutButton.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
+            logOutButton.Location = new Point(392, 38);
+            logOutButton.Name = "logOutButton";
+            logOutButton.Size = new Size(185, 33);
+            logOutButton.TabIndex = 9;
+            logOutButton.Text = "Log Out";
+            logOutButton.UseVisualStyleBackColor = true;
+            logOutButton.Visible = false;
+            logOutButton.Click += logOutButton_Click;
+            // 
+            // backButton
+            // 
+            backButton.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
+            backButton.Location = new Point(191, 3);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(185, 33);
+            backButton.TabIndex = 10;
+            backButton.Text = "Go back";
+            backButton.UseVisualStyleBackColor = true;
+            backButton.Click += backButton_Click;
             // 
             // ShopForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1042, 561);
+            Controls.Add(backButton);
+            Controls.Add(logOutButton);
             Controls.Add(logInButton);
             Controls.Add(totalcostlabel);
             Controls.Add(removeKundvagnButton);
@@ -1978,22 +2005,6 @@
             Name = "ShopForm";
             Text = "ShopForm";
             mainPanel.ResumeLayout(false);
-            vestPanel.ResumeLayout(false);
-            vestPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            capPanel.ResumeLayout(false);
-            capPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)capPictureBox).EndInit();
-            coatPanel.ResumeLayout(false);
-            coatPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            hatPanel.ResumeLayout(false);
-            hatPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             shoePanel.ResumeLayout(false);
             shoePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
@@ -2011,6 +2022,22 @@
             blazerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            vestPanel.ResumeLayout(false);
+            vestPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            capPanel.ResumeLayout(false);
+            capPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)capPictureBox).EndInit();
+            coatPanel.ResumeLayout(false);
+            coatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            hatPanel.ResumeLayout(false);
+            hatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -2025,8 +2052,8 @@
         private Button SizeButton38;
         private Button SizeButton37;
         private Button SizeButton36;
-        private Label label57;
-        private Label label58;
+        private Label shoeColorLabel;
+        private Label shoeNameLabel;
         private PictureBox pictureBox14;
         private Label label59;
         private Button greyShoeAddButton;
@@ -2165,5 +2192,7 @@
         private Button removeKundvagnButton;
         private Label totalcostlabel;
         public Button logInButton;
+        public Button logOutButton;
+        private Button backButton;
     }
 }

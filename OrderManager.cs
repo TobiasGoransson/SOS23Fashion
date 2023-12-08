@@ -52,8 +52,9 @@ namespace SOSFashion
                     int Price = int.Parse(variables[1]);
                     int Quantity = int.Parse(variables[2]);
                     int SoldTotal = int.Parse(variables[5]);
+                    
 
-                    Item item = new Item(variables[0], Price, Quantity, variables[3], variables[4], SoldTotal);
+                    Item item = new Item(variables[0], Price, Quantity, variables[3], variables[4], SoldTotal, variables[6]);
                     items.Add(item);
 
                     nextLine = sr.ReadLine();

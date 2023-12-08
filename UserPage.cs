@@ -14,13 +14,15 @@ namespace SOSFashion
     {
         UserManager userManager = new UserManager();
         OrderManager orderManager = new OrderManager();
+        public MainForm mainForm;
         User User { get; set; }
 
-        public UserPage(User user)
+        public UserPage(User user, MainForm mainForm)
         {
             InitializeComponent();
             this.User = user;
             PopulateUserPage(user);
+            this.mainForm = mainForm;
         }
 
 
@@ -60,12 +62,12 @@ namespace SOSFashion
         private void leaveUserPageButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainForm mainForm = new MainForm();
             mainForm.mainLogInButton.Text = User.UserName;
             mainForm.logOutButton.Show();
-            ShopForm shopForm = new ShopForm();
+            ShopForm shopForm = new ShopForm(mainForm);
             shopForm.Show();
             shopForm.logInButton.Text = User.UserName;
+            shopForm.logOutButton.Show();
         }
 
         private void OrderHistory_MouseDown(object sender, MouseEventArgs e)

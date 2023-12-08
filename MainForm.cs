@@ -29,7 +29,7 @@ namespace SOSFashion
             if (mainLogInButton.Text == "Log In")
             {
                 this.Hide();
-                LogInForm logInForm = new LogInForm();
+                LogInForm logInForm = new LogInForm(this);
                 logInForm.Show();
             }
             else
@@ -41,7 +41,7 @@ namespace SOSFashion
                     if (user.UserName == mainLogInButton.Text)
                     {
                         this.Hide();
-                        UserPage userPage = new UserPage(user);
+                        UserPage userPage = new UserPage(user, this);
                         userPage.Show();
                     }
                 }
@@ -53,9 +53,21 @@ namespace SOSFashion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ShopForm shopForm = new ShopForm();
-            shopForm.Show();
+            if (mainLogInButton.Text == "Log In")
+            {
+                this.Hide();
+                ShopForm shopForm = new ShopForm(this);
+                shopForm.logInButton.Text = "Log In";
+                shopForm.Show();
+            }
+            else
+            {
+                ShopForm shopForm1 = new ShopForm(this);
+                shopForm1.logInButton.Text = mainLogInButton.Text;
+                shopForm1.logOutButton.Show();
+                logOutButton.Show();
+                shopForm1.Show();
+            }
         }
 
         private void logOutButton_Click(object sender, EventArgs e)

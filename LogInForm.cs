@@ -6,12 +6,13 @@ namespace SOSFashion
     {
         UserManager userManager = new UserManager();
         List<User> users;
-        public LogInForm()
+        MainForm mainForm;
+        public LogInForm(MainForm mainForm)
         {
             InitializeComponent();
             LogInPanel.BringToFront();
             this.BackgroundImage = Image.FromFile("Pics/LogIn.jpg");
-
+            this.mainForm = mainForm;
         }
 
         public User RegisterNewUser()
@@ -124,7 +125,7 @@ namespace SOSFashion
                 UserNameTextBox.Clear();
                 passwordTextBox.Clear();
                 this.Hide();
-                UserPage userPage = new UserPage(user);
+                UserPage userPage = new UserPage(user, mainForm);
                 userPage.Show();
 
             }
