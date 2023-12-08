@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SOSFashion
 {
-    internal class Item
+    public class Item
     {
         public string ItemName { get; set; }
-        public int Price { get; set; }
-        public int Quantity { get; set; }
-        public string Size { get; set; }
-        public string Color { get; set; }
-        public int SoldTotal { get; set; }
+        public int Price        { get; set; }
+        public int Quantity     { get; set; }
+        public string Size      { get; set; }
+        public string Color     { get; set; }
+        public int SoldTotal    { get; set; }
 
         public Item(string itemName, int price, int quantity, string size, string color, int soldTotal)
         {
