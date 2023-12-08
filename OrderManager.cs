@@ -50,8 +50,8 @@ namespace SOSFashion
                 {
                     string[] variables = nextLine.Split(';');
                     int Price = int.Parse(variables[1]);
-                    int Quantity=int.Parse(variables[2]);
-                    int SoldTotal = int.Parse(variables[5]);    
+                    int Quantity = int.Parse(variables[2]);
+                    int SoldTotal = int.Parse(variables[5]);
 
                     Item item = new Item(variables[0], Price, Quantity, variables[3], variables[4], SoldTotal);
                     items.Add(item);
@@ -60,7 +60,7 @@ namespace SOSFashion
                 }
             }
             return items;
-            
+        }   
 
         public List<Order> GetAllOrders()
         {

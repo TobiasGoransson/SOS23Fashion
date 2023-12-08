@@ -1,13 +1,13 @@
-Cap;159;6;One size;Brown;0
-Cap;159;6;One size;Black;0
-Outlander Coat;1899;4;S;Navy Blue;0
-Outlander Coat;1899;4;M;Navy Blue;0
-Outlander Coat;1899;4;L;Navy Blue;0
-Fur Coat;1699;3;S;Black;0
-Fur Coat;1699;3;M;Black;0
-Fur Coat;1699;3;L;Black;0
-Cap;399;4;One size;Grey;0
-Hat;299;4;One size;Black;0
+Brown Cap;159;6;One size;Brown;0
+Black Cap;159;6;One size;Black;0
+Navy Coat;1899;4;S;Navy Blue;0
+Navy Coat;1899;4;M;Navy Blue;0
+Navy Coat;1899;4;L;Navy Blue;0
+Black Fur Coat;1699;3;S;Black;0
+Black Fur Coat;1699;3;M;Black;0
+Black Fur Coat;1699;3;L;Black;0
+Women Cap;399;4;One size;Grey;0
+Black Hat;299;4;One size;Black;0
 Short-Heel Shoe;959;3;S;Striped;0
 Short-Heel Shoe;959;2;M;Striped;0
 Short-Heel Shoe;959;2;L;Striped;0
@@ -23,15 +23,15 @@ Navy Suit-Pants;899;4;L;Navy Blue;0
 Grey Suit-Pants;899;2;S;Grey;0
 Grey Suit-Pants;899;3;M;Grey;0
 Grey Suit-Pants;899;4;L;Grey;0
-Blazer;1599;2;S;Navy Blue;0
-Blazer;1599;2;M;Navy Blue;0
-Blazer;1599;4;L;Navy Blue;0
-Blazer;1599;2;S;Grey;0
-Blazer;1599;3;M;Grey;0
-Blazer;1599;4;L;Grey;0
-Suit-Vest;569;2;S;Navy Blue;0
-Suit-Vest;569;3;M;Navy Blue;0
-Suit-Vest;569;4;L;Navy Blue;0
-Suit-Vest;569;3;S;Grey;0
-Suit-Vest;569;2;M;Grey;0
-Suit-Vest;569;4;L;Grey;0
+Navy Blazer;1599;2;S;Navy Blue;0
+Navy Blazer;1599;2;M;Navy Blue;0
+Navy Blazer;1599;4;L;Navy Blue;0
+Grey Blazer;1599;2;S;Grey;0
+Grey Blazer;1599;3;M;Grey;0
+Grey Blazer;1599;4;L;Grey;0
+Navy Vest;569;2;S;Navy Blue;0
+Navy Vest;569;3;M;Navy Blue;0
+Navy Vest;569;4;L;Navy Blue;0
+Grey Vest;569;3;S;Grey;0
+Grey Vest;569;2;M;Grey;0
+Grey Vest;569;4;L;Grey;0

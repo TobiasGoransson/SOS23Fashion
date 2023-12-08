@@ -85,9 +85,6 @@ namespace SOSFashion
 
         }
 
-        private void sHowOrderDelailsButton_Click(object sender, EventArgs e)
-        {
-          
-        }
+
     }
 }
