@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -94,6 +95,22 @@ namespace SOSFashion
                 }
             }
             size = string.Empty;
+        }
+
+        public void GetItem(string ItemName) 
+        {
+            foreach (Item item in itemsList)
+            {
+                if (item.ItemName == ItemName)
+                {
+                    if (item.Size == size)
+                    {
+                       LinkLabelLinkClickedEventArgs.text = "Price" + item.Price;
+                        break;
+                    }
+                }
+            }
+
         }
 
         private void UpdateTotalCostLabel()
