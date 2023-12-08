@@ -13,15 +13,18 @@ namespace SOSFashion
 {
     public partial class ShopForm : Form
     {
+        UserManager UserManager = new UserManager();
         bool kundvagn = false;
         string size = string.Empty;
         string itemsFilePath = "Items/Items.csv";
         List<Item> itemsList = new List<Item>();
         List<Item> kundvagnList = new List<Item>();
-        public ShopForm()
+        MainForm mainForm;
+        public ShopForm(MainForm mainForm)
         {
             InitializeComponent();
             HidePanels();
+            this.mainForm = mainForm;
             using (StreamReader reader = new StreamReader(itemsFilePath))
             {
                 string line = reader.ReadLine();
@@ -36,9 +39,10 @@ namespace SOSFashion
                         string size = strings[3];
                         string color = strings[4];
                         int amountSold = Convert.ToInt32(strings[5]);
+                        string category = strings[6];
 
 
-                        itemsList.Add(new Item(name, price, amountStock, size, color, amountSold));
+                        itemsList.Add(new Item(name, price, amountStock, size, color, amountSold, category));
                         line = reader.ReadLine();
                     }
                     catch (Exception ex)
@@ -559,10 +563,39 @@ namespace SOSFashion
         {
             if (logInButton.Text == "Log In")
             {
-                LogInForm logInForm = new LogInForm();
+                LogInForm logInForm = new LogInForm(mainForm);
                 logInForm.Show();
                 this.Close();
             }
+            else
+            {
+                List<User> users = UserManager.CreateUserList();
+
+                foreach (User user in users)
+                {
+                    if (user.UserName == logInButton.Text)
+                    {
+                        this.Hide();
+                        UserPage userPage = new UserPage(user, mainForm);
+                        userPage.Show();
+                    }
+                }
+            }
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            logOutButton.Hide();
+            logInButton.Text = "Log In";
+            MainForm mainForm = new MainForm();
+            mainForm.mainLogInButton.Text = "Log In";
+            mainForm.logOutButton.Hide();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainForm.Show();
+            this.Hide();
         }
     }
 }

@@ -472,9 +472,9 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(989, 558);
             Controls.Add(label1);
-            Controls.Add(LogInPanel);
             Controls.Add(registerNewUserPanel);
             Controls.Add(chooseUserNamePasswordPanel);
+            Controls.Add(LogInPanel);
             Name = "LogInForm";
             Text = "LogInForm";
             LogInPanel.ResumeLayout(false);
