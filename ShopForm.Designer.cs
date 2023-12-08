@@ -1961,6 +1961,7 @@
             logInButton.TabIndex = 8;
             logInButton.Text = "Log In";
             logInButton.UseVisualStyleBackColor = true;
+            logInButton.Click += logInButton_Click;
             // 
             // ShopForm
             // 
