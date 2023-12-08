@@ -65,7 +65,9 @@ namespace SOSFashion
             mainForm.logOutButton.Show();
             ShopForm shopForm = new ShopForm();
             shopForm.Show();
+            shopForm.logInButton.Text = User.UserName;
         }
+
         private void OrderHistory_MouseDown(object sender, MouseEventArgs e)
         {
             int index = OrderHistory.IndexFromPoint(e.Location);
