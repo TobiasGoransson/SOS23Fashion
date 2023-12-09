@@ -1,15 +1,16 @@
 Cap;159;6;One size;Brown;0;Hats
 Cap;159;6;One size;Black;0;Hats
-Coat;1699;48;S;Black;0;Coats
+Coat;1899;4;S;Navy Blue;0;Coats
 Coat;1899;4;M;Navy Blue;0;Coats
-Coat;1699;23;L;Black;0;Coats
+Coat;1899;4;L;Navy Blue;0;Coats
 Coat;1699;3;S;Black;0;Coats
 Coat;1699;3;M;Black;0;Coats
 Coat;1699;3;L;Black;0;Coats
 Cap;399;4;One size;Grey;0;Hats
 Hat;299;4;One size;Black;0;Hats
-Short-Heel Shoe;959;56;S;Striped;0;Accessories
-Short-Heel Shoe;959;102;M;Striped;0;Accessories
+Short-Heel Shoe;959;3;S;Striped;0;Accessories
+Short-Heel Shoe;959;2;M;Striped;0;Accessories
+Short-Heel Shoe;959;2;L;Striped;0;Accessories
 Dress;699;5;S;Grey;0;Dresses
 Dress;699;4;M;Grey;0;Dresses
 Dress;699;5;L;Grey;0;Dresses
@@ -22,8 +23,8 @@ Suit-Pants;899;4;L;Navy Blue;0;Suits
 Suit-Pants;899;2;S;Grey;0;Suits
 Suit-Pants;899;3;M;Grey;0;Suits
 Suit-Pants;899;4;L;Grey;0;Suits
-Blazer;2599;10;S;Black;0;Suits
-Blazer;2599;10;M;Black;0;Suits
+Blazer;1599;2;S;Navy Blue;0;Suits
+Blazer;1599;2;M;Navy Blue;0;Suits
 Blazer;1599;4;L;Navy Blue;0;Suits
 Blazer;1599;2;S;Grey;0;Suits
 Blazer;1599;3;M;Grey;0;Suits
@@ -34,15 +35,3 @@ Vest;569;4;L;Navy Blue;0;Suits
 Vest;569;3;S;Grey;0;Suits
 Vest;569;2;M;Grey;0;Suits
 Vest;569;4;L;Grey;0;Suits
-Tie;55;20;One Size;Purple;0;Accessories
-Tie;55;0;One Size;Purple;0;Accessories
-Cocktaildress;1999;0;S;Black;0;Dresses
-Cocktaildress;1999;0;M;Black;0;Dresses
-Cocktaildress;1999;10;L;Black;0;Dresses
-Blazer;1500;0;S;Turkois;0;Suits
-Blazer;1999;0;S;Black;0;Suits
-Blazer;2599;0;S;Black;0;Suits
-Blazer;2599;0;M;Black;0;Suits
-Blazer;2599;0;L;Black;0;Suits
-Skirt;150;10;S;Pink;0;Dresses
-Skirt;150;0;M;Pink;0;Dresses
