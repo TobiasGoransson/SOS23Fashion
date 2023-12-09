@@ -224,7 +224,6 @@
             editItemPanel.Name = "editItemPanel";
             editItemPanel.Size = new Size(550, 350);
             editItemPanel.TabIndex = 26;
-            editItemPanel.Paint += editItemPanel_Paint;
             // 
             // editSizetextBox
             // 

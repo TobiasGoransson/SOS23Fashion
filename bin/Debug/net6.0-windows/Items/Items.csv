@@ -22,8 +22,8 @@ Suit-Pants;899;4;L;Navy Blue;0;Suits
 Suit-Pants;899;2;S;Grey;0;Suits
 Suit-Pants;899;3;M;Grey;0;Suits
 Suit-Pants;899;4;L;Grey;0;Suits
-Blazer;1599;2;S;Navy Blue;0;Suits
-Blazer;1599;2;M;Navy Blue;0;Suits
+Blazer;2599;10;S;Black;0;Suits
+Blazer;2599;10;M;Black;0;Suits
 Blazer;1599;4;L;Navy Blue;0;Suits
 Blazer;1599;2;S;Grey;0;Suits
 Blazer;1599;3;M;Grey;0;Suits
@@ -34,3 +34,15 @@ Vest;569;4;L;Navy Blue;0;Suits
 Vest;569;3;S;Grey;0;Suits
 Vest;569;2;M;Grey;0;Suits
 Vest;569;4;L;Grey;0;Suits
+Tie;55;20;One Size;Purple;0;Accessories
+Tie;55;0;One Size;Purple;0;Accessories
+Cocktaildress;1999;0;S;Black;0;Dresses
+Cocktaildress;1999;0;M;Black;0;Dresses
+Cocktaildress;1999;10;L;Black;0;Dresses
+Blazer;1500;0;S;Turkois;0;Suits
+Blazer;1999;0;S;Black;0;Suits
+Blazer;2599;0;S;Black;0;Suits
+Blazer;2599;0;M;Black;0;Suits
+Blazer;2599;0;L;Black;0;Suits
+Skirt;150;10;S;Pink;0;Dresses
+Skirt;150;0;M;Pink;0;Dresses

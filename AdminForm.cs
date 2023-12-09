@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -20,6 +21,8 @@ namespace SOSFashion
 {
     public partial class AdminForm : Form
     {
+       
+
         UserManager UserManager = new UserManager();
         OrderManager orderManager = new OrderManager();
         ItemManager ItemManager = new ItemManager();
@@ -37,6 +40,7 @@ namespace SOSFashion
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
             stockUpPanel.Visible = false;
+            
 
         }
 
@@ -126,37 +130,55 @@ namespace SOSFashion
                 }
             }
         }
-        public void RegisterItem(string ItemName, double Price, int Quantity, string Color, string Category)
+        public async void RegisterItem(string ItemName, double Price, int Quantity, string Color, string Category)
         {
             string Size;
 
             if (OneSize() == true)
             {
                 Size = "One Size";
+                
                 Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
-                ItemManager.RegisterNewItem(item);
+                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
+                stockUpPanel.Visible = true;
+
             }
             if (smallCheckBox.Checked)
             {
                 oneSizeCheckBox.Checked = false;
                 Size = "S";
                 Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
+                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
                 ItemManager.RegisterNewItem(item);
+
             }
             if (mediumCheckBox.Checked)
             {
                 oneSizeCheckBox.Checked = false;
                 Size = "M";
                 Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
+                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
                 ItemManager.RegisterNewItem(item);
+               
             }
             if (LargeCheckBox.Checked)
             {
                 oneSizeCheckBox.Checked = false;
                 Size = "L";
                 Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
+                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
                 ItemManager.RegisterNewItem(item);
+              
             }
+        }
+        public void PopulateStockUpNewItem(string ItemName, double Price, int Quantity, string Size, string Color, string Category)
+        {
+            stockUpItemNameTextBox.Text = ItemName;
+            stockUpPricetextBox.Text = Price.ToString();
+            stockUpSizetextBox.Text = Size;
+            stockUpColortextBox.Text = Color;
+            stockUpCategorytextBox.Text = Category;
+            stockUpQuantitytextBox.Text = Quantity.ToString();
         }
         public bool OneSize()
         {
@@ -296,18 +318,12 @@ namespace SOSFashion
                         break;
                     }
                 }
-
-
-
             }
             else
             {
                 MessageBox.Show("Ingen rad markerad.", "Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
-
 
         public void PopulateEditItem(int index)
         {
@@ -379,9 +395,6 @@ namespace SOSFashion
                         break;
                     }
                 }
-
-
-
             }
             else
             {
@@ -433,9 +446,6 @@ namespace SOSFashion
                         break;
                     }
                 }
-
-
-
             }
             else
             {
@@ -466,6 +476,7 @@ namespace SOSFashion
                     foreach (Item item in items)
                     {
                         ItemManager.RegisterNewItem(item);
+                        
                     }
                     break;
                 }
@@ -475,11 +486,6 @@ namespace SOSFashion
             stockUpPanel.Visible = false;
             mainPanel.BringToFront();
             mainPanel.Visible = true;
-        }
-
-        private void editItemPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -501,5 +507,6 @@ namespace SOSFashion
             editItemButton.Visible = true;
             stockUpButton.Visible = true;
         }
+
     }
 }
