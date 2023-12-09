@@ -66,10 +66,11 @@
             // 
             adminListBox1.FormattingEnabled = true;
             adminListBox1.ItemHeight = 15;
-            adminListBox1.Location = new Point(0, 0);
+            adminListBox1.Location = new Point(0, 3);
             adminListBox1.Name = "adminListBox1";
-            adminListBox1.Size = new Size(380, 349);
+            adminListBox1.Size = new Size(550, 349);
             adminListBox1.TabIndex = 0;
+            adminListBox1.SelectedIndexChanged += adminListBox1_SelectedIndexChanged;
             // 
             // panel1
             // 
@@ -131,6 +132,7 @@
             costumorLabel.TabIndex = 4;
             costumorLabel.TabStop = true;
             costumorLabel.Text = "Costumers";
+            costumorLabel.LinkClicked += costumorLabel_LinkClicked;
             // 
             // placedOrdersLabel
             // 
@@ -143,6 +145,7 @@
             placedOrdersLabel.TabIndex = 3;
             placedOrdersLabel.TabStop = true;
             placedOrdersLabel.Text = "Placed orders";
+            placedOrdersLabel.LinkClicked += placedOrdersLabel_LinkClicked;
             // 
             // productlistLable
             // 
@@ -155,18 +158,20 @@
             productlistLable.TabIndex = 0;
             productlistLable.TabStop = true;
             productlistLable.Text = "Product list";
+            productlistLable.LinkClicked += productlistLable_LinkClicked;
             // 
             // mainPanel
             // 
             mainPanel.Controls.Add(adminListBox1);
-            mainPanel.Location = new Point(568, 32);
+            mainPanel.Location = new Point(0, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(380, 350);
+            mainPanel.Size = new Size(550, 350);
             mainPanel.TabIndex = 6;
             // 
             // registerNewItemPanel
             // 
             registerNewItemPanel.BackColor = Color.Transparent;
+            registerNewItemPanel.Controls.Add(mainPanel);
             registerNewItemPanel.Controls.Add(accessoriesCheckBox);
             registerNewItemPanel.Controls.Add(suitsCheckBox);
             registerNewItemPanel.Controls.Add(coatsCheckBox);
@@ -186,9 +191,9 @@
             registerNewItemPanel.Controls.Add(priceTextBox);
             registerNewItemPanel.Controls.Add(itemPriceLable);
             registerNewItemPanel.Controls.Add(itemNamelable);
-            registerNewItemPanel.Location = new Point(164, 32);
+            registerNewItemPanel.Location = new Point(164, 12);
             registerNewItemPanel.Name = "registerNewItemPanel";
-            registerNewItemPanel.Size = new Size(380, 350);
+            registerNewItemPanel.Size = new Size(547, 350);
             registerNewItemPanel.TabIndex = 3;
             // 
             // accessoriesCheckBox
@@ -406,9 +411,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1205, 462);
+            ClientSize = new Size(1501, 803);
             Controls.Add(registerNewItemPanel);
-            Controls.Add(mainPanel);
             Controls.Add(panel1);
             Name = "AdminForm";
             Text = "AdminForm";

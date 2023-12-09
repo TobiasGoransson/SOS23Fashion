@@ -4,17 +4,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using CheckBox = System.Windows.Forms.CheckBox;
 
 namespace SOSFashion
 {
     public partial class AdminForm : Form
     {
+        UserManager UserManager = new UserManager();
+        OrderManager orderManager = new OrderManager();
         ItemManager ItemManager = new ItemManager();
         List<Item> items = new List<Item>();
         string itemsFilePath = "Items/Items.csv";
@@ -23,6 +28,9 @@ namespace SOSFashion
         {
             InitializeComponent();
             checkBoxes = new List<CheckBox> { hatCheckBox, coatsCheckBox, dressesCheckBox, suitsCheckBox, accessoriesCheckBox };
+            mainPanel.Hide();
+            registerNewItemPanel.Hide();
+
         }
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -45,7 +53,7 @@ namespace SOSFashion
             if (string.IsNullOrWhiteSpace(ItemName))
             {
                 MessageBox.Show("Item Name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false; 
+                return false;
             }
             else if (string.IsNullOrWhiteSpace(Color))
             {
@@ -61,9 +69,9 @@ namespace SOSFashion
             {
                 return true;
             }
-            
+
         }
-       
+
         public string CheckCategory()
         {
             if (hatCheckBox.Checked) { return "Hat"; }
@@ -75,7 +83,7 @@ namespace SOSFashion
         }
         private void confirmRegisterNewUserButton_Click(object sender, EventArgs e)
         {
-           
+
             string Category = CheckCategory();
             string Size;
             string ItemName = itemTextBox.Text;
@@ -84,7 +92,7 @@ namespace SOSFashion
             string Color = colorTextBox.Text;
             bool allBoxesChecked = false;
 
-           
+
             allBoxesChecked = CheckVariebles(Category, ItemName, Color);
             try
             {
@@ -109,7 +117,7 @@ namespace SOSFashion
                     MessageBox.Show("Please select a size.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            }               
+            }
         }
         public void RegisterItem(string ItemName, double Price, int Quantity, string Color, string Category)
         {
@@ -169,12 +177,68 @@ namespace SOSFashion
 
         private void registerNewItemkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            
+            mainPanel.Hide();
             registerNewItemPanel.Show();
         }
 
         private void oneSizeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             OneSize();
+        }
+
+        private void productlistLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            registerNewItemPanel.Hide();
+            mainPanel.Show();
+            mainPanel.BringToFront();
+            List<Item> items = ItemManager.GetItemList();
+            foreach (Item item in items)
+            {
+
+                double price = item.Price; price.ToString();
+                int quantity = item.Quantity; quantity.ToString();
+                int soldtotal = item.SoldTotal; soldtotal.ToString();
+
+                adminListBox1.Items.Add(item.ItemName + "\t" + price + "\t" + quantity + "\t" + item.Size + "\t" + item.Color + "\t" + soldtotal + "\t" + item.Category);
+            }
+        }
+
+        private void placedOrdersLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            registerNewItemPanel.Hide();
+            mainPanel.Show();
+            mainPanel.BringToFront();
+            List<Order> orders = orderManager.GetOrders("AllOrders");
+            foreach (Order order in orders)
+            {
+                int orderNo = order.OrderNo;
+                orderNo.ToString();
+                DateTime dateTime = order.Placedtime;
+                dateTime.ToString();
+
+                adminListBox1.Items.Add(orderNo + "\t" + dateTime + "\t" + order.Username);
+            }
+        }
+
+        private void costumorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            registerNewItemPanel.Hide();
+            mainPanel.Show();
+            mainPanel.BringToFront();
+            List<User> users = UserManager.CreateUserList();
+            foreach (User user in users)
+            {
+                adminListBox1.Items.Add(user.UserName + "\t" + user.Password + "\t" + user.FirstName + "\t" + user.LastName + "\t" + user.Email + "\t" + user.Street + "\t" + user.Zip + "\t" + user.City);
+            }
+        }
+
+        private void adminListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
