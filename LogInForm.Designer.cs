@@ -109,19 +109,19 @@
             passwordTextBox.BackColor = SystemColors.Control;
             passwordTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             passwordTextBox.Location = new Point(123, 56);
-            passwordTextBox.Multiline = true;
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(152, 30);
+            passwordTextBox.PlaceholderText = "****";
+            passwordTextBox.Size = new Size(152, 28);
             passwordTextBox.TabIndex = 2;
+            passwordTextBox.WordWrap = false;
             // 
             // UserNameTextBox
             // 
             UserNameTextBox.BackColor = SystemColors.Control;
             UserNameTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             UserNameTextBox.Location = new Point(123, 11);
-            UserNameTextBox.Multiline = true;
             UserNameTextBox.Name = "UserNameTextBox";
-            UserNameTextBox.Size = new Size(152, 30);
+            UserNameTextBox.Size = new Size(152, 28);
             UserNameTextBox.TabIndex = 1;
             // 
             // label3
@@ -472,10 +472,11 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(989, 558);
             Controls.Add(label1);
+            Controls.Add(LogInPanel);
             Controls.Add(registerNewUserPanel);
             Controls.Add(chooseUserNamePasswordPanel);
-            Controls.Add(LogInPanel);
             Name = "LogInForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInForm";
             LogInPanel.ResumeLayout(false);
             LogInPanel.PerformLayout();

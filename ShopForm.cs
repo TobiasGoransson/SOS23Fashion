@@ -101,7 +101,7 @@ namespace SOSFashion
             size = string.Empty;
         }
 
-        public void GetItem(string ItemName) 
+        public void GetItem(string ItemName)
         {
             foreach (Item item in itemsList)
             {
@@ -109,7 +109,7 @@ namespace SOSFashion
                 {
                     if (item.Size == size)
                     {
-                       
+
                         break;
                     }
                 }

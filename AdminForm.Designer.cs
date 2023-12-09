@@ -37,6 +37,38 @@
             placedOrdersLabel = new LinkLabel();
             productlistLable = new LinkLabel();
             mainPanel = new Panel();
+            editItemPanel = new Panel();
+            editSizetextBox = new TextBox();
+            editCategoryTextBox = new TextBox();
+            label6 = new Label();
+            quantityTextBox = new TextBox();
+            label1 = new Label();
+            editItemNameTextBox = new TextBox();
+            button1 = new Button();
+            editItemEditPanelButton = new Button();
+            editIColorTextBox = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            editPriceTextBox = new TextBox();
+            label4 = new Label();
+            label5 = new Label();
+            stockUpPanel = new Panel();
+            label13 = new Label();
+            incommingQuantity = new TextBox();
+            stockUpSizetextBox = new TextBox();
+            stockUpCategorytextBox = new TextBox();
+            label7 = new Label();
+            stockUpQuantitytextBox = new TextBox();
+            label8 = new Label();
+            stockUpItemNameTextBox = new TextBox();
+            button2 = new Button();
+            stockUpButtonStockupPanel = new Button();
+            stockUpColortextBox = new TextBox();
+            label9 = new Label();
+            label10 = new Label();
+            stockUpPricetextBox = new TextBox();
+            label11 = new Label();
+            label12 = new Label();
             registerNewItemPanel = new Panel();
             accessoriesCheckBox = new CheckBox();
             suitsCheckBox = new CheckBox();
@@ -49,7 +81,6 @@
             mediumCheckBox = new CheckBox();
             oneSizeCheckBox = new CheckBox();
             itemTextBox = new TextBox();
-            cancelRegisterNewUserButton = new Button();
             confirmRegisterNewUserButton = new Button();
             colorTextBox = new TextBox();
             colorLable = new Label();
@@ -57,8 +88,13 @@
             priceTextBox = new TextBox();
             itemPriceLable = new Label();
             itemNamelable = new Label();
+            removeButton = new Button();
+            editItemButton = new Button();
+            stockUpButton = new Button();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
+            editItemPanel.SuspendLayout();
+            stockUpPanel.SuspendLayout();
             registerNewItemPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,11 +102,10 @@
             // 
             adminListBox1.FormattingEnabled = true;
             adminListBox1.ItemHeight = 15;
-            adminListBox1.Location = new Point(0, 3);
+            adminListBox1.Location = new Point(3, 7);
             adminListBox1.Name = "adminListBox1";
-            adminListBox1.Size = new Size(550, 349);
+            adminListBox1.Size = new Size(533, 334);
             adminListBox1.TabIndex = 0;
-            adminListBox1.SelectedIndexChanged += adminListBox1_SelectedIndexChanged;
             // 
             // panel1
             // 
@@ -163,15 +198,404 @@
             // mainPanel
             // 
             mainPanel.Controls.Add(adminListBox1);
-            mainPanel.Location = new Point(0, 0);
+            mainPanel.Location = new Point(164, 12);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(550, 350);
             mainPanel.TabIndex = 6;
             // 
+            // editItemPanel
+            // 
+            editItemPanel.BackColor = SystemColors.Control;
+            editItemPanel.Controls.Add(editSizetextBox);
+            editItemPanel.Controls.Add(editCategoryTextBox);
+            editItemPanel.Controls.Add(label6);
+            editItemPanel.Controls.Add(quantityTextBox);
+            editItemPanel.Controls.Add(label1);
+            editItemPanel.Controls.Add(editItemNameTextBox);
+            editItemPanel.Controls.Add(button1);
+            editItemPanel.Controls.Add(editItemEditPanelButton);
+            editItemPanel.Controls.Add(editIColorTextBox);
+            editItemPanel.Controls.Add(label2);
+            editItemPanel.Controls.Add(label3);
+            editItemPanel.Controls.Add(editPriceTextBox);
+            editItemPanel.Controls.Add(label4);
+            editItemPanel.Controls.Add(label5);
+            editItemPanel.Location = new Point(164, 12);
+            editItemPanel.Name = "editItemPanel";
+            editItemPanel.Size = new Size(550, 350);
+            editItemPanel.TabIndex = 26;
+            editItemPanel.Paint += editItemPanel_Paint;
+            // 
+            // editSizetextBox
+            // 
+            editSizetextBox.BackColor = SystemColors.Control;
+            editSizetextBox.Enabled = false;
+            editSizetextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            editSizetextBox.Location = new Point(136, 89);
+            editSizetextBox.Multiline = true;
+            editSizetextBox.Name = "editSizetextBox";
+            editSizetextBox.PlaceholderText = "123,45";
+            editSizetextBox.Size = new Size(152, 30);
+            editSizetextBox.TabIndex = 26;
+            // 
+            // editCategoryTextBox
+            // 
+            editCategoryTextBox.BackColor = SystemColors.Control;
+            editCategoryTextBox.Enabled = false;
+            editCategoryTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            editCategoryTextBox.Location = new Point(136, 168);
+            editCategoryTextBox.Multiline = true;
+            editCategoryTextBox.Name = "editCategoryTextBox";
+            editCategoryTextBox.PlaceholderText = "123,45";
+            editCategoryTextBox.Size = new Size(152, 30);
+            editCategoryTextBox.TabIndex = 25;
+            // 
+            // label6
+            // 
+            label6.BackColor = SystemColors.Control;
+            label6.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(22, 215);
+            label6.Name = "label6";
+            label6.Size = new Size(110, 30);
+            label6.TabIndex = 24;
+            label6.Text = "Quntity";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // quantityTextBox
+            // 
+            quantityTextBox.BackColor = SystemColors.Control;
+            quantityTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            quantityTextBox.Location = new Point(138, 213);
+            quantityTextBox.Multiline = true;
+            quantityTextBox.Name = "quantityTextBox";
+            quantityTextBox.PlaceholderText = "1234";
+            quantityTextBox.Size = new Size(152, 30);
+            quantityTextBox.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.BackColor = SystemColors.Control;
+            label1.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(20, 166);
+            label1.Name = "label1";
+            label1.Size = new Size(110, 30);
+            label1.TabIndex = 20;
+            label1.Text = "Category";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // editItemNameTextBox
+            // 
+            editItemNameTextBox.BackColor = SystemColors.Control;
+            editItemNameTextBox.Enabled = false;
+            editItemNameTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            editItemNameTextBox.Location = new Point(138, 15);
+            editItemNameTextBox.Multiline = true;
+            editItemNameTextBox.Name = "editItemNameTextBox";
+            editItemNameTextBox.PlaceholderText = "item";
+            editItemNameTextBox.Size = new Size(152, 30);
+            editItemNameTextBox.TabIndex = 15;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Control;
+            button1.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(12, 290);
+            button1.Name = "button1";
+            button1.Size = new Size(140, 35);
+            button1.TabIndex = 14;
+            button1.Text = "Cancel";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // editItemEditPanelButton
+            // 
+            editItemEditPanelButton.BackColor = SystemColors.Control;
+            editItemEditPanelButton.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            editItemEditPanelButton.Location = new Point(158, 290);
+            editItemEditPanelButton.Name = "editItemEditPanelButton";
+            editItemEditPanelButton.Size = new Size(140, 35);
+            editItemEditPanelButton.TabIndex = 13;
+            editItemEditPanelButton.Text = "Edit Item";
+            editItemEditPanelButton.UseVisualStyleBackColor = false;
+            editItemEditPanelButton.Click += editItemEditPanelButton_Click;
+            // 
+            // editIColorTextBox
+            // 
+            editIColorTextBox.BackColor = SystemColors.Control;
+            editIColorTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            editIColorTextBox.Location = new Point(138, 128);
+            editIColorTextBox.Multiline = true;
+            editIColorTextBox.Name = "editIColorTextBox";
+            editIColorTextBox.PlaceholderText = "Black";
+            editIColorTextBox.Size = new Size(152, 30);
+            editIColorTextBox.TabIndex = 10;
+            // 
+            // label2
+            // 
+            label2.BackColor = SystemColors.Control;
+            label2.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(20, 128);
+            label2.Name = "label2";
+            label2.Size = new Size(110, 30);
+            label2.TabIndex = 14;
+            label2.Text = "Color";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            label3.BackColor = SystemColors.Control;
+            label3.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(20, 87);
+            label3.Name = "label3";
+            label3.Size = new Size(110, 30);
+            label3.TabIndex = 12;
+            label3.Text = "Size";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // editPriceTextBox
+            // 
+            editPriceTextBox.BackColor = SystemColors.Control;
+            editPriceTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            editPriceTextBox.Location = new Point(138, 53);
+            editPriceTextBox.Multiline = true;
+            editPriceTextBox.Name = "editPriceTextBox";
+            editPriceTextBox.PlaceholderText = "123,45";
+            editPriceTextBox.Size = new Size(152, 30);
+            editPriceTextBox.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.Control;
+            label4.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(20, 53);
+            label4.Name = "label4";
+            label4.Size = new Size(110, 30);
+            label4.TabIndex = 8;
+            label4.Text = "Price";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.Control;
+            label5.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(22, 15);
+            label5.Name = "label5";
+            label5.Size = new Size(110, 30);
+            label5.TabIndex = 4;
+            label5.Text = "Item Name";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // stockUpPanel
+            // 
+            stockUpPanel.BackColor = SystemColors.Control;
+            stockUpPanel.Controls.Add(label13);
+            stockUpPanel.Controls.Add(incommingQuantity);
+            stockUpPanel.Controls.Add(stockUpSizetextBox);
+            stockUpPanel.Controls.Add(stockUpCategorytextBox);
+            stockUpPanel.Controls.Add(label7);
+            stockUpPanel.Controls.Add(stockUpQuantitytextBox);
+            stockUpPanel.Controls.Add(label8);
+            stockUpPanel.Controls.Add(stockUpItemNameTextBox);
+            stockUpPanel.Controls.Add(button2);
+            stockUpPanel.Controls.Add(stockUpButtonStockupPanel);
+            stockUpPanel.Controls.Add(stockUpColortextBox);
+            stockUpPanel.Controls.Add(label9);
+            stockUpPanel.Controls.Add(label10);
+            stockUpPanel.Controls.Add(stockUpPricetextBox);
+            stockUpPanel.Controls.Add(label11);
+            stockUpPanel.Controls.Add(label12);
+            stockUpPanel.Location = new Point(164, 12);
+            stockUpPanel.Name = "stockUpPanel";
+            stockUpPanel.Size = new Size(550, 350);
+            stockUpPanel.TabIndex = 27;
+            // 
+            // label13
+            // 
+            label13.BackColor = SystemColors.Control;
+            label13.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(22, 251);
+            label13.Name = "label13";
+            label13.Size = new Size(175, 30);
+            label13.TabIndex = 28;
+            label13.Text = "Incoming Quantity";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // incommingQuantity
+            // 
+            incommingQuantity.BackColor = SystemColors.ButtonHighlight;
+            incommingQuantity.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            incommingQuantity.Location = new Point(203, 251);
+            incommingQuantity.Multiline = true;
+            incommingQuantity.Name = "incommingQuantity";
+            incommingQuantity.PlaceholderText = "0 Pcs";
+            incommingQuantity.Size = new Size(152, 30);
+            incommingQuantity.TabIndex = 27;
+            // 
+            // stockUpSizetextBox
+            // 
+            stockUpSizetextBox.BackColor = SystemColors.Control;
+            stockUpSizetextBox.Enabled = false;
+            stockUpSizetextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stockUpSizetextBox.Location = new Point(136, 89);
+            stockUpSizetextBox.Multiline = true;
+            stockUpSizetextBox.Name = "stockUpSizetextBox";
+            stockUpSizetextBox.PlaceholderText = "123,45";
+            stockUpSizetextBox.Size = new Size(152, 30);
+            stockUpSizetextBox.TabIndex = 26;
+            // 
+            // stockUpCategorytextBox
+            // 
+            stockUpCategorytextBox.BackColor = SystemColors.Control;
+            stockUpCategorytextBox.Enabled = false;
+            stockUpCategorytextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stockUpCategorytextBox.Location = new Point(136, 160);
+            stockUpCategorytextBox.Multiline = true;
+            stockUpCategorytextBox.Name = "stockUpCategorytextBox";
+            stockUpCategorytextBox.PlaceholderText = "123,45";
+            stockUpCategorytextBox.Size = new Size(152, 30);
+            stockUpCategorytextBox.TabIndex = 25;
+            // 
+            // label7
+            // 
+            label7.BackColor = SystemColors.Control;
+            label7.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(24, 200);
+            label7.Name = "label7";
+            label7.Size = new Size(110, 30);
+            label7.TabIndex = 24;
+            label7.Text = "Quntity";
+            label7.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // stockUpQuantitytextBox
+            // 
+            stockUpQuantitytextBox.BackColor = SystemColors.Control;
+            stockUpQuantitytextBox.Enabled = false;
+            stockUpQuantitytextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stockUpQuantitytextBox.Location = new Point(136, 196);
+            stockUpQuantitytextBox.Multiline = true;
+            stockUpQuantitytextBox.Name = "stockUpQuantitytextBox";
+            stockUpQuantitytextBox.PlaceholderText = "1234";
+            stockUpQuantitytextBox.Size = new Size(152, 30);
+            stockUpQuantitytextBox.TabIndex = 23;
+            // 
+            // label8
+            // 
+            label8.BackColor = SystemColors.Control;
+            label8.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(20, 158);
+            label8.Name = "label8";
+            label8.Size = new Size(110, 30);
+            label8.TabIndex = 20;
+            label8.Text = "Category";
+            label8.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // stockUpItemNameTextBox
+            // 
+            stockUpItemNameTextBox.BackColor = SystemColors.Control;
+            stockUpItemNameTextBox.Enabled = false;
+            stockUpItemNameTextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stockUpItemNameTextBox.Location = new Point(138, 15);
+            stockUpItemNameTextBox.Multiline = true;
+            stockUpItemNameTextBox.Name = "stockUpItemNameTextBox";
+            stockUpItemNameTextBox.PlaceholderText = "item";
+            stockUpItemNameTextBox.Size = new Size(152, 30);
+            stockUpItemNameTextBox.TabIndex = 15;
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.Control;
+            button2.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(12, 290);
+            button2.Name = "button2";
+            button2.Size = new Size(140, 35);
+            button2.TabIndex = 14;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // stockUpButtonStockupPanel
+            // 
+            stockUpButtonStockupPanel.BackColor = SystemColors.Control;
+            stockUpButtonStockupPanel.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            stockUpButtonStockupPanel.Location = new Point(158, 290);
+            stockUpButtonStockupPanel.Name = "stockUpButtonStockupPanel";
+            stockUpButtonStockupPanel.Size = new Size(140, 35);
+            stockUpButtonStockupPanel.TabIndex = 13;
+            stockUpButtonStockupPanel.Text = "Stock Up";
+            stockUpButtonStockupPanel.UseVisualStyleBackColor = false;
+            stockUpButtonStockupPanel.Click += stockUpButtonStockupPanel_Click;
+            // 
+            // stockUpColortextBox
+            // 
+            stockUpColortextBox.BackColor = SystemColors.Control;
+            stockUpColortextBox.Enabled = false;
+            stockUpColortextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stockUpColortextBox.Location = new Point(136, 124);
+            stockUpColortextBox.Multiline = true;
+            stockUpColortextBox.Name = "stockUpColortextBox";
+            stockUpColortextBox.PlaceholderText = "Black";
+            stockUpColortextBox.Size = new Size(152, 30);
+            stockUpColortextBox.TabIndex = 10;
+            // 
+            // label9
+            // 
+            label9.BackColor = SystemColors.Control;
+            label9.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(18, 124);
+            label9.Name = "label9";
+            label9.Size = new Size(110, 30);
+            label9.TabIndex = 14;
+            label9.Text = "Color";
+            label9.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            label10.BackColor = SystemColors.Control;
+            label10.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(20, 87);
+            label10.Name = "label10";
+            label10.Size = new Size(110, 30);
+            label10.TabIndex = 12;
+            label10.Text = "Size";
+            label10.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // stockUpPricetextBox
+            // 
+            stockUpPricetextBox.BackColor = SystemColors.Control;
+            stockUpPricetextBox.Enabled = false;
+            stockUpPricetextBox.Font = new Font("Modern No. 20", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stockUpPricetextBox.Location = new Point(138, 53);
+            stockUpPricetextBox.Multiline = true;
+            stockUpPricetextBox.Name = "stockUpPricetextBox";
+            stockUpPricetextBox.PlaceholderText = "123,45";
+            stockUpPricetextBox.Size = new Size(152, 30);
+            stockUpPricetextBox.TabIndex = 7;
+            // 
+            // label11
+            // 
+            label11.BackColor = SystemColors.Control;
+            label11.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(20, 53);
+            label11.Name = "label11";
+            label11.Size = new Size(110, 30);
+            label11.TabIndex = 8;
+            label11.Text = "Price";
+            label11.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label12
+            // 
+            label12.BackColor = SystemColors.Control;
+            label12.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(22, 15);
+            label12.Name = "label12";
+            label12.Size = new Size(110, 30);
+            label12.TabIndex = 4;
+            label12.Text = "Item Name";
+            label12.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // registerNewItemPanel
             // 
             registerNewItemPanel.BackColor = Color.Transparent;
-            registerNewItemPanel.Controls.Add(mainPanel);
             registerNewItemPanel.Controls.Add(accessoriesCheckBox);
             registerNewItemPanel.Controls.Add(suitsCheckBox);
             registerNewItemPanel.Controls.Add(coatsCheckBox);
@@ -183,7 +607,6 @@
             registerNewItemPanel.Controls.Add(mediumCheckBox);
             registerNewItemPanel.Controls.Add(oneSizeCheckBox);
             registerNewItemPanel.Controls.Add(itemTextBox);
-            registerNewItemPanel.Controls.Add(cancelRegisterNewUserButton);
             registerNewItemPanel.Controls.Add(confirmRegisterNewUserButton);
             registerNewItemPanel.Controls.Add(colorTextBox);
             registerNewItemPanel.Controls.Add(colorLable);
@@ -193,7 +616,7 @@
             registerNewItemPanel.Controls.Add(itemNamelable);
             registerNewItemPanel.Location = new Point(164, 12);
             registerNewItemPanel.Name = "registerNewItemPanel";
-            registerNewItemPanel.Size = new Size(547, 350);
+            registerNewItemPanel.Size = new Size(550, 350);
             registerNewItemPanel.TabIndex = 3;
             // 
             // accessoriesCheckBox
@@ -318,22 +741,11 @@
             itemTextBox.Size = new Size(152, 30);
             itemTextBox.TabIndex = 15;
             // 
-            // cancelRegisterNewUserButton
-            // 
-            cancelRegisterNewUserButton.BackColor = SystemColors.Control;
-            cancelRegisterNewUserButton.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cancelRegisterNewUserButton.Location = new Point(12, 290);
-            cancelRegisterNewUserButton.Name = "cancelRegisterNewUserButton";
-            cancelRegisterNewUserButton.Size = new Size(140, 35);
-            cancelRegisterNewUserButton.TabIndex = 14;
-            cancelRegisterNewUserButton.Text = "Cancel";
-            cancelRegisterNewUserButton.UseVisualStyleBackColor = false;
-            // 
             // confirmRegisterNewUserButton
             // 
             confirmRegisterNewUserButton.BackColor = SystemColors.Control;
             confirmRegisterNewUserButton.Font = new Font("Modern No. 20", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            confirmRegisterNewUserButton.Location = new Point(158, 290);
+            confirmRegisterNewUserButton.Location = new Point(20, 290);
             confirmRegisterNewUserButton.Name = "confirmRegisterNewUserButton";
             confirmRegisterNewUserButton.Size = new Size(140, 35);
             confirmRegisterNewUserButton.TabIndex = 13;
@@ -407,18 +819,62 @@
             itemNamelable.Text = "Item Name";
             itemNamelable.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // removeButton
+            // 
+            removeButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            removeButton.Location = new Point(167, 368);
+            removeButton.Name = "removeButton";
+            removeButton.Size = new Size(105, 32);
+            removeButton.TabIndex = 47;
+            removeButton.Text = "Remove";
+            removeButton.UseVisualStyleBackColor = true;
+            removeButton.Click += removeButton_Click;
+            // 
+            // editItemButton
+            // 
+            editItemButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            editItemButton.Location = new Point(302, 368);
+            editItemButton.Name = "editItemButton";
+            editItemButton.Size = new Size(134, 32);
+            editItemButton.TabIndex = 48;
+            editItemButton.Text = "Edit Item";
+            editItemButton.UseVisualStyleBackColor = true;
+            editItemButton.Click += editItemButton_Click;
+            // 
+            // stockUpButton
+            // 
+            stockUpButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            stockUpButton.Location = new Point(464, 368);
+            stockUpButton.Name = "stockUpButton";
+            stockUpButton.Size = new Size(134, 32);
+            stockUpButton.TabIndex = 49;
+            stockUpButton.Text = "Stock Up";
+            stockUpButton.UseVisualStyleBackColor = true;
+            stockUpButton.Click += stockUpButton_Click;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1501, 803);
-            Controls.Add(registerNewItemPanel);
+            ClientSize = new Size(813, 444);
+            Controls.Add(stockUpButton);
+            Controls.Add(editItemButton);
+            Controls.Add(removeButton);
             Controls.Add(panel1);
+            Controls.Add(mainPanel);
+            Controls.Add(registerNewItemPanel);
+            Controls.Add(stockUpPanel);
+            Controls.Add(editItemPanel);
             Name = "AdminForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             mainPanel.ResumeLayout(false);
+            editItemPanel.ResumeLayout(false);
+            editItemPanel.PerformLayout();
+            stockUpPanel.ResumeLayout(false);
+            stockUpPanel.PerformLayout();
             registerNewItemPanel.ResumeLayout(false);
             registerNewItemPanel.PerformLayout();
             ResumeLayout(false);
@@ -435,7 +891,6 @@
         private LinkLabel productlistLable;
         private Panel mainPanel;
         private Panel registerNewItemPanel;
-        private Button cancelRegisterNewUserButton;
         private Button confirmRegisterNewUserButton;
         private TextBox colorTextBox;
         private Label colorLable;
@@ -455,5 +910,40 @@
         private CheckBox coatsCheckBox;
         private CheckBox dressesCheckBox;
         private CheckBox hatCheckBox;
+        private Button removeButton;
+        private Panel editItemPanel;
+        private Label label6;
+        private TextBox quantityTextBox;
+        private Label label1;
+        private TextBox editItemNameTextBox;
+        private Button button1;
+        private Button editItemEditPanelButton;
+        private TextBox editIColorTextBox;
+        private Label label2;
+        private Label label3;
+        private TextBox editPriceTextBox;
+        private Label label4;
+        private Label label5;
+        private Button editItemButton;
+        private TextBox editSizetextBox;
+        private TextBox editCategoryTextBox;
+        private Button stockUpButton;
+        private Panel stockUpPanel;
+        private Label label13;
+        private TextBox incommingQuantity;
+        private TextBox stockUpSizetextBox;
+        private TextBox stockUpCategorytextBox;
+        private Label label7;
+        private TextBox stockUpQuantitytextBox;
+        private Label label8;
+        private TextBox stockUpItemNameTextBox;
+        private Button button2;
+        private Button stockUpButtonStockupPanel;
+        private TextBox stockUpColortextBox;
+        private Label label9;
+        private Label label10;
+        private TextBox stockUpPricetextBox;
+        private Label label11;
+        private Label label12;
     }
 }

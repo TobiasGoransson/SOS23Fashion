@@ -6,10 +6,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using CheckBox = System.Windows.Forms.CheckBox;
@@ -28,8 +30,13 @@ namespace SOSFashion
         {
             InitializeComponent();
             checkBoxes = new List<CheckBox> { hatCheckBox, coatsCheckBox, dressesCheckBox, suitsCheckBox, accessoriesCheckBox };
-            mainPanel.Hide();
-            registerNewItemPanel.Hide();
+            mainPanel.Visible = false;
+            registerNewItemPanel.Visible = false;
+            editItemPanel.Visible = false;
+            removeButton.Visible = false;
+            editItemButton.Visible = false;
+            stockUpButton.Visible = false;
+            stockUpPanel.Visible = false;
 
         }
 
@@ -159,17 +166,17 @@ namespace SOSFashion
                 smallCheckBox.Checked = false;
                 mediumCheckBox.Checked = false;
                 LargeCheckBox.Checked = false;
-                smallCheckBox.Hide();
-                mediumCheckBox.Hide();
-                LargeCheckBox.Hide();
+                smallCheckBox.Visible = false;
+                mediumCheckBox.Visible = false;
+                LargeCheckBox.Visible = false;
 
                 return true;
             }
             if (oneSizeCheckBox.Checked == false)
             {
-                smallCheckBox.Show();
-                mediumCheckBox.Show();
-                LargeCheckBox.Show();
+                smallCheckBox.Visible = true;
+                mediumCheckBox.Visible = true;
+                LargeCheckBox.Visible = true;
 
             }
             return false;
@@ -177,9 +184,12 @@ namespace SOSFashion
 
         private void registerNewItemkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
-            mainPanel.Hide();
-            registerNewItemPanel.Show();
+            removeButton.Visible = false;
+            editItemButton.Visible = false;
+            mainPanel.Visible = false;
+            stockUpButton.Visible = false;
+            registerNewItemPanel.Visible = true;
+            registerNewItemPanel.BringToFront();
         }
 
         private void oneSizeCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -189,10 +199,17 @@ namespace SOSFashion
 
         private void productlistLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-            registerNewItemPanel.Hide();
-            mainPanel.Show();
+            adminListBox1.Items.Clear();
+            registerNewItemPanel.Visible = false;
+            removeButton.Visible = true;
+            editItemButton.Visible = true;
+            stockUpButton.Visible = true;
+            mainPanel.Visible = true;
             mainPanel.BringToFront();
+            PopulateListBoxItem();
+        }
+        public void PopulateListBoxItem()
+        {
             List<Item> items = ItemManager.GetItemList();
             foreach (Item item in items)
             {
@@ -204,12 +221,14 @@ namespace SOSFashion
                 adminListBox1.Items.Add(item.ItemName + "\t" + price + "\t" + quantity + "\t" + item.Size + "\t" + item.Color + "\t" + soldtotal + "\t" + item.Category);
             }
         }
-
         private void placedOrdersLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-            registerNewItemPanel.Hide();
-            mainPanel.Show();
+            adminListBox1.Items.Clear();
+            registerNewItemPanel.Visible = false;
+            removeButton.Visible = false;
+            editItemButton.Visible = false;
+            stockUpButton.Visible = false;
+            mainPanel.Visible = true;
             mainPanel.BringToFront();
             List<Order> orders = orderManager.GetOrders("AllOrders");
             foreach (Order order in orders)
@@ -226,19 +245,261 @@ namespace SOSFashion
         private void costumorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            registerNewItemPanel.Hide();
-            mainPanel.Show();
+            registerNewItemPanel.Visible = false;
+            mainPanel.Visible = true;
+            removeButton.Visible = true;
+            editItemButton.Visible = false;
+            stockUpButton.Visible = false;
             mainPanel.BringToFront();
+            PopulateListBoxUser();
+        }
+        public void PopulateListBoxUser()
+        {
             List<User> users = UserManager.CreateUserList();
+            adminListBox1.Items.Clear();
+            adminListBox1.Refresh();
             foreach (User user in users)
             {
                 adminListBox1.Items.Add(user.UserName + "\t" + user.Password + "\t" + user.FirstName + "\t" + user.LastName + "\t" + user.Email + "\t" + user.Street + "\t" + user.Zip + "\t" + user.City);
             }
         }
 
-        private void adminListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            if (adminListBox1.SelectedIndex != -1)
+            {
+                List<User> users = UserManager.CreateUserList();
+                for (int i = 0; i < users.Count; i++)
+                {
+                    string user = users[i].UserName + "\t" + users[i].Password + "\t" + users[i].FirstName + "\t" + users[i].LastName + "\t" + users[i].Email + "\t" + users[i].Street + "\t" + users[i].Zip + "\t" + users[i].City;
+                    if (adminListBox1.SelectedItem.ToString() == user)
+                    {
+                        UserManager.RemoveUser(i);
+                        adminListBox1.Items.Clear();
+                        PopulateListBoxUser();
+                    }
+                }
+
+                List<Item> items = ItemManager.GetItemList();
+                for (int i = 0; i < items.Count; i++)
+                {
+                    double price = items[i].Price; price.ToString();
+                    int quantity = items[i].Quantity; quantity.ToString();
+                    int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                    string item = items[i].ItemName + "\t" + price + "\t" + quantity + "\t" + items[i].Size + "\t" + items[i].Color + "\t" + soldtotal + "\t" + items[i].Category;
+
+                    if (adminListBox1.SelectedItem.ToString() == item)
+                    {
+                        ItemManager.RemoveItem(i);
+                        adminListBox1.Items.Clear();
+                        PopulateListBoxItem();
+                        break;
+                    }
+                }
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Ingen rad markerad.", "Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
+
+        public void PopulateEditItem(int index)
+        {
+            List<Item> items = ItemManager.GetItemList();
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (index == i)
+                {
+                    editItemNameTextBox.Text = items[i].ItemName;
+                    editPriceTextBox.Text = items[i].Price.ToString();
+                    editSizetextBox.Text = items[i].Size;
+                    editIColorTextBox.Text = items[i].Color;
+                    editCategoryTextBox.Text = items[i].Category;
+                    quantityTextBox.Text = items[i].Quantity.ToString();
+                    break;
+
+                }
+            }
+        }
+
+        private void editItemEditPanelButton_Click(object sender, EventArgs e)
+        {
+            string Category = editIColorTextBox.Text;
+            string Size = editSizetextBox.Text;
+            string ItemName = editItemNameTextBox.Text;
+            double Price = double.Parse(editPriceTextBox.Text);
+            int Quantity = int.Parse(quantityTextBox.Text);
+            string Color = editIColorTextBox.Text;
+
+            List<Item> items = ItemManager.GetItemList();
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].ItemName == ItemName && items[i].Size == Size)
+                {
+                    items.RemoveAt(i);
+                    Item newitem = new Item(ItemName, Price, Quantity, Size, Color, Category);
+
+                    items.Insert(i, newitem);
+                    ItemManager.RemoveFilePath();
+                    foreach (Item item in items)
+                    {
+                        ItemManager.RegisterNewItem(item);
+                    }
+                }
+            }
+        }
+
+        private void editItemButton_Click(object sender, EventArgs e)
+        {
+            if (adminListBox1.SelectedIndex != -1)
+            {
+                List<Item> items = ItemManager.GetItemList();
+                for (int i = 0; i < items.Count; i++)
+                {
+                    double price = items[i].Price; price.ToString();
+                    int quantity = items[i].Quantity; quantity.ToString();
+                    int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                    string item = items[i].ItemName + "\t" + price + "\t" + quantity + "\t" + items[i].Size + "\t" + items[i].Color + "\t" + soldtotal + "\t" + items[i].Category;
+
+                    if (adminListBox1.SelectedItem.ToString() == item)
+                    {
+                        mainPanel.Visible = false;
+                        removeButton.Visible = false;
+                        editItemButton.Visible = false;
+                        stockUpButton.Visible = false;
+                        editItemPanel.Visible = true;
+                        editItemPanel.BringToFront();
+                        PopulateEditItem(i);
+                        break;
+                    }
+                }
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Ingen rad markerad.", "Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+        public void PopulateStockUp(int index)
+        {
+            List<Item> items = ItemManager.GetItemList();
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (index == i)
+                {
+                    stockUpItemNameTextBox.Text = items[i].ItemName;
+                    stockUpPricetextBox.Text = items[i].Price.ToString();
+                    stockUpSizetextBox.Text = items[i].Size;
+                    stockUpColortextBox.Text = items[i].Color;
+                    stockUpCategorytextBox.Text = items[i].Category;
+                    stockUpQuantitytextBox.Text = items[i].Quantity.ToString();
+                    break;
+
+                }
+            }
+        }
+
+        private void stockUpButton_Click(object sender, EventArgs e)
+        {
+            if (adminListBox1.SelectedIndex != -1)
+            {
+                List<Item> items = ItemManager.GetItemList();
+                for (int i = 0; i < items.Count; i++)
+                {
+                    double price = items[i].Price; price.ToString();
+                    int quantity = items[i].Quantity; quantity.ToString();
+                    int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                    string item = items[i].ItemName + "\t" + price + "\t" + quantity + "\t" + items[i].Size + "\t" + items[i].Color + "\t" + soldtotal + "\t" + items[i].Category;
+
+                    if (adminListBox1.SelectedItem.ToString() == item)
+                    {
+                        mainPanel.Visible = false;
+                        removeButton.Visible = false;
+                        editItemButton.Visible = false;
+                        stockUpButton.Visible = false;
+
+                        PopulateStockUp(i);
+                        stockUpPanel.Visible = true;
+                        stockUpPanel.BringToFront();
+                        break;
+                    }
+                }
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Ingen rad markerad.", "Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void stockUpButtonStockupPanel_Click(object sender, EventArgs e)
+        {
+            string ItemName = stockUpItemNameTextBox.Text;
+            double Price = double.Parse(stockUpPricetextBox.Text);
+            string Size = stockUpSizetextBox.Text;
+            string Color = stockUpColortextBox.Text;
+            string Category = stockUpCategorytextBox.Text;
+            int Quantity = int.Parse(stockUpQuantitytextBox.Text);
+            int incomming = int.Parse(incommingQuantity.Text);
+            int newQuantity = Quantity + incomming;
+            List<Item> items = ItemManager.GetItemList();
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].ItemName == ItemName && items[i].Size == Size)
+                {
+                    items.RemoveAt(i);
+                    Item newitem = new Item(ItemName, Price, newQuantity, Size, Color, Category);
+
+                    items.Insert(i, newitem);
+                    ItemManager.RemoveFilePath();
+                    foreach (Item item in items)
+                    {
+                        ItemManager.RegisterNewItem(item);
+                    }
+                    break;
+                }
+            }
+            PopulateListBoxItem();
+            incommingQuantity.Text = "";
+            stockUpPanel.Visible = false;
+            mainPanel.BringToFront();
+            mainPanel.Visible = true;
+        }
+
+        private void editItemPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            editItemPanel.Visible = false;
+            mainPanel.Visible = true;
+            mainPanel.BringToFront();
+            removeButton.Visible = true;
+            editItemButton.Visible = true;
+            stockUpButton.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            stockUpPanel.Visible = false;
+            mainPanel.Visible = true;
+            mainPanel.BringToFront();
+            removeButton.Visible = true;
+            editItemButton.Visible = true;
+            stockUpButton.Visible = true;
         }
     }
 }

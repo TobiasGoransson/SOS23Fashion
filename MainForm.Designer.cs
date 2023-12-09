@@ -75,6 +75,7 @@
             Controls.Add(button1);
             Controls.Add(mainLogInButton);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
             ResumeLayout(false);
         }

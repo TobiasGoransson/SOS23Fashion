@@ -12,7 +12,7 @@ namespace SOSFashion
     public class UserManager
     {
         public bool isloggedin=false;
-        List<User> users = new List<User>();
+        
         string userFilePath = "Users/Users.csv";
         
 
@@ -24,6 +24,7 @@ namespace SOSFashion
 
         public List<User> CreateUserList()
         {
+            List<User> users = new List<User>();
             using (StreamReader sr = new StreamReader(userFilePath))
             {
                 string nextLine = sr.ReadLine();
@@ -49,6 +50,16 @@ namespace SOSFashion
         public bool Isloggedin()
         {
             return isloggedin = true;
+        }
+        public void RemoveUser(int index)
+        {
+            List<User> users = CreateUserList();
+            users.RemoveAt(index);
+            File.Delete(userFilePath);
+            foreach (User user in users) 
+            {
+                RegisterNewUser(user);
+            }
         }
     }
 }

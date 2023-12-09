@@ -295,6 +295,7 @@
             Controls.Add(label4);
             Controls.Add(label5);
             Name = "UserPage";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UserPage";
             ResumeLayout(false);
         }

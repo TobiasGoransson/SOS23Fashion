@@ -2003,6 +2003,7 @@
             Controls.Add(panel1);
             Controls.Add(mainPanel);
             Name = "ShopForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ShopForm";
             mainPanel.ResumeLayout(false);
             shoePanel.ResumeLayout(false);

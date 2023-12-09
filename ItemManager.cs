@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace SOSFashion
 {
     public class ItemManager
     {
         string itemsFilePath = "Items/Items.csv";
-        List<Item> items = new List<Item>();
 
         public List<Item> GetItemList()
         {
+            List<Item> items = new List<Item>();
             using (StreamReader reader = new StreamReader(itemsFilePath))
             {
                 string line = reader.ReadLine();
@@ -47,6 +48,20 @@ namespace SOSFashion
                 {
                     sw.WriteLine(item.GetCSV());
                 }
+        }
+        public void RemoveItem(int index)
+        {
+            List<Item>items = GetItemList();
+            items.RemoveAt(index);
+            File.Delete(itemsFilePath);
+            foreach (Item item in items)
+            {
+                RegisterNewItem(item);
+            }
+        }
+        public void RemoveFilePath()
+        {
+            File.Delete(itemsFilePath);
         }
     }
 }
