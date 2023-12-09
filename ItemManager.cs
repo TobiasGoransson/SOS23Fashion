@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace SOSFashion
 {
     public class ItemManager
     {
-        Item Item { get; set; }
         string itemsFilePath = "Items/Items.csv";
         List<Item> items = new List<Item>();
 
@@ -45,10 +45,8 @@ namespace SOSFashion
         {
                 using (StreamWriter sw = File.AppendText(itemsFilePath))
                 {
-                    sw.WriteLine(Item.GetCSV());
+                    sw.WriteLine(item.GetCSV());
                 }
-
-            
         }
     }
 }

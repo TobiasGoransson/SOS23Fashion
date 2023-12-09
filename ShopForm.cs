@@ -119,7 +119,7 @@ namespace SOSFashion
 
         private void UpdateTotalCostLabel()
         {
-            int totalCost = CalculateTotalCost();
+            double totalCost = CalculateTotalCost();
 
             totalcostlabel.Text = $"Total Cost: {totalCost} kr";
         }
