@@ -55,16 +55,16 @@ namespace SOSFashion
         }
         private void removeKundvagnButton_Click(object sender, EventArgs e)
         {
-            if (kundvagnListBox.SelectedItem != null)
+            if (KundvagnlistBox.SelectedItem != null)
             {
-                string listBoxToString = kundvagnListBox.SelectedItem.ToString();
+                string listBoxToString = KundvagnlistBox.SelectedItem.ToString();
                 foreach (Item item in kundvagnList)
                 {
                     string kundvagnItemToString = item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr";
                     if (listBoxToString == kundvagnItemToString)
                     {
                         kundvagnList.Remove(item);
-                        kundvagnListBox.Items.Remove(kundvagnListBox.SelectedItem);
+                        KundvagnlistBox.Items.Remove(KundvagnlistBox.SelectedItem);
                         UpdateTotalCostLabel();
                         break;
                     }
@@ -90,7 +90,7 @@ namespace SOSFashion
                     {
                         if (item.Size == size)
                         {
-                            kundvagnListBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
+                            KundvagnlistBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
                             kundvagnList.Add(item);
                             UpdateTotalCostLabel();
                             break;
@@ -232,19 +232,19 @@ namespace SOSFashion
             AddToCart(choice);
         }
 
-        private void kundvagnButton_Click(object sender, EventArgs e)
-        {
-            if (kundvagn == false)
-            {
-                kundvagnListBox.Show();
-                kundvagn = true;
-            }
-            else if (kundvagn == true)
-            {
-                kundvagnListBox.Hide();
-                kundvagn = false;
-            }
-        }
+        /* private void kundvagnButton_Click(object sender, EventArgs e)
+         {
+             if (kundvagn == false)
+             {
+                 kundvagnListBox.Show();
+                 kundvagn = true;
+             }
+             else if (kundvagn == true)
+             {
+                 kundvagnListBox.Hide();
+                 kundvagn = false;
+             }
+         }*/
 
 
 
@@ -613,6 +613,27 @@ namespace SOSFashion
         {
             mainForm.Show();
             this.Hide();
+        }
+
+        private void purchasebutton_Click(object sender, EventArgs e)
+        {
+            if (logInButton.Text == "Log In")
+            {
+                MessageBox.Show("Please log in before making a purchase.");
+                LogInForm logInForm = new LogInForm(mainForm);
+                logInForm.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                double totalCost = CalculateTotalCost();
+                MessageBox.Show($"Thank you for your purchase! Total Cost: {totalCost} kr");
+
+                kundvagnList.Clear();
+
+                UpdateTotalCostLabel();
+            }
         }
     }
 }
