@@ -232,21 +232,6 @@ namespace SOSFashion
             AddToCart(choice);
         }
 
-        /* private void kundvagnButton_Click(object sender, EventArgs e)
-         {
-             if (kundvagn == false)
-             {
-                 kundvagnListBox.Show();
-                 kundvagn = true;
-             }
-             else if (kundvagn == true)
-             {
-                 kundvagnListBox.Hide();
-                 kundvagn = false;
-             }
-         }*/
-
-
 
         private void sGreyDressButton_Click(object sender, EventArgs e)
         {

@@ -2054,13 +2054,13 @@
             // 
             // KundvagnlistBox
             // 
-            KundvagnlistBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            KundvagnlistBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             KundvagnlistBox.FormattingEnabled = true;
-            KundvagnlistBox.ItemHeight = 38;
+            KundvagnlistBox.ItemHeight = 32;
             KundvagnlistBox.Location = new Point(1065, 131);
             KundvagnlistBox.Margin = new Padding(4, 5, 4, 5);
             KundvagnlistBox.Name = "KundvagnlistBox";
-            KundvagnlistBox.Size = new Size(320, 536);
+            KundvagnlistBox.Size = new Size(320, 516);
             KundvagnlistBox.TabIndex = 5;
             // 
             // removeKundvagnButton
