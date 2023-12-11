@@ -75,5 +75,7 @@ namespace SOSFashion
             logOutButton.Hide();
             mainLogInButton.Text = "Log In";
         }
+
+
     }
 }

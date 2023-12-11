@@ -346,7 +346,7 @@ namespace SOSFashion
 
         private void editItemEditPanelButton_Click(object sender, EventArgs e)
         {
-            string Category = editIColorTextBox.Text;
+            
             string Size = editSizetextBox.Text;
             string ItemName = editItemNameTextBox.Text;
             double Price = double.Parse(editPriceTextBox.Text);
@@ -358,10 +358,10 @@ namespace SOSFashion
             {
                 if (items[i].ItemName == ItemName && items[i].Size == Size)
                 {
-                    items.RemoveAt(i);
-                    Item newitem = new Item(ItemName, Price, Quantity, Size, Color, Category);
-
-                    items.Insert(i, newitem);
+                    items[i].Price = Price;
+                    items[i].Quantity = Quantity;
+                    items[i].Color = Color; 
+                    
                     ItemManager.RemoveFilePath();
                     foreach (Item item in items)
                     {
@@ -468,24 +468,19 @@ namespace SOSFashion
             {
                 if (items[i].ItemName == ItemName && items[i].Size == Size)
                 {
-                    items.RemoveAt(i);
-                    Item newitem = new Item(ItemName, Price, newQuantity, Size, Color, Category);
-
-                    items.Insert(i, newitem);
+                    items[i].Quantity=newQuantity;
                     ItemManager.RemoveFilePath();
                     foreach (Item item in items)
                     {
                         ItemManager.RegisterNewItem(item);
-                        
-                    }
+                    }  
                     break;
                 }
             }
-            PopulateListBoxItem();
+            
             incommingQuantity.Text = "";
             stockUpPanel.Visible = false;
-            mainPanel.BringToFront();
-            mainPanel.Visible = true;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

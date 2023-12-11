@@ -13,6 +13,7 @@ namespace SOSFashion
             LogInPanel.BringToFront();
             this.BackgroundImage = Image.FromFile("Pics/LogIn.jpg");
             this.mainForm = mainForm;
+            userLable.TextAlign = ContentAlignment.MiddleLeft;
         }
 
         public User RegisterNewUser()
@@ -139,6 +140,8 @@ namespace SOSFashion
             }
 
         }
+
+
     }
 
 }
