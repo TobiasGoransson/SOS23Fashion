@@ -898,7 +898,7 @@
             orderDetailsAdminListBox.ItemHeight = 15;
             orderDetailsAdminListBox.Location = new Point(279, 16);
             orderDetailsAdminListBox.Name = "orderDetailsAdminListBox";
-            orderDetailsAdminListBox.Size = new Size(464, 304);
+            orderDetailsAdminListBox.Size = new Size(700, 304);
             orderDetailsAdminListBox.TabIndex = 1;
             // 
             // orderHistoryAdminlistBox
@@ -915,16 +915,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1183, 451);
+            ClientSize = new Size(1230, 451);
             Controls.Add(stockUpButton);
             Controls.Add(editItemButton);
             Controls.Add(removeButton);
             Controls.Add(panel1);
-            Controls.Add(mainPanel);
             Controls.Add(stockUpPanel);
             Controls.Add(registerNewItemPanel);
             Controls.Add(editItemPanel);
             Controls.Add(orderHistoryPanel);
+            Controls.Add(mainPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";

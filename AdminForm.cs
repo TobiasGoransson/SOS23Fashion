@@ -96,14 +96,14 @@ namespace SOSFashion
         }
         private void confirmRegisterNewUserButton_Click(object sender, EventArgs e)
         {
-
+            string picturePath = "Pics/NoImage";
             string Category = CheckCategory();
             string Size;
             string ItemName = itemTextBox.Text;
             double Price;
             int Quantity = 0;
             string Color = colorTextBox.Text;
-            string picturePath = "Pics/NoImage";
+
             bool allBoxesChecked = false;
 
 
@@ -127,10 +127,15 @@ namespace SOSFashion
                     if (pictureBox1.Image != null)
                     {
                         picName = SaveImage();
-                        picturePath = "Pics" + picName;
+                        picturePath = "Pics/" + picName;
+                        RegisterItem(ItemName, Price, Quantity, Color, Category, picturePath);
+                        registerNewItemPanel.Visible = false;
                     }
-                    RegisterItem(ItemName, Price, Quantity, Color, Category, picturePath);
-                    registerNewItemPanel.Visible = false;
+                    else
+                    {
+                        RegisterItem(ItemName, Price, Quantity, Color, Category, picturePath);
+                        registerNewItemPanel.Visible = false;
+                    }
                 }
                 else
                 {
@@ -247,8 +252,8 @@ namespace SOSFashion
                 string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
                 adminListBox1.Items.Add(formattedText);
             }
-                
-            
+
+
         }
         private void placedOrdersLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -286,12 +291,12 @@ namespace SOSFashion
                     if (index == j)
                     {
                         List<Item> items = orderManager.GetItems(orders[j].OrderNo);
-                        for (int i = 0;i < items.Count; i++)
+                        for (int i = 0; i < items.Count; i++)
                         {
                             double price = items[i].Price; price.ToString();
                             int quantity = items[i].Quantity; quantity.ToString();
                             int soldtotal = items[i].SoldTotal; soldtotal.ToString();
-                            string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4,-20}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                            string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
                             orderDetailsAdminListBox.Items.Add(formattedText);
                         }
                     }
@@ -318,14 +323,14 @@ namespace SOSFashion
 
             for (int i = 0; i < users.Count; i++)
             {
-                
-                string formattedText = string.Format("{0,-15}\t{1,-25}\t{2,-15}\t{3,-30}\t{4,-35}\t{5}\t{6}", 
-                    users[i].UserName, 
-                    users[i].FirstName, 
-                    users[i].LastName, 
-                    users[i].Email, 
-                    users[i].Street, 
-                    users[i].Zip, 
+
+                string formattedText = string.Format("{0,-15}\t{1,-25}\t{2,-15}\t{3,-30}\t{4,-35}\t{5}\t{6}",
+                    users[i].UserName,
+                    users[i].FirstName,
+                    users[i].LastName,
+                    users[i].Email,
+                    users[i].Street,
+                    users[i].Zip,
                     users[i].City);
                 adminListBox1.Items.Add(formattedText);
             }
@@ -353,8 +358,7 @@ namespace SOSFashion
                     double price = items[i].Price; price.ToString();
                     int quantity = items[i].Quantity; quantity.ToString();
                     int soldtotal = items[i].SoldTotal; soldtotal.ToString();
-                    string item = items[i].ItemName + "\t" + price + "\t" + quantity + "\t" + items[i].Size + "\t" + items[i].Color + "\t" + soldtotal + "\t" + items[i].Category;
-
+                    string item = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4,-20}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
                     if (adminListBox1.SelectedItem.ToString() == item)
                     {
                         ItemManager.RemoveItem(i);
@@ -426,7 +430,7 @@ namespace SOSFashion
                     double price = items[i].Price; price.ToString();
                     int quantity = items[i].Quantity; quantity.ToString();
                     int soldtotal = items[i].SoldTotal; soldtotal.ToString();
-                    string item = items[i].ItemName + "\t" + price + "\t" + quantity + "\t" + items[i].Size + "\t" + items[i].Color + "\t" + soldtotal + "\t" + items[i].Category;
+                    string item = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
 
                     if (adminListBox1.SelectedItem.ToString() == item)
                     {
@@ -476,9 +480,9 @@ namespace SOSFashion
                     double price = items[i].Price; price.ToString();
                     int quantity = items[i].Quantity; quantity.ToString();
                     int soldtotal = items[i].SoldTotal; soldtotal.ToString();
-                    string item = items[i].ItemName + "\t" + price + "\t" + quantity + "\t" + items[i].Size + "\t" + items[i].Color + "\t" + soldtotal + "\t" + items[i].Category;
-
-                    if (adminListBox1.SelectedItem.ToString() == item)
+                    string item = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                    string selection = adminListBox1.SelectedItem.ToString();
+                    if (selection == item)
                     {
                         mainPanel.Visible = false;
                         removeButton.Visible = false;
@@ -486,8 +490,9 @@ namespace SOSFashion
                         stockUpButton.Visible = false;
 
                         PopulateStockUp(i);
-                        stockUpPanel.Visible = true;
                         stockUpPanel.BringToFront();
+                        stockUpPanel.Visible = true;
+
                         break;
                     }
                 }
