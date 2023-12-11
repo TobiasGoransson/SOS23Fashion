@@ -30,8 +30,9 @@ namespace SOSFashion
                         string color = strings[4];
                         int amountSold = Convert.ToInt32(strings[5]);
                         string category = strings[6];
+                        string picturePath = strings[7];
 
-                        items.Add(new Item(name, price, amountStock, size, color, amountSold, category));
+                        items.Add(new Item(name, price, amountStock, size, color, amountSold, category, picturePath));
                         line = reader.ReadLine();
                     }
                     catch (Exception ex)

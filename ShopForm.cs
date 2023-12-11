@@ -15,8 +15,10 @@ namespace SOSFashion
     public partial class ShopForm : Form
     {
         UserManager UserManager = new UserManager();
+        ItemManager itemManager = new ItemManager();
         bool kundvagn = false;
         string size = string.Empty;
+        string pictureFilePath = string.Empty;
         string itemsFilePath = "Items/Items.csv";
         List<Item> itemsList = new List<Item>();
         List<Item> kundvagnList = new List<Item>();
@@ -24,7 +26,6 @@ namespace SOSFashion
         public ShopForm(MainForm mainForm)
         {
             InitializeComponent();
-            HidePanels();
             this.mainForm = mainForm;
             using (StreamReader reader = new StreamReader(itemsFilePath))
             {
@@ -41,9 +42,10 @@ namespace SOSFashion
                         string color = strings[4];
                         int amountSold = Convert.ToInt32(strings[5]);
                         string category = strings[6];
+                        string picturePath = strings[7];
 
 
-                        itemsList.Add(new Item(name, price, amountStock, size, color, amountSold, category));
+                        itemsList.Add(new Item(name, price, amountStock, size, color, amountSold, category, picturePath));
                         line = reader.ReadLine();
                     }
                     catch (Exception ex)
@@ -53,18 +55,50 @@ namespace SOSFashion
                 }
             }
         }
+        public void ChangePanel(string name, string color, string size)
+        {
+
+
+            foreach (Item items in itemsList)
+            {
+                if (items.ItemName == name && items.Color == color && items.Size == size)
+                {
+                    nameLabel.Text = items.ItemName;
+                    priceLabel.Text = items.Price.ToString();
+                    colorLabel.Text = items.Color;
+                    sizeLabel.Text = items.Size;
+                    pictureFilePath = items.PicturePath + ".png";
+                    mainPictureBox.Image = Image.FromFile(pictureFilePath);
+
+                }
+            }
+            itemsPanel.Visible = true;
+        }
+        private void ChooseCategory(string category)
+        {
+            categoryListBox.Items.Clear();
+            itemsList = itemManager.GetItemList();
+            foreach (Item item in itemsList)
+            {
+                if (item.Category == category)
+                {
+                    categoryListBox.Items.Add(item.ItemName + " " + item.Color + " " + item.Size);
+                }
+            }
+            categoryListBox.Visible = true;
+        }
         private void removeKundvagnButton_Click(object sender, EventArgs e)
         {
-            if (kundvagnListBox.SelectedItem != null)
+            if (KundvagnlistBox.SelectedItem != null)
             {
-                string listBoxToString = kundvagnListBox.SelectedItem.ToString();
+                string listBoxToString = KundvagnlistBox.SelectedItem.ToString();
                 foreach (Item item in kundvagnList)
                 {
                     string kundvagnItemToString = item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr";
                     if (listBoxToString == kundvagnItemToString)
                     {
                         kundvagnList.Remove(item);
-                        kundvagnListBox.Items.Remove(kundvagnListBox.SelectedItem);
+                        KundvagnlistBox.Items.Remove(KundvagnlistBox.SelectedItem);
                         UpdateTotalCostLabel();
                         break;
                     }
@@ -72,34 +106,10 @@ namespace SOSFashion
             }
             else
             {
-                MessageBox.Show("Du måste välja en vara i kundvagen först!");
+                MessageBox.Show("You must choose an item in your cart first!");
             }
         }
-        private void AddToCart(string str)
-        {
-            string shoeName = str;
-            if (size == string.Empty)
-            {
-                MessageBox.Show("Du måste välja en storlek först!");
-            }
-            else
-            {
-                foreach (Item item in itemsList)
-                {
-                    if (item.ItemName == shoeName)
-                    {
-                        if (item.Size == size)
-                        {
-                            kundvagnListBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
-                            kundvagnList.Add(item);
-                            UpdateTotalCostLabel();
-                            break;
-                        }
-                    }
-                }
-            }
-            size = string.Empty;
-        }
+
 
         public void GetItem(string ItemName)
         {
@@ -135,446 +145,10 @@ namespace SOSFashion
         }
 
 
-        private void HidePanels()
-        {
-            capPanel.Hide();
-            vestPanel.Hide();
-            blazerPanel.Hide();
-            pantsPanel.Hide();
-            shirtPanel.Hide();
-            dressPanel.Hide();
-            hatPanel.Hide();
-            coatPanel.Hide();
-            shoePanel.Hide();
-        }
-
-        private void capLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            capPanel.Show();
-        }
-
-        private void vestLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            vestPanel.Show();
-        }
-
-        private void blazerLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            blazerPanel.Show();
-        }
-
-        private void pantsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            pantsPanel.Show();
-        }
-
-        private void shirtsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            shirtPanel.Show();
-        }
-
-        private void dressLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            dressPanel.Show();
-        }
-
-        private void hatsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            hatPanel.Show();
-        }
-
-        private void coatsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            coatPanel.Show();
-        }
-
-        private void shoesLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            HidePanels();
-            shoePanel.Show();
-        }
-
-        private void SizeButton36_Click(object sender, EventArgs e)
-        {
-            SizeButton36.BackColor = Color.Olive;
-            SizeButton37.BackColor = Color.White;
-            SizeButton38.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void SizeButton37_Click(object sender, EventArgs e)
-        {
-            SizeButton37.BackColor = Color.Olive;
-            SizeButton36.BackColor = Color.White;
-            SizeButton38.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void SizeButton38_Click(object sender, EventArgs e)
-        {
-            SizeButton38.BackColor = Color.Olive;
-            SizeButton37.BackColor = Color.White;
-            SizeButton36.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void greyShoeAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Short-Heel Shoe";
-            AddToCart(choice);
-        }
-
-        private void kundvagnButton_Click(object sender, EventArgs e)
-        {
-            if (kundvagn == false)
-            {
-                kundvagnListBox.Show();
-                kundvagn = true;
-            }
-            else if (kundvagn == true)
-            {
-                kundvagnListBox.Hide();
-                kundvagn = false;
-            }
-        }
 
 
 
-        private void sGreyDressButton_Click(object sender, EventArgs e)
-        {
-            sGreyDressButton.BackColor = Color.Olive;
-            mGreyDressButton.BackColor = Color.White;
-            lGreyDressButton.BackColor = Color.White;
-            size = "S";
-        }
 
-        private void mGreyDressButton_Click(object sender, EventArgs e)
-        {
-            mGreyDressButton.BackColor = Color.Olive;
-            sGreyDressButton.BackColor = Color.White;
-            lGreyDressButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lGreyDressButton_Click(object sender, EventArgs e)
-        {
-            lGreyDressButton.BackColor = Color.Olive;
-            mGreyDressButton.BackColor = Color.White;
-            sGreyDressButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void greyDressAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Dress";
-            AddToCart(choice);
-        }
-
-        private void sWhiteShirtButton_Click(object sender, EventArgs e)
-        {
-            sWhiteShirtButton.BackColor = Color.Olive;
-            mWhiteShirtButton.BackColor = Color.White;
-            lWhiteShirtButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mWhiteShirtButton_Click(object sender, EventArgs e)
-        {
-            mWhiteShirtButton.BackColor = Color.Olive;
-            sWhiteShirtButton.BackColor = Color.White;
-            lWhiteShirtButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void LWhiteShirtButton_Click(object sender, EventArgs e)
-        {
-            lWhiteShirtButton.BackColor = Color.Olive;
-            mWhiteShirtButton.BackColor = Color.White;
-            sWhiteShirtButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void whiteShirtAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Shirt";
-            AddToCart(choice);
-        }
-
-        private void sNavyPantsButton_Click(object sender, EventArgs e)
-        {
-            sNavyPantsButton.BackColor = Color.Olive;
-            mNavyPantsButton.BackColor = Color.White;
-            lNavyPantsButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mNavyPantsButton_Click(object sender, EventArgs e)
-        {
-            mNavyPantsButton.BackColor = Color.Olive;
-            sNavyPantsButton.BackColor = Color.White;
-            lNavyPantsButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lNavyPantsButton_Click(object sender, EventArgs e)
-        {
-            lNavyPantsButton.BackColor = Color.Olive;
-            mNavyPantsButton.BackColor = Color.White;
-            sNavyPantsButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void sGreyPantsButton_Click(object sender, EventArgs e)
-        {
-            sGreyPantsButton.BackColor = Color.Olive;
-            mGreyPantsButton.BackColor = Color.White;
-            lGreyPantsButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mGreyPantsButton_Click(object sender, EventArgs e)
-        {
-            mGreyPantsButton.BackColor = Color.Olive;
-            sGreyPantsButton.BackColor = Color.White;
-            lGreyPantsButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lGreyPantsButton_Click(object sender, EventArgs e)
-        {
-            lGreyPantsButton.BackColor = Color.Olive;
-            mGreyPantsButton.BackColor = Color.White;
-            sGreyPantsButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void navyPantsAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Navy Suit-Pants";
-            AddToCart(choice);
-        }
-
-        private void greyPantsAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Grey Suit-Pants";
-            AddToCart(choice);
-        }
-
-        private void sNavyBlazerButton_Click(object sender, EventArgs e)
-        {
-            sNavyBlazerButton.BackColor = Color.Olive;
-            mNavyBlazerButton.BackColor = Color.White;
-            lNavyBlazerButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mNavyBlazerButton_Click(object sender, EventArgs e)
-        {
-            mNavyBlazerButton.BackColor = Color.Olive;
-            sNavyBlazerButton.BackColor = Color.White;
-            lNavyBlazerButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lNavyBlazerButton_Click(object sender, EventArgs e)
-        {
-            lNavyBlazerButton.BackColor = Color.Olive;
-            mNavyBlazerButton.BackColor = Color.White;
-            sNavyBlazerButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void navyBlazerAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Navy Blazer";
-            AddToCart(choice);
-        }
-
-        private void sGreyBlazerButton_Click(object sender, EventArgs e)
-        {
-            sGreyBlazerButton.BackColor = Color.Olive;
-            mGreyBlazerButton.BackColor = Color.White;
-            lGreyBlazerButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mGreyBlazerButton_Click(object sender, EventArgs e)
-        {
-            mGreyBlazerButton.BackColor = Color.Olive;
-            sGreyBlazerButton.BackColor = Color.White;
-            lGreyBlazerButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lGreyBlazerButton_Click(object sender, EventArgs e)
-        {
-            lGreyBlazerButton.BackColor = Color.Olive;
-            mGreyBlazerButton.BackColor = Color.White;
-            sGreyBlazerButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void greyBlazerAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Grey Blazer";
-            AddToCart(choice);
-        }
-
-        private void sNavyVestButton_Click(object sender, EventArgs e)
-        {
-            sNavyVestButton.BackColor = Color.Olive;
-            mNavyVestButton.BackColor = Color.White;
-            lNavyVestButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mNavyVestButton_Click(object sender, EventArgs e)
-        {
-            mNavyVestButton.BackColor = Color.Olive;
-            sNavyVestButton.BackColor = Color.White;
-            lNavyVestButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lNavyVestButton_Click(object sender, EventArgs e)
-        {
-            lNavyVestButton.BackColor = Color.Olive;
-            mNavyVestButton.BackColor = Color.White;
-            sNavyVestButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void sGreyVestButton_Click(object sender, EventArgs e)
-        {
-            sGreyVestButton.BackColor = Color.Olive;
-            mGreyVestButton.BackColor = Color.White;
-            lGreyVestButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mGreyVestButton_Click(object sender, EventArgs e)
-        {
-            mGreyVestButton.BackColor = Color.Olive;
-            sGreyVestButton.BackColor = Color.White;
-            lGreyVestButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lGreyVestButton_Click(object sender, EventArgs e)
-        {
-            lNavyVestButton.BackColor = Color.Olive;
-            mNavyVestButton.BackColor = Color.White;
-            sNavyVestButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void navyVestAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Navy Vest";
-            AddToCart(choice);
-        }
-
-        private void greyVestAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Grey Vest";
-            AddToCart(choice);
-        }
-
-        private void brownCapAddButton_Click(object sender, EventArgs e)
-        {
-            size = "One size";
-            string choice = "Brown Cap";
-            AddToCart(choice);
-        }
-
-        private void blackCapAddButton_Click(object sender, EventArgs e)
-        {
-            size = "One size";
-            string choice = "Black Cap";
-            AddToCart(choice);
-        }
-
-        private void sNavyCoatButton_Click(object sender, EventArgs e)
-        {
-            sNavyCoatButton.BackColor = Color.Olive;
-            mNavyCoatButton.BackColor = Color.White;
-            lNavyCoatButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mNavyCoatButton_Click(object sender, EventArgs e)
-        {
-            mNavyCoatButton.BackColor = Color.Olive;
-            sNavyCoatButton.BackColor = Color.White;
-            lNavyCoatButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lNavyCoatButton_Click(object sender, EventArgs e)
-        {
-            lNavyCoatButton.BackColor = Color.Olive;
-            mNavyCoatButton.BackColor = Color.White;
-            sNavyCoatButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void sBlackFurCoatButton_Click(object sender, EventArgs e)
-        {
-            sBlackFurCoatButton.BackColor = Color.Olive;
-            sBlackFurCoatButton.BackColor = Color.White;
-            sBlackFurCoatButton.BackColor = Color.White;
-            size = "S";
-        }
-
-        private void mBlackFurCoatButton_Click(object sender, EventArgs e)
-        {
-            mBlackFurCoatButton.BackColor = Color.Olive;
-            sBlackFurCoatButton.BackColor = Color.White;
-            lBlackFurCoatButton.BackColor = Color.White;
-            size = "M";
-        }
-
-        private void lBlackFurCoatButton_Click(object sender, EventArgs e)
-        {
-            lBlackFurCoatButton.BackColor = Color.Olive;
-            mBlackFurCoatButton.BackColor = Color.White;
-            sBlackFurCoatButton.BackColor = Color.White;
-            size = "L";
-        }
-
-        private void navyCoatAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Navy Coat";
-            AddToCart(choice);
-        }
-
-        private void blackFurCoatAddButton_Click(object sender, EventArgs e)
-        {
-            string choice = "Black Fur Coat";
-            AddToCart(choice);
-        }
-
-        private void blackHatAddButton_Click(object sender, EventArgs e)
-        {
-            size = "One size";
-            string choice = "Black Hat";
-            AddToCart(choice);
-        }
-
-        private void greyWomanCapAddButton_Click(object sender, EventArgs e)
-        {
-            size = "One size";
-            string choice = "Women Cap";
-            AddToCart(choice);
-        }
 
         private void logInButton_Click(object sender, EventArgs e)
         {
@@ -613,6 +187,99 @@ namespace SOSFashion
         {
             mainForm.Show();
             this.Hide();
+        }
+
+        private void purchasebutton_Click(object sender, EventArgs e)
+        {
+            if (logInButton.Text == "Log In")
+            {
+                MessageBox.Show("Please log in before making a purchase.");
+                LogInForm logInForm = new LogInForm(mainForm);
+                logInForm.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                double totalCost = CalculateTotalCost();
+                MessageBox.Show($"Thank you for your purchase! Total Cost: {totalCost} kr");
+
+                kundvagnList.Clear();
+
+                UpdateTotalCostLabel();
+            }
+        }
+
+        private void ShopForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hatsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string choice = "Hats";
+            ChooseCategory(choice);
+        }
+
+        private void suitsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string choice = "Suits";
+            ChooseCategory(choice);
+
+        }
+
+        private void coatsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string choice = "Coats";
+            ChooseCategory(choice);
+        }
+
+        private void dressesLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string choice = "Dresses";
+            ChooseCategory(choice);
+        }
+
+        private void accessoriesLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string choice = "Accessories";
+            ChooseCategory(choice);
+        }
+
+        private void categoryListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (categoryListBox.SelectedItems != null)
+            {
+                string choosenItem = categoryListBox.SelectedItem.ToString();
+                itemsList = itemManager.GetItemList();
+                foreach (Item item in itemsList)
+                {
+                    string str = item.ItemName + " " + item.Color + " " + item.Size;
+                    if (choosenItem == str)
+                    {
+                        ChangePanel(item.ItemName, item.Color, item.Size);
+                    }
+                }
+
+            }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            foreach (Item item in itemsList)
+            {
+                if (item.ItemName == nameLabel.Text && item.Color == colorLabel.Text && item.Size == sizeLabel.Text)
+                {
+                    KundvagnlistBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
+                    kundvagnList.Add(item);
+                    break;
+                }
+            }
+        }
+
+        private void nameLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
