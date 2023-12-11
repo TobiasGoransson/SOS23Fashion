@@ -70,6 +70,8 @@
             label11 = new Label();
             label12 = new Label();
             registerNewItemPanel = new Panel();
+            pictureBox1 = new PictureBox();
+            imageLable = new Label();
             accessoriesCheckBox = new CheckBox();
             suitsCheckBox = new CheckBox();
             coatsCheckBox = new CheckBox();
@@ -96,6 +98,7 @@
             editItemPanel.SuspendLayout();
             stockUpPanel.SuspendLayout();
             registerNewItemPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // adminListBox1
@@ -595,6 +598,8 @@
             // registerNewItemPanel
             // 
             registerNewItemPanel.BackColor = Color.Transparent;
+            registerNewItemPanel.Controls.Add(pictureBox1);
+            registerNewItemPanel.Controls.Add(imageLable);
             registerNewItemPanel.Controls.Add(accessoriesCheckBox);
             registerNewItemPanel.Controls.Add(suitsCheckBox);
             registerNewItemPanel.Controls.Add(coatsCheckBox);
@@ -617,6 +622,28 @@
             registerNewItemPanel.Name = "registerNewItemPanel";
             registerNewItemPanel.Size = new Size(550, 350);
             registerNewItemPanel.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(308, 46);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(218, 279);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 27;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // imageLable
+            // 
+            imageLable.BackColor = SystemColors.Control;
+            imageLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            imageLable.Location = new Point(303, 15);
+            imageLable.Name = "imageLable";
+            imageLable.Size = new Size(244, 30);
+            imageLable.TabIndex = 26;
+            imageLable.Text = "Picture";
+            imageLable.TextAlign = ContentAlignment.MiddleLeft;
+            imageLable.Click += imageLable_Click;
             // 
             // accessoriesCheckBox
             // 
@@ -860,10 +887,10 @@
             Controls.Add(editItemButton);
             Controls.Add(removeButton);
             Controls.Add(panel1);
-            Controls.Add(mainPanel);
             Controls.Add(registerNewItemPanel);
             Controls.Add(stockUpPanel);
             Controls.Add(editItemPanel);
+            Controls.Add(mainPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -876,6 +903,7 @@
             stockUpPanel.PerformLayout();
             registerNewItemPanel.ResumeLayout(false);
             registerNewItemPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -944,5 +972,7 @@
         private TextBox stockUpPricetextBox;
         private Label label11;
         private Label label12;
+        private PictureBox pictureBox1;
+        private Label imageLable;
     }
 }

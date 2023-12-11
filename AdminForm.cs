@@ -21,7 +21,7 @@ namespace SOSFashion
 {
     public partial class AdminForm : Form
     {
-       
+
 
         UserManager UserManager = new UserManager();
         OrderManager orderManager = new OrderManager();
@@ -40,7 +40,7 @@ namespace SOSFashion
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
             stockUpPanel.Visible = false;
-            
+
 
         }
 
@@ -117,17 +117,22 @@ namespace SOSFashion
 
             if (allBoxesChecked)
             {
+                if (pictureBox1 != null)
+                {
+                    SaveImage2();
+                }
 
-                if (OneSize() || smallCheckBox.Checked || mediumCheckBox.Checked || LargeCheckBox.Checked)
-                {
-                    RegisterItem(ItemName, Price, Quantity, Color, Category);
-                    allBoxesChecked = true;
-                }
-                else
-                {
-                    MessageBox.Show("Please select a size.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    if (OneSize() || smallCheckBox.Checked || mediumCheckBox.Checked || LargeCheckBox.Checked)
+                    {
+                        RegisterItem(ItemName, Price, Quantity, Color, Category);
+                        allBoxesChecked = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a size.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                
             }
         }
         public async void RegisterItem(string ItemName, double Price, int Quantity, string Color, string Category)
@@ -137,7 +142,7 @@ namespace SOSFashion
             if (OneSize() == true)
             {
                 Size = "One Size";
-                
+
                 Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
                 PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
                 stockUpPanel.Visible = true;
@@ -159,7 +164,7 @@ namespace SOSFashion
                 Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
                 PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
                 ItemManager.RegisterNewItem(item);
-               
+
             }
             if (LargeCheckBox.Checked)
             {
@@ -168,7 +173,7 @@ namespace SOSFashion
                 Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
                 PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
                 ItemManager.RegisterNewItem(item);
-              
+
             }
         }
         public void PopulateStockUpNewItem(string ItemName, double Price, int Quantity, string Size, string Color, string Category)
@@ -346,7 +351,7 @@ namespace SOSFashion
 
         private void editItemEditPanelButton_Click(object sender, EventArgs e)
         {
-            
+
             string Size = editSizetextBox.Text;
             string ItemName = editItemNameTextBox.Text;
             double Price = double.Parse(editPriceTextBox.Text);
@@ -360,8 +365,8 @@ namespace SOSFashion
                 {
                     items[i].Price = Price;
                     items[i].Quantity = Quantity;
-                    items[i].Color = Color; 
-                    
+                    items[i].Color = Color;
+
                     ItemManager.RemoveFilePath();
                     foreach (Item item in items)
                     {
@@ -468,19 +473,19 @@ namespace SOSFashion
             {
                 if (items[i].ItemName == ItemName && items[i].Size == Size)
                 {
-                    items[i].Quantity=newQuantity;
+                    items[i].Quantity = newQuantity;
                     ItemManager.RemoveFilePath();
                     foreach (Item item in items)
                     {
                         ItemManager.RegisterNewItem(item);
-                    }  
+                    }
                     break;
                 }
             }
-            
+
             incommingQuantity.Text = "";
             stockUpPanel.Visible = false;
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -502,6 +507,89 @@ namespace SOSFashion
             editItemButton.Visible = true;
             stockUpButton.Visible = true;
         }
+        private void DisplayImage(string imagePath)
+        {
+            try
+            {
 
+                Image image = Image.FromFile(imagePath);
+                pictureBox1.Image = image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Open Image",
+                Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif|All Files|*.*"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = openFileDialog.FileName;
+                DisplayImage(imagePath);
+            }
+        }
+
+        private void imageLable_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Open Image",
+                Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif|All Files|*.*"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = openFileDialog.FileName;
+                DisplayImage(imagePath);
+              
+            }
+        }
+
+        private void SaveImage2()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Title = "Save Image",
+                Filter = "PNG Image|*.png|JPEG Image|*.jpg;*.jpeg|BMP Image|*.bmp|GIF Image|*.gif",
+                DefaultExt = "png",
+                AddExtension = true
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string savePath = saveFileDialog.FileName;
+                SaveImage(savePath);
+            }
+        }
+
+        private void SaveImage(string savePath)
+        {
+            try
+            {
+                // Check if there is an image loaded
+                if (pictureBox1.Image != null)
+                {
+                    // Save the image to the specified path
+                    pictureBox1.Image.Save(savePath);
+
+                    MessageBox.Show($"Image saved to: {savePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No image loaded to save.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
