@@ -15,9 +15,10 @@ namespace SOSFashion
         public string Color { get; set; }
         public int SoldTotal { get; set; }
         public string Category { get; set; }
+        public string PicturePath { get; set; }
 
 
-        public Item(string itemName, double price, int quantity, string size, string color, int soldTotal, string category)
+        public Item(string itemName, double price, int quantity, string size, string color, int soldTotal, string category, string picturePath)
         {
             ItemName = itemName;
             Price = price;
@@ -26,6 +27,7 @@ namespace SOSFashion
             Color = color;
             SoldTotal = soldTotal;
             Category = category;
+            PicturePath = picturePath;
         }
         public Item(string itemName, double price, int quantity, string size, string color, string category)
         {
@@ -36,6 +38,7 @@ namespace SOSFashion
             Color = color;
             Category = category;
             SoldTotal = 0;
+            PicturePath = "Pics/NoImage";
 
         }
         public string GetCSV()
