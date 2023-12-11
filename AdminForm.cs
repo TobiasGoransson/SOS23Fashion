@@ -29,6 +29,8 @@ namespace SOSFashion
         List<Item> items = new List<Item>();
         string itemsFilePath = "Items/Items.csv";
         private List<CheckBox> checkBoxes;
+        public string picName;
+
         public AdminForm()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace SOSFashion
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
             stockUpPanel.Visible = false;
-
+            orderHistoryPanel.Visible = false;
 
         }
 
@@ -101,6 +103,7 @@ namespace SOSFashion
             double Price;
             int Quantity = 0;
             string Color = colorTextBox.Text;
+            string picturePath = "Pics/NoImage";
             bool allBoxesChecked = false;
 
 
@@ -117,25 +120,27 @@ namespace SOSFashion
 
             if (allBoxesChecked)
             {
-                if (pictureBox1 != null)
+
+                if (OneSize() || smallCheckBox.Checked || mediumCheckBox.Checked || LargeCheckBox.Checked)
                 {
-                    SaveImage2();
+
+                    if (pictureBox1.Image != null)
+                    {
+                        picName = SaveImage();
+                        picturePath = "Pics" + picName;
+                    }
+                    RegisterItem(ItemName, Price, Quantity, Color, Category, picturePath);
+                    registerNewItemPanel.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Please select a size.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
-                    if (OneSize() || smallCheckBox.Checked || mediumCheckBox.Checked || LargeCheckBox.Checked)
-                    {
-                        RegisterItem(ItemName, Price, Quantity, Color, Category);
-                        allBoxesChecked = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please select a size.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                
             }
         }
-        public async void RegisterItem(string ItemName, double Price, int Quantity, string Color, string Category)
+        public async void RegisterItem(string ItemName, double Price, int Quantity, string Color, string Category, string picturePath)
         {
             string Size;
 
@@ -143,35 +148,30 @@ namespace SOSFashion
             {
                 Size = "One Size";
 
-                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
-                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
-                stockUpPanel.Visible = true;
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category, picturePath);
+                ItemManager.RegisterNewItem(item);
 
             }
             if (smallCheckBox.Checked)
             {
-                oneSizeCheckBox.Checked = false;
+
                 Size = "S";
-                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
-                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category, picturePath);
                 ItemManager.RegisterNewItem(item);
 
             }
             if (mediumCheckBox.Checked)
             {
-                oneSizeCheckBox.Checked = false;
+
                 Size = "M";
-                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
-                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category, picturePath);
                 ItemManager.RegisterNewItem(item);
 
             }
             if (LargeCheckBox.Checked)
             {
-                oneSizeCheckBox.Checked = false;
                 Size = "L";
-                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category);
-                PopulateStockUpNewItem(ItemName, Price, Quantity, Size, Color, Category);
+                Item item = new Item(ItemName, Price, Quantity, Size, Color, Category, picturePath);
                 ItemManager.RegisterNewItem(item);
 
             }
@@ -238,15 +238,17 @@ namespace SOSFashion
         public void PopulateListBoxItem()
         {
             List<Item> items = ItemManager.GetItemList();
-            foreach (Item item in items)
+
+            for (int i = 0; i < items.Count; i++)
             {
-
-                double price = item.Price; price.ToString();
-                int quantity = item.Quantity; quantity.ToString();
-                int soldtotal = item.SoldTotal; soldtotal.ToString();
-
-                adminListBox1.Items.Add(item.ItemName + "\t" + price + "\t" + quantity + "\t" + item.Size + "\t" + item.Color + "\t" + soldtotal + "\t" + item.Category);
+                double price = items[i].Price; price.ToString();
+                int quantity = items[i].Quantity; quantity.ToString();
+                int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                adminListBox1.Items.Add(formattedText);
             }
+                
+            
         }
         private void placedOrdersLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -255,8 +257,9 @@ namespace SOSFashion
             removeButton.Visible = false;
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
-            mainPanel.Visible = true;
-            mainPanel.BringToFront();
+            mainPanel.Visible = false;
+            orderHistoryPanel.Visible = true;
+            orderHistoryPanel.BringToFront();
             List<Order> orders = orderManager.GetOrders("AllOrders");
             foreach (Order order in orders)
             {
@@ -265,10 +268,37 @@ namespace SOSFashion
                 DateTime dateTime = order.Placedtime;
                 dateTime.ToString();
 
-                adminListBox1.Items.Add(orderNo + "\t" + dateTime + "\t" + order.Username);
+                orderHistoryAdminlistBox.Items.Add(orderNo + "\t" + dateTime + "\t" + order.Username);
             }
-        }
 
+        }
+        private void orderHistoryAdminlistBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            orderDetailsAdminListBox.Items.Clear();
+            int index = orderHistoryAdminlistBox.IndexFromPoint(e.Location);
+
+            if (index != ListBox.NoMatches)
+            {
+                orderHistoryAdminlistBox.SelectedIndex = index;
+                List<Order> orders = orderManager.GetOrders("AllOrders");
+                for (int j = 0; j < orders.Count; j++)
+                {
+                    if (index == j)
+                    {
+                        List<Item> items = orderManager.GetItems(orders[j].OrderNo);
+                        for (int i = 0;i < items.Count; i++)
+                        {
+                            double price = items[i].Price; price.ToString();
+                            int quantity = items[i].Quantity; quantity.ToString();
+                            int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                            string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4,-20}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                            orderDetailsAdminListBox.Items.Add(formattedText);
+                        }
+                    }
+                }
+            }
+
+        }
         private void costumorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -282,12 +312,22 @@ namespace SOSFashion
         }
         public void PopulateListBoxUser()
         {
-            List<User> users = UserManager.CreateUserList();
             adminListBox1.Items.Clear();
             adminListBox1.Refresh();
-            foreach (User user in users)
+            List<User> users = UserManager.CreateUserList();
+
+            for (int i = 0; i < users.Count; i++)
             {
-                adminListBox1.Items.Add(user.UserName + "\t" + user.Password + "\t" + user.FirstName + "\t" + user.LastName + "\t" + user.Email + "\t" + user.Street + "\t" + user.Zip + "\t" + user.City);
+                
+                string formattedText = string.Format("{0,-15}\t{1,-25}\t{2,-15}\t{3,-30}\t{4,-35}\t{5}\t{6}", 
+                    users[i].UserName, 
+                    users[i].FirstName, 
+                    users[i].LastName, 
+                    users[i].Email, 
+                    users[i].Street, 
+                    users[i].Zip, 
+                    users[i].City);
+                adminListBox1.Items.Add(formattedText);
             }
         }
 
@@ -548,48 +588,32 @@ namespace SOSFashion
             {
                 string imagePath = openFileDialog.FileName;
                 DisplayImage(imagePath);
-              
+                picName = Path.GetFileName(imagePath);
             }
         }
 
-        private void SaveImage2()
+        public string SaveImage()
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog
+            if (pictureBox1.Image != null)
             {
-                Title = "Save Image",
-                Filter = "PNG Image|*.png|JPEG Image|*.jpg;*.jpeg|BMP Image|*.bmp|GIF Image|*.gif",
-                DefaultExt = "png",
-                AddExtension = true
-            };
+                string targetDirectory = "Pics";
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string savePath = saveFileDialog.FileName;
-                SaveImage(savePath);
-            }
-        }
+                string fullPath = Path.Combine(targetDirectory, picName);
 
-        private void SaveImage(string savePath)
-        {
-            try
-            {
-                // Check if there is an image loaded
-                if (pictureBox1.Image != null)
+                if (!Directory.Exists(targetDirectory))
                 {
-                    // Save the image to the specified path
-                    pictureBox1.Image.Save(savePath);
+                    Directory.CreateDirectory(targetDirectory);
+                }
 
-                    MessageBox.Show($"Image saved to: {savePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No image loaded to save.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                pictureBox1.Image.Save(fullPath);
+
+                return fullPath;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "Pics/NoImage";
             }
+
         }
     }
 }

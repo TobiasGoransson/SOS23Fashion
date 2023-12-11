@@ -29,7 +29,7 @@ namespace SOSFashion
             Category = category;
             PicturePath = picturePath;
         }
-        public Item(string itemName, double price, int quantity, string size, string color, string category)
+        public Item(string itemName, double price, int quantity, string size, string color, string category, string picturePath)
         {
             ItemName = itemName;
             Price = price;
@@ -43,7 +43,7 @@ namespace SOSFashion
         }
         public string GetCSV()
         {
-            return ItemName + ";" + Price + ";" + Quantity + ";" + Size + ";" + Color + ";" + SoldTotal + ";" + Category;
+            return ItemName + ";" + Price + ";" + Quantity + ";" + Size + ";" + Color + ";" + SoldTotal + ";" + Category +";" + PicturePath;
         }
         
     }

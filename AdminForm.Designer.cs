@@ -93,12 +93,16 @@
             removeButton = new Button();
             editItemButton = new Button();
             stockUpButton = new Button();
+            orderHistoryPanel = new Panel();
+            orderDetailsAdminListBox = new ListBox();
+            orderHistoryAdminlistBox = new ListBox();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             editItemPanel.SuspendLayout();
             stockUpPanel.SuspendLayout();
             registerNewItemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            orderHistoryPanel.SuspendLayout();
             SuspendLayout();
             // 
             // adminListBox1
@@ -107,7 +111,7 @@
             adminListBox1.ItemHeight = 15;
             adminListBox1.Location = new Point(3, 7);
             adminListBox1.Name = "adminListBox1";
-            adminListBox1.Size = new Size(533, 334);
+            adminListBox1.Size = new Size(840, 334);
             adminListBox1.TabIndex = 0;
             // 
             // panel1
@@ -203,7 +207,7 @@
             mainPanel.Controls.Add(adminListBox1);
             mainPanel.Location = new Point(164, 12);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(550, 350);
+            mainPanel.Size = new Size(1000, 350);
             mainPanel.TabIndex = 6;
             // 
             // editItemPanel
@@ -225,7 +229,7 @@
             editItemPanel.Controls.Add(label5);
             editItemPanel.Location = new Point(164, 12);
             editItemPanel.Name = "editItemPanel";
-            editItemPanel.Size = new Size(550, 350);
+            editItemPanel.Size = new Size(1000, 350);
             editItemPanel.TabIndex = 26;
             // 
             // editSizetextBox
@@ -408,7 +412,7 @@
             stockUpPanel.Controls.Add(label12);
             stockUpPanel.Location = new Point(164, 12);
             stockUpPanel.Name = "stockUpPanel";
-            stockUpPanel.Size = new Size(550, 350);
+            stockUpPanel.Size = new Size(1000, 350);
             stockUpPanel.TabIndex = 27;
             // 
             // label13
@@ -620,12 +624,12 @@
             registerNewItemPanel.Controls.Add(itemNamelable);
             registerNewItemPanel.Location = new Point(164, 12);
             registerNewItemPanel.Name = "registerNewItemPanel";
-            registerNewItemPanel.Size = new Size(550, 350);
+            registerNewItemPanel.Size = new Size(1000, 350);
             registerNewItemPanel.TabIndex = 3;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(308, 46);
+            pictureBox1.Location = new Point(384, 46);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(218, 279);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -637,10 +641,10 @@
             // 
             imageLable.BackColor = SystemColors.Control;
             imageLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            imageLable.Location = new Point(303, 15);
+            imageLable.Location = new Point(379, 15);
             imageLable.Name = "imageLable";
             imageLable.Size = new Size(244, 30);
-            imageLable.TabIndex = 26;
+            imageLable.TabIndex = 12;
             imageLable.Text = "Picture";
             imageLable.TextAlign = ContentAlignment.MiddleLeft;
             imageLable.Click += imageLable_Click;
@@ -652,7 +656,7 @@
             accessoriesCheckBox.Location = new Point(111, 235);
             accessoriesCheckBox.Name = "accessoriesCheckBox";
             accessoriesCheckBox.Size = new Size(117, 25);
-            accessoriesCheckBox.TabIndex = 25;
+            accessoriesCheckBox.TabIndex = 11;
             accessoriesCheckBox.Text = "Accessories";
             accessoriesCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -663,7 +667,7 @@
             suitsCheckBox.Location = new Point(222, 215);
             suitsCheckBox.Name = "suitsCheckBox";
             suitsCheckBox.Size = new Size(68, 25);
-            suitsCheckBox.TabIndex = 24;
+            suitsCheckBox.TabIndex = 10;
             suitsCheckBox.Text = "Suits";
             suitsCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -674,7 +678,7 @@
             coatsCheckBox.Location = new Point(222, 195);
             coatsCheckBox.Name = "coatsCheckBox";
             coatsCheckBox.Size = new Size(70, 25);
-            coatsCheckBox.TabIndex = 23;
+            coatsCheckBox.TabIndex = 9;
             coatsCheckBox.Text = "Coats";
             coatsCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -685,7 +689,7 @@
             dressesCheckBox.Location = new Point(111, 215);
             dressesCheckBox.Name = "dressesCheckBox";
             dressesCheckBox.Size = new Size(87, 25);
-            dressesCheckBox.TabIndex = 22;
+            dressesCheckBox.TabIndex = 9;
             dressesCheckBox.Text = "Dresses";
             dressesCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -696,7 +700,7 @@
             hatCheckBox.Location = new Point(111, 194);
             hatCheckBox.Name = "hatCheckBox";
             hatCheckBox.Size = new Size(59, 25);
-            hatCheckBox.TabIndex = 21;
+            hatCheckBox.TabIndex = 8;
             hatCheckBox.Text = "Hat";
             hatCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -718,7 +722,7 @@
             LargeCheckBox.Location = new Point(222, 106);
             LargeCheckBox.Name = "LargeCheckBox";
             LargeCheckBox.Size = new Size(74, 25);
-            LargeCheckBox.TabIndex = 19;
+            LargeCheckBox.TabIndex = 6;
             LargeCheckBox.Text = "Large";
             LargeCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -729,7 +733,7 @@
             smallCheckBox.Location = new Point(222, 86);
             smallCheckBox.Name = "smallCheckBox";
             smallCheckBox.Size = new Size(74, 25);
-            smallCheckBox.TabIndex = 18;
+            smallCheckBox.TabIndex = 4;
             smallCheckBox.Text = "Small";
             smallCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -740,7 +744,7 @@
             mediumCheckBox.Location = new Point(111, 106);
             mediumCheckBox.Name = "mediumCheckBox";
             mediumCheckBox.Size = new Size(92, 25);
-            mediumCheckBox.TabIndex = 17;
+            mediumCheckBox.TabIndex = 5;
             mediumCheckBox.Text = "Medium";
             mediumCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -751,7 +755,7 @@
             oneSizeCheckBox.Location = new Point(111, 85);
             oneSizeCheckBox.Name = "oneSizeCheckBox";
             oneSizeCheckBox.Size = new Size(96, 25);
-            oneSizeCheckBox.TabIndex = 16;
+            oneSizeCheckBox.TabIndex = 3;
             oneSizeCheckBox.Text = "One Size";
             oneSizeCheckBox.UseVisualStyleBackColor = true;
             oneSizeCheckBox.CheckedChanged += oneSizeCheckBox_CheckedChanged;
@@ -765,7 +769,7 @@
             itemTextBox.Name = "itemTextBox";
             itemTextBox.PlaceholderText = "item";
             itemTextBox.Size = new Size(152, 30);
-            itemTextBox.TabIndex = 15;
+            itemTextBox.TabIndex = 1;
             // 
             // confirmRegisterNewUserButton
             // 
@@ -788,7 +792,7 @@
             colorTextBox.Name = "colorTextBox";
             colorTextBox.PlaceholderText = "Black";
             colorTextBox.Size = new Size(152, 30);
-            colorTextBox.TabIndex = 10;
+            colorTextBox.TabIndex = 7;
             // 
             // colorLable
             // 
@@ -821,7 +825,7 @@
             priceTextBox.Name = "priceTextBox";
             priceTextBox.PlaceholderText = "123,45";
             priceTextBox.Size = new Size(152, 30);
-            priceTextBox.TabIndex = 7;
+            priceTextBox.TabIndex = 2;
             // 
             // itemPriceLable
             // 
@@ -878,19 +882,49 @@
             stockUpButton.UseVisualStyleBackColor = true;
             stockUpButton.Click += stockUpButton_Click;
             // 
+            // orderHistoryPanel
+            // 
+            orderHistoryPanel.BackColor = SystemColors.Control;
+            orderHistoryPanel.Controls.Add(orderDetailsAdminListBox);
+            orderHistoryPanel.Controls.Add(orderHistoryAdminlistBox);
+            orderHistoryPanel.Location = new Point(164, 12);
+            orderHistoryPanel.Name = "orderHistoryPanel";
+            orderHistoryPanel.Size = new Size(1000, 350);
+            orderHistoryPanel.TabIndex = 27;
+            // 
+            // orderDetailsAdminListBox
+            // 
+            orderDetailsAdminListBox.FormattingEnabled = true;
+            orderDetailsAdminListBox.ItemHeight = 15;
+            orderDetailsAdminListBox.Location = new Point(279, 16);
+            orderDetailsAdminListBox.Name = "orderDetailsAdminListBox";
+            orderDetailsAdminListBox.Size = new Size(464, 304);
+            orderDetailsAdminListBox.TabIndex = 1;
+            // 
+            // orderHistoryAdminlistBox
+            // 
+            orderHistoryAdminlistBox.FormattingEnabled = true;
+            orderHistoryAdminlistBox.ItemHeight = 15;
+            orderHistoryAdminlistBox.Location = new Point(18, 16);
+            orderHistoryAdminlistBox.Name = "orderHistoryAdminlistBox";
+            orderHistoryAdminlistBox.Size = new Size(230, 304);
+            orderHistoryAdminlistBox.TabIndex = 0;
+            orderHistoryAdminlistBox.MouseDown += orderHistoryAdminlistBox_MouseDown;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(813, 444);
+            ClientSize = new Size(1183, 451);
             Controls.Add(stockUpButton);
             Controls.Add(editItemButton);
             Controls.Add(removeButton);
             Controls.Add(panel1);
-            Controls.Add(registerNewItemPanel);
-            Controls.Add(stockUpPanel);
-            Controls.Add(editItemPanel);
             Controls.Add(mainPanel);
+            Controls.Add(stockUpPanel);
+            Controls.Add(registerNewItemPanel);
+            Controls.Add(editItemPanel);
+            Controls.Add(orderHistoryPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -904,6 +938,7 @@
             registerNewItemPanel.ResumeLayout(false);
             registerNewItemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            orderHistoryPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -974,5 +1009,8 @@
         private Label label12;
         private PictureBox pictureBox1;
         private Label imageLable;
+        private Panel orderHistoryPanel;
+        private ListBox orderDetailsAdminListBox;
+        private ListBox orderHistoryAdminlistBox;
     }
 }

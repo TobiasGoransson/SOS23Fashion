@@ -40,7 +40,7 @@ namespace SOSFashion
         public List<Item> GetItems(int OrderNo)
         {
 
-            OrderFilePath = "OrderLists/OrderDetail" + OrderNo + ".csv";
+            OrderFilePath = "OrderLists/OrderDetail/" + OrderNo + ".csv";
             List<Item> items = new List<Item>();
             using (StreamReader sr = new StreamReader(OrderFilePath))
             {
