@@ -84,6 +84,10 @@ namespace SOSFashion
 
             MessageBox.Show("Order confirmed! Thank you for your purchase.", "Order Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            this.Close();
+
         }
+
+
     }
 }
