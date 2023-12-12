@@ -83,7 +83,7 @@ namespace SOSFashion
             }
             return true;
         }
-        public bool CheckUserName()
+       private bool CheckUserName()
         {
             List<User> users = userManager.CreateUserList();
             foreach (User user in users)
@@ -99,7 +99,7 @@ namespace SOSFashion
         }
 
 
-        public User CheckLoggIn()
+        private User CheckLoggIn()
         {
             users = userManager.CreateUserList();
             foreach (User user in users)

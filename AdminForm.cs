@@ -358,7 +358,7 @@ namespace SOSFashion
                     double price = items[i].Price; price.ToString();
                     int quantity = items[i].Quantity; quantity.ToString();
                     int soldtotal = items[i].SoldTotal; soldtotal.ToString();
-                    string item = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4,-20}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                    string item = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
                     if (adminListBox1.SelectedItem.ToString() == item)
                     {
                         ItemManager.RemoveItem(i);
@@ -387,6 +387,7 @@ namespace SOSFashion
                     editIColorTextBox.Text = items[i].Color;
                     editCategoryTextBox.Text = items[i].Category;
                     quantityTextBox.Text = items[i].Quantity.ToString();
+                    pictureBoxEditItem.Image = Image.FromFile(items[i].PicturePath + ".png");
                     break;
 
                 }
@@ -581,22 +582,6 @@ namespace SOSFashion
             }
         }
 
-        private void imageLable_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                Title = "Open Image",
-                Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif|All Files|*.*"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string imagePath = openFileDialog.FileName;
-                DisplayImage(imagePath);
-                picName = Path.GetFileName(imagePath);
-            }
-        }
-
         public string SaveImage()
         {
             if (pictureBox1.Image != null)
@@ -619,6 +604,22 @@ namespace SOSFashion
                 return "Pics/NoImage";
             }
 
+        }
+
+        private void insertPicButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Open Image",
+                Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif|All Files|*.*"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string imagePath = openFileDialog.FileName;
+                DisplayImage(imagePath);
+                picName = Path.GetFileName(imagePath);
+            }
         }
     }
 }
