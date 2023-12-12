@@ -197,11 +197,17 @@ namespace SOSFashion
             }
             else
             {
-                double totalCost = CalculateTotalCost();
-                MessageBox.Show($"Thank you for your purchase! Total Cost: {totalCost} kr");
-
+                //double totalCost = CalculateTotalCost();
+                //MessageBox.Show($"Thank you for your purchase! Total Cost: {totalCost} kr");
+                //
+                
+                Checkout checkout = new Checkout();
+                checkout.GetList(kundvagnList);
+                checkout.CalculateTotalCost();
+                checkout.userButton.Text = logInButton.Text;
+                checkout.GetUser();
+                checkout.Show();
                 kundvagnList.Clear();
-
                 UpdateTotalCostLabel();
             }
         }
