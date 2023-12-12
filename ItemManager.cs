@@ -43,6 +43,17 @@ namespace SOSFashion
             }
             return items;
         }
+        public void SaveText(List<Item> itemList)
+        {
+
+            using (StreamWriter writer = new StreamWriter(itemsFilePath))
+            {
+                foreach (Item item in itemList)
+                {
+                    writer.WriteLine(item.GetCSV());
+                }
+            }
+        }
         public void RegisterNewItem( Item item)
         {
                 using (StreamWriter sw = File.AppendText(itemsFilePath))

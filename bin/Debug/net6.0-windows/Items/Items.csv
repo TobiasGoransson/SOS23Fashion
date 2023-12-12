@@ -1,9 +1,9 @@
-Cap;159;6;One size;Brown;0;Hats;Pics/BrownCap
-Cap;159;6;One size;Black;0;Hats;Pics/BlackCap
-Coat;1899;4;S;Navy Blue;0;Coats;Pics/NavyCoat
+Cap;159;0;One size;Brown;0;Hats;Pics/BrownCap
+Cap;159;2;One size;Black;0;Hats;Pics/BlackCap
+Coat;1699;6;S;Black;0;Coats;Pics/NavyCoat
 Coat;1899;4;M;Navy Blue;0;Coats;Pics/NavyCoat
 Coat;1899;4;L;Navy Blue;0;Coats;Pics/NavyCoat
-Coat;1699;3;S;Black;0;Coats;Pics/BlackFurCoat
+Coat;1699;5;S;Black;0;Coats;Pics/BlackFurCoat
 Coat;1699;3;M;Black;0;Coats;Pics/BlackFurCoat
 Coat;1699;3;L;Black;0;Coats;Pics/BlackFurCoat
 Cap;399;4;One size;Grey;0;Hats;Pics/GreyWomanCap
@@ -14,22 +14,22 @@ Short-Heel Shoe;959;2;L;Striped;0;Accessories;Pics/BlackGreyShoes
 Dress;699;5;S;Grey;0;Dresses;Pics/GreyDress
 Dress;699;4;M;Grey;0;Dresses;Pics/GreyDress
 Dress;699;5;L;Grey;0;Dresses;Pics/GreyDress
-Shirt;399;3;S;White;0;Suits;Pics/WhiteShirt
+Shirt;399;5;S;White;0;Suits;Pics/WhiteShirt
 Shirt;399;3;M;White;0;Suits;Pics/WhiteShirt
-Shirt;399;4;L;White;0;Suits;Pics/WhiteShirt
+Shirt;399;3;L;White;0;Suits;Pics/WhiteShirt
 Suit-Pants;899;3;S;Navy Blue;0;Suits;Pics/NavyPants
 Suit-Pants;899;3;M;Navy Blue;0;Suits;Pics/NavyPants
-Suit-Pants;899;4;L;Navy Blue;0;Suits;Pics/NavyPants
+Suit-Pants;899;3;L;Navy Blue;0;Suits;Pics/NavyPants
 Suit-Pants;899;2;S;Grey;0;Suits;Pics/GreyPants
 Suit-Pants;899;3;M;Grey;0;Suits;Pics/GreyPants
 Suit-Pants;899;4;L;Grey;0;Suits;Pics/GreyPants
 Blazer;1599;2;S;Navy Blue;0;Suits;Pics/NavyBlazer
-Blazer;1599;2;M;Navy Blue;0;Suits;Pics/NavyBlazer
+Blazer;1599;5;M;Navy Blue;0;Suits;Pics/NavyBlazer
 Blazer;1599;4;L;Navy Blue;0;Suits;Pics/NavyBlazer
 Blazer;1599;2;S;Grey;0;Suits;Pics/GreyBlazer
-Blazer;1599;3;M;Grey;0;Suits;Pics/GreyBlazer
+Blazer;1599;1;M;Grey;0;Suits;Pics/GreyBlazer
 Blazer;1599;4;L;Grey;0;Suits;Pics/GreyBlazer
-Vest;569;2;S;Navy Blue;0;Suits;Pics/BlackVest
+Vest;569;5;S;Navy Blue;0;Suits;Pics/BlackVest
 Vest;569;3;M;Navy Blue;0;Suits;Pics/BlackVest
 Vest;569;4;L;Navy Blue;0;Suits;Pics/BlackVest
 Vest;569;3;S;Grey;0;Suits;Pics/BrownVest

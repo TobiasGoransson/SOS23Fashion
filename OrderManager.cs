@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -28,8 +29,9 @@ namespace SOSFashion
                     string[] variables = nextLine.Split(';');
                     int orderNo = int.Parse(variables[0]);
                     DateTime date = DateTime.Parse(variables[2]);
+                    string finishedOrder = variables[3];
 
-                    Order order = new Order(orderNo, variables[1], date);
+                    Order order = new Order(orderNo, variables[1], date, finishedOrder);
                     orders.Add(order);
 
                     nextLine = sr.ReadLine();
@@ -67,6 +69,17 @@ namespace SOSFashion
         {
             List<Order> allOrders = GetOrders("AllOrders");
             return allOrders;
+        }
+        public void SaveOrder(List<Order> orderList)
+        {
+            OrderFilePath = "OrderLists/AllOrders.csv";
+            using (StreamWriter writer = new StreamWriter(OrderFilePath))
+            {
+                foreach (Order order in orderList)
+                {
+                    writer.WriteLine(order.GetOrderCSV());
+                }
+            }
         }
 
         public int CreateNewOrder(User user)
@@ -106,7 +119,7 @@ namespace SOSFashion
 
         public void CreateItemList (int OrderNo, List<Item> cart) 
         {
-            OrderFilePath = "OrderLists/OrderDetail" + OrderNo + ".csv";
+            OrderFilePath = "OrderLists/OrderDetail/" + OrderNo + ".csv";
 
             foreach (Item item in cart)
             {

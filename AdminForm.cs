@@ -21,8 +21,10 @@ namespace SOSFashion
 {
     public partial class AdminForm : Form
     {
-
-
+        bool switchLists = true;
+        List<Order> allOrders;
+        List<Order> pendingOrders = new List<Order>();
+        List<Order> finishedOrders = new List<Order>();
         UserManager UserManager = new UserManager();
         OrderManager orderManager = new OrderManager();
         ItemManager ItemManager = new ItemManager();
@@ -43,6 +45,7 @@ namespace SOSFashion
             stockUpButton.Visible = false;
             stockUpPanel.Visible = false;
             orderHistoryPanel.Visible = false;
+            sendOrderButton.Visible = false;
 
         }
 
@@ -216,6 +219,7 @@ namespace SOSFashion
 
         private void registerNewItemkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            sendOrderButton.Visible = false;
             removeButton.Visible = false;
             editItemButton.Visible = false;
             mainPanel.Visible = false;
@@ -232,6 +236,7 @@ namespace SOSFashion
         private void productlistLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             adminListBox1.Items.Clear();
+            sendOrderButton.Visible = false;
             registerNewItemPanel.Visible = false;
             removeButton.Visible = true;
             editItemButton.Visible = true;
@@ -255,9 +260,11 @@ namespace SOSFashion
 
 
         }
-        private void placedOrdersLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ChangeOrderLabels()
         {
+            orderHistoryAdminlistBox.Items.Clear();
             adminListBox1.Items.Clear();
+            sendOrderButton.Visible = true;
             registerNewItemPanel.Visible = false;
             removeButton.Visible = false;
             editItemButton.Visible = false;
@@ -268,14 +275,23 @@ namespace SOSFashion
             List<Order> orders = orderManager.GetOrders("AllOrders");
             foreach (Order order in orders)
             {
-                int orderNo = order.OrderNo;
-                orderNo.ToString();
-                DateTime dateTime = order.Placedtime;
-                dateTime.ToString();
+                if (order.FinishedOrder == "False")
+                {
+                    pendingOrders.Add(order);
+                    int orderNo = order.OrderNo;
+                    orderNo.ToString();
+                    DateTime dateTime = order.Placedtime;
+                    dateTime.ToString();
 
-                orderHistoryAdminlistBox.Items.Add(orderNo + "\t" + dateTime + "\t" + order.Username);
+                    orderHistoryAdminlistBox.Items.Add(orderNo + "\t" + dateTime + "\t" + order.Username);
+                }
             }
 
+        }
+        private void placedOrdersLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            switchLists = true;
+            ChangeOrderLabels();
         }
         private void orderHistoryAdminlistBox_MouseDown(object sender, MouseEventArgs e)
         {
@@ -285,19 +301,43 @@ namespace SOSFashion
             if (index != ListBox.NoMatches)
             {
                 orderHistoryAdminlistBox.SelectedIndex = index;
-                List<Order> orders = orderManager.GetOrders("AllOrders");
-                for (int j = 0; j < orders.Count; j++)
+                if (switchLists == true)
                 {
-                    if (index == j)
+
+
+                    for (int j = 0; j < pendingOrders.Count; j++)
                     {
-                        List<Item> items = orderManager.GetItems(orders[j].OrderNo);
-                        for (int i = 0; i < items.Count; i++)
+                        if (index == j)
                         {
-                            double price = items[i].Price; price.ToString();
-                            int quantity = items[i].Quantity; quantity.ToString();
-                            int soldtotal = items[i].SoldTotal; soldtotal.ToString();
-                            string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
-                            orderDetailsAdminListBox.Items.Add(formattedText);
+                            List<Item> items = orderManager.GetItems(pendingOrders[j].OrderNo);
+                            orderNoLabel.Text = pendingOrders[j].OrderNo.ToString();
+                            for (int i = 0; i < items.Count; i++)
+                            {
+                                double price = items[i].Price; price.ToString();
+                                int quantity = items[i].Quantity; quantity.ToString();
+                                int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                                string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                                orderDetailsAdminListBox.Items.Add(formattedText);
+                            }
+                        }
+                    }
+                }
+                else if (switchLists == false)
+                {
+                    for (int j = 0; j < finishedOrders.Count; j++)
+                    {
+                        if (index == j)
+                        {
+                            List<Item> items = orderManager.GetItems(finishedOrders[j].OrderNo);
+                            orderNoLabel.Text = finishedOrders[j].OrderNo.ToString();
+                            for (int i = 0; i < items.Count; i++)
+                            {
+                                double price = items[i].Price; price.ToString();
+                                int quantity = items[i].Quantity; quantity.ToString();
+                                int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                                string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                                orderDetailsAdminListBox.Items.Add(formattedText);
+                            }
                         }
                     }
                 }
@@ -306,7 +346,7 @@ namespace SOSFashion
         }
         private void costumorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            sendOrderButton.Visible = false;
             registerNewItemPanel.Visible = false;
             mainPanel.Visible = true;
             removeButton.Visible = true;
@@ -436,6 +476,7 @@ namespace SOSFashion
                     if (adminListBox1.SelectedItem.ToString() == item)
                     {
                         mainPanel.Visible = false;
+                        sendOrderButton.Visible = false;
                         removeButton.Visible = false;
                         editItemButton.Visible = false;
                         stockUpButton.Visible = false;
@@ -620,6 +661,92 @@ namespace SOSFashion
                 DisplayImage(imagePath);
                 picName = Path.GetFileName(imagePath);
             }
+        }
+
+        private void logOutAdminLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void sendOrderButton_Click(object sender, EventArgs e)
+        {
+            bool success = false;
+            if (orderHistoryAdminlistBox.SelectedItem != null)
+            {
+                int orderNo = Convert.ToInt32(orderNoLabel.Text);
+                List<Item> itemsList = ItemManager.GetItemList();
+                List<Item> orderItems = orderManager.GetItems(orderNo);
+                List<Order> orders = orderManager.GetAllOrders();
+                foreach (Item orderItem in orderItems)
+                {
+                    foreach (Item item in itemsList)
+                    {
+                        if (item.ItemName == orderItem.ItemName && item.Size == orderItem.Size && item.Color == orderItem.Color)
+                        {
+                            item.Quantity -= orderItem.Quantity;
+                            success = true;
+                        }
+                    }
+                }
+                if (success == true)
+                {
+                    
+                    foreach (Order order in orders)
+                    {
+                        if (order.OrderNo == orderNo)
+                        {
+                            order.FinishedOrder = "True";
+                        }
+                    }
+                    ItemManager.SaveText(itemsList);
+                    orderManager.SaveOrder(orders);
+                    ChangeOrderLabels();
+                }
+                else if (success == false)
+                {
+                    MessageBox.Show("DIDNT WORKD");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pick an order");
+            }
+            
+        }
+
+        private void finishedOrdersLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            switchLists = false;
+            orderNoLabel.Text = string.Empty;
+            orderDetailsAdminListBox.Items.Clear();
+            orderHistoryAdminlistBox.Items.Clear();
+            adminListBox1.Items.Clear();
+            sendOrderButton.Visible = false;
+            registerNewItemPanel.Visible = false;
+            removeButton.Visible = false;
+            editItemButton.Visible = false;
+            stockUpButton.Visible = false;
+            mainPanel.Visible = false;
+            orderHistoryPanel.Visible = true;
+            orderHistoryPanel.BringToFront();
+            List<Order> orders = orderManager.GetOrders("AllOrders");
+            foreach (Order order in orders)
+            {
+                if (order.FinishedOrder == "True")
+                {
+                    int orderNo = order.OrderNo;
+                    orderNo.ToString();
+                    DateTime dateTime = order.Placedtime;
+                    dateTime.ToString();
+                    finishedOrders.Add(order);
+                    orderHistoryAdminlistBox.Items.Add(orderNo + "\t" + dateTime + "\t" + order.Username);
+                }
+            }
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
