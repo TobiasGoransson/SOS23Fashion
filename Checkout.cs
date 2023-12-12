@@ -61,23 +61,28 @@ namespace SOSFashion
                     User = user;
                     txtFirstName.Text = user.FirstName;
                     txtLastName.Text = user.LastName;
-                    txtAddress.Text = user.City + " " + user.Street;
+                    textemail.Text = user.Email;
                     txtZipCode.Text = user.Zip;
-                    textEmail.Text = user.Email;
+                    txtCity.Text = user.City;
+                    txtstreet.Text = user.Street;
                 }
             }
-            
+
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string name = txtFirstName.Text;
             string name2 = txtLastName.Text;
-            string address = txtAddress.Text;
-            string email = textEmail.Text;
+            string address = txtstreet.Text;
+            string email = textemail.Text;
             string zipCode = txtZipCode.Text;
-            string phone = txtPhone.Text;
+            string phone = txtCity.Text;
 
+            int OrderNo = orderManager.CreateNewOrder(User);
+            orderManager.CreateItemList(OrderNo, kundvagnList);
+
+            MessageBox.Show("Order confirmed! Thank you for your purchase.", "Order Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }
