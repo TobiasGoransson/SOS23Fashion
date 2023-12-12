@@ -30,6 +30,7 @@
         {
             adminListBox1 = new ListBox();
             panel1 = new Panel();
+            finishedOrdersLinkLabel = new LinkLabel();
             logOutAdminLable = new LinkLabel();
             label31 = new Label();
             registerNewItemkLabel = new LinkLabel();
@@ -98,6 +99,9 @@
             orderHistoryPanel = new Panel();
             orderDetailsAdminListBox = new ListBox();
             orderHistoryAdminlistBox = new ListBox();
+            sendOrderButton = new Button();
+            orderLabel = new Label();
+            orderNoLabel = new Label();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             editItemPanel.SuspendLayout();
@@ -120,6 +124,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(finishedOrdersLinkLabel);
             panel1.Controls.Add(logOutAdminLable);
             panel1.Controls.Add(label31);
             panel1.Controls.Add(registerNewItemkLabel);
@@ -130,6 +135,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(158, 451);
             panel1.TabIndex = 4;
+            // 
+            // finishedOrdersLinkLabel
+            // 
+            finishedOrdersLinkLabel.AutoSize = true;
+            finishedOrdersLinkLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            finishedOrdersLinkLabel.LinkColor = Color.Black;
+            finishedOrdersLinkLabel.Location = new Point(3, 184);
+            finishedOrdersLinkLabel.Name = "finishedOrdersLinkLabel";
+            finishedOrdersLinkLabel.Size = new Size(117, 21);
+            finishedOrdersLinkLabel.TabIndex = 7;
+            finishedOrdersLinkLabel.TabStop = true;
+            finishedOrdersLinkLabel.Text = "Finished orders";
+            finishedOrdersLinkLabel.LinkClicked += finishedOrdersLinkLabel_LinkClicked;
             // 
             // logOutAdminLable
             // 
@@ -142,6 +160,7 @@
             logOutAdminLable.TabIndex = 6;
             logOutAdminLable.TabStop = true;
             logOutAdminLable.Text = "Log out Admin";
+            logOutAdminLable.LinkClicked += logOutAdminLable_LinkClicked;
             // 
             // label31
             // 
@@ -876,7 +895,7 @@
             // removeButton
             // 
             removeButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            removeButton.Location = new Point(167, 368);
+            removeButton.Location = new Point(167, 378);
             removeButton.Name = "removeButton";
             removeButton.Size = new Size(105, 32);
             removeButton.TabIndex = 47;
@@ -887,7 +906,7 @@
             // editItemButton
             // 
             editItemButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            editItemButton.Location = new Point(302, 368);
+            editItemButton.Location = new Point(302, 378);
             editItemButton.Name = "editItemButton";
             editItemButton.Size = new Size(134, 32);
             editItemButton.TabIndex = 48;
@@ -898,7 +917,7 @@
             // stockUpButton
             // 
             stockUpButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            stockUpButton.Location = new Point(464, 368);
+            stockUpButton.Location = new Point(459, 378);
             stockUpButton.Name = "stockUpButton";
             stockUpButton.Size = new Size(134, 32);
             stockUpButton.TabIndex = 49;
@@ -909,6 +928,8 @@
             // orderHistoryPanel
             // 
             orderHistoryPanel.BackColor = SystemColors.Control;
+            orderHistoryPanel.Controls.Add(orderNoLabel);
+            orderHistoryPanel.Controls.Add(orderLabel);
             orderHistoryPanel.Controls.Add(orderDetailsAdminListBox);
             orderHistoryPanel.Controls.Add(orderHistoryAdminlistBox);
             orderHistoryPanel.Location = new Point(164, 12);
@@ -920,7 +941,7 @@
             // 
             orderDetailsAdminListBox.FormattingEnabled = true;
             orderDetailsAdminListBox.ItemHeight = 15;
-            orderDetailsAdminListBox.Location = new Point(279, 16);
+            orderDetailsAdminListBox.Location = new Point(281, 37);
             orderDetailsAdminListBox.Name = "orderDetailsAdminListBox";
             orderDetailsAdminListBox.Size = new Size(700, 304);
             orderDetailsAdminListBox.TabIndex = 1;
@@ -929,29 +950,61 @@
             // 
             orderHistoryAdminlistBox.FormattingEnabled = true;
             orderHistoryAdminlistBox.ItemHeight = 15;
-            orderHistoryAdminlistBox.Location = new Point(18, 16);
+            orderHistoryAdminlistBox.Location = new Point(18, 37);
             orderHistoryAdminlistBox.Name = "orderHistoryAdminlistBox";
             orderHistoryAdminlistBox.Size = new Size(230, 304);
             orderHistoryAdminlistBox.TabIndex = 0;
             orderHistoryAdminlistBox.MouseDown += orderHistoryAdminlistBox_MouseDown;
+            // 
+            // sendOrderButton
+            // 
+            sendOrderButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            sendOrderButton.Location = new Point(227, 378);
+            sendOrderButton.Name = "sendOrderButton";
+            sendOrderButton.Size = new Size(134, 32);
+            sendOrderButton.TabIndex = 50;
+            sendOrderButton.Text = "Send";
+            sendOrderButton.UseVisualStyleBackColor = true;
+            sendOrderButton.Click += sendOrderButton_Click;
+            // 
+            // orderLabel
+            // 
+            orderLabel.AutoSize = true;
+            orderLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            orderLabel.Location = new Point(498, 11);
+            orderLabel.Name = "orderLabel";
+            orderLabel.Size = new Size(75, 21);
+            orderLabel.TabIndex = 2;
+            orderLabel.Text = "OrderNo:";
+            // 
+            // orderNoLabel
+            // 
+            orderNoLabel.AutoSize = true;
+            orderNoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            orderNoLabel.Location = new Point(579, 11);
+            orderNoLabel.Name = "orderNoLabel";
+            orderNoLabel.Size = new Size(0, 21);
+            orderNoLabel.TabIndex = 3;
             // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1230, 451);
+            Controls.Add(sendOrderButton);
             Controls.Add(stockUpButton);
             Controls.Add(editItemButton);
             Controls.Add(removeButton);
             Controls.Add(panel1);
-            Controls.Add(registerNewItemPanel);
-            Controls.Add(editItemPanel);
             Controls.Add(orderHistoryPanel);
             Controls.Add(mainPanel);
             Controls.Add(stockUpPanel);
+            Controls.Add(registerNewItemPanel);
+            Controls.Add(editItemPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
+            Load += AdminForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             mainPanel.ResumeLayout(false);
@@ -964,6 +1017,7 @@
             registerNewItemPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             orderHistoryPanel.ResumeLayout(false);
+            orderHistoryPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1039,5 +1093,9 @@
         private PictureBox pictureBoxEditItem;
         private Label pictureLable;
         private Button insertPicButton;
+        private Button sendOrderButton;
+        private LinkLabel finishedOrdersLinkLabel;
+        private Label orderLabel;
+        private Label orderNoLabel;
     }
 }
