@@ -38,6 +38,8 @@
             productlistLable = new LinkLabel();
             mainPanel = new Panel();
             editItemPanel = new Panel();
+            pictureBoxEditItem = new PictureBox();
+            pictureLable = new Label();
             editSizetextBox = new TextBox();
             editCategoryTextBox = new TextBox();
             label6 = new Label();
@@ -70,8 +72,8 @@
             label11 = new Label();
             label12 = new Label();
             registerNewItemPanel = new Panel();
+            insertPicButton = new Button();
             pictureBox1 = new PictureBox();
-            imageLable = new Label();
             accessoriesCheckBox = new CheckBox();
             suitsCheckBox = new CheckBox();
             coatsCheckBox = new CheckBox();
@@ -99,6 +101,7 @@
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             editItemPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEditItem).BeginInit();
             stockUpPanel.SuspendLayout();
             registerNewItemPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -213,6 +216,8 @@
             // editItemPanel
             // 
             editItemPanel.BackColor = SystemColors.Control;
+            editItemPanel.Controls.Add(pictureBoxEditItem);
+            editItemPanel.Controls.Add(pictureLable);
             editItemPanel.Controls.Add(editSizetextBox);
             editItemPanel.Controls.Add(editCategoryTextBox);
             editItemPanel.Controls.Add(label6);
@@ -231,6 +236,26 @@
             editItemPanel.Name = "editItemPanel";
             editItemPanel.Size = new Size(1000, 350);
             editItemPanel.TabIndex = 26;
+            // 
+            // pictureBoxEditItem
+            // 
+            pictureBoxEditItem.Location = new Point(401, 53);
+            pictureBoxEditItem.Name = "pictureBoxEditItem";
+            pictureBoxEditItem.Size = new Size(221, 267);
+            pictureBoxEditItem.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEditItem.TabIndex = 28;
+            pictureBoxEditItem.TabStop = false;
+            // 
+            // pictureLable
+            // 
+            pictureLable.BackColor = SystemColors.Control;
+            pictureLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            pictureLable.Location = new Point(401, 18);
+            pictureLable.Name = "pictureLable";
+            pictureLable.Size = new Size(110, 30);
+            pictureLable.TabIndex = 27;
+            pictureLable.Text = "Picture";
+            pictureLable.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // editSizetextBox
             // 
@@ -602,8 +627,8 @@
             // registerNewItemPanel
             // 
             registerNewItemPanel.BackColor = Color.Transparent;
+            registerNewItemPanel.Controls.Add(insertPicButton);
             registerNewItemPanel.Controls.Add(pictureBox1);
-            registerNewItemPanel.Controls.Add(imageLable);
             registerNewItemPanel.Controls.Add(accessoriesCheckBox);
             registerNewItemPanel.Controls.Add(suitsCheckBox);
             registerNewItemPanel.Controls.Add(coatsCheckBox);
@@ -627,6 +652,17 @@
             registerNewItemPanel.Size = new Size(1000, 350);
             registerNewItemPanel.TabIndex = 3;
             // 
+            // insertPicButton
+            // 
+            insertPicButton.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            insertPicButton.Location = new Point(383, 11);
+            insertPicButton.Name = "insertPicButton";
+            insertPicButton.Size = new Size(149, 35);
+            insertPicButton.TabIndex = 30;
+            insertPicButton.Text = "Insert Picture";
+            insertPicButton.UseVisualStyleBackColor = true;
+            insertPicButton.Click += insertPicButton_Click;
+            // 
             // pictureBox1
             // 
             pictureBox1.Location = new Point(384, 46);
@@ -636,18 +672,6 @@
             pictureBox1.TabIndex = 27;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // imageLable
-            // 
-            imageLable.BackColor = SystemColors.Control;
-            imageLable.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            imageLable.Location = new Point(379, 15);
-            imageLable.Name = "imageLable";
-            imageLable.Size = new Size(244, 30);
-            imageLable.TabIndex = 12;
-            imageLable.Text = "Picture";
-            imageLable.TextAlign = ContentAlignment.MiddleLeft;
-            imageLable.Click += imageLable_Click;
             // 
             // accessoriesCheckBox
             // 
@@ -920,11 +944,11 @@
             Controls.Add(editItemButton);
             Controls.Add(removeButton);
             Controls.Add(panel1);
-            Controls.Add(stockUpPanel);
             Controls.Add(registerNewItemPanel);
             Controls.Add(editItemPanel);
             Controls.Add(orderHistoryPanel);
             Controls.Add(mainPanel);
+            Controls.Add(stockUpPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -933,6 +957,7 @@
             mainPanel.ResumeLayout(false);
             editItemPanel.ResumeLayout(false);
             editItemPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEditItem).EndInit();
             stockUpPanel.ResumeLayout(false);
             stockUpPanel.PerformLayout();
             registerNewItemPanel.ResumeLayout(false);
@@ -1008,9 +1033,11 @@
         private Label label11;
         private Label label12;
         private PictureBox pictureBox1;
-        private Label imageLable;
         private Panel orderHistoryPanel;
         private ListBox orderDetailsAdminListBox;
         private ListBox orderHistoryAdminlistBox;
+        private PictureBox pictureBoxEditItem;
+        private Label pictureLable;
+        private Button insertPicButton;
     }
 }
