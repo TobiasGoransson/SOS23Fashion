@@ -23,6 +23,7 @@ namespace SOSFashion
         List<Item> itemsList = new List<Item>();
         List<Item> kundvagnList = new List<Item>();
         MainForm mainForm;
+
         public ShopForm(MainForm mainForm)
         {
             InitializeComponent();
@@ -55,10 +56,9 @@ namespace SOSFashion
                 }
             }
         }
+
         public void ChangePanel(string name, string color, string size)
         {
-
-
             foreach (Item items in itemsList)
             {
                 if (items.ItemName == name && items.Color == color && items.Size == size)
@@ -74,6 +74,7 @@ namespace SOSFashion
             }
             itemsPanel.Visible = true;
         }
+
         private void ChooseCategory(string category)
         {
             categoryListBox.Items.Clear();
@@ -87,6 +88,7 @@ namespace SOSFashion
             }
             categoryListBox.Visible = true;
         }
+
         private void removeKundvagnButton_Click(object sender, EventArgs e)
         {
             if (KundvagnlistBox.SelectedItem != null)
@@ -143,12 +145,6 @@ namespace SOSFashion
             }
             return totalCost;
         }
-
-
-
-
-
-
 
         private void logInButton_Click(object sender, EventArgs e)
         {
@@ -210,10 +206,6 @@ namespace SOSFashion
             }
         }
 
-        private void ShopForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void hatsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -272,14 +264,14 @@ namespace SOSFashion
                 {
                     KundvagnlistBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
                     kundvagnList.Add(item);
+
+                    UpdateTotalCostLabel();
+
                     break;
                 }
             }
         }
 
-        private void nameLabel_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
