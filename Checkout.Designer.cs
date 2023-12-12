@@ -30,23 +30,23 @@
         {
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtFirstName = new TextBox();
+            txtLastName = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtPhone = new TextBox();
             label4 = new Label();
-            textBox4 = new TextBox();
+            textEmail = new TextBox();
             label5 = new Label();
-            textBox5 = new TextBox();
+            txtZipCode = new TextBox();
             label6 = new Label();
-            textBox6 = new TextBox();
+            txtAddress = new TextBox();
             label7 = new Label();
-            listBox1 = new ListBox();
-            comboBox1 = new ComboBox();
+            comboBoxShipping = new ComboBox();
             label8 = new Label();
-            comboBox2 = new ComboBox();
+            comboBoxPayment = new ComboBox();
             label9 = new Label();
-            button1 = new Button();
+            btnConfirm = new Button();
+            totalCostLabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -68,51 +68,51 @@
             label2.TabIndex = 1;
             label2.Text = "First name";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            textBox1.Location = new Point(100, 89);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(152, 27);
-            textBox1.TabIndex = 2;
+            txtFirstName.Location = new Point(100, 89);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(152, 27);
+            txtFirstName.TabIndex = 2;
             // 
-            // textBox2
+            // txtLastName
             // 
-            textBox2.Location = new Point(354, 89);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(152, 27);
-            textBox2.TabIndex = 4;
+            txtLastName.Location = new Point(454, 89);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(152, 27);
+            txtLastName.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(270, 92);
+            label3.Location = new Point(370, 92);
             label3.Name = "label3";
             label3.Size = new Size(76, 20);
             label3.TabIndex = 3;
             label3.Text = "Last name";
             // 
-            // textBox3
+            // txtPhone
             // 
-            textBox3.Location = new Point(354, 170);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(152, 27);
-            textBox3.TabIndex = 8;
+            txtPhone.Location = new Point(454, 170);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(152, 27);
+            txtPhone.TabIndex = 8;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(270, 173);
+            label4.Location = new Point(370, 173);
             label4.Name = "label4";
             label4.Size = new Size(50, 20);
             label4.TabIndex = 7;
             label4.Text = "Phone";
             // 
-            // textBox4
+            // textEmail
             // 
-            textBox4.Location = new Point(100, 170);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(152, 27);
-            textBox4.TabIndex = 6;
+            textEmail.Location = new Point(100, 170);
+            textEmail.Name = "textEmail";
+            textEmail.Size = new Size(152, 27);
+            textEmail.TabIndex = 6;
             // 
             // label5
             // 
@@ -123,28 +123,28 @@
             label5.TabIndex = 5;
             label5.Text = "Email";
             // 
-            // textBox5
+            // txtZipCode
             // 
-            textBox5.Location = new Point(354, 244);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(152, 27);
-            textBox5.TabIndex = 11;
+            txtZipCode.Location = new Point(454, 244);
+            txtZipCode.Name = "txtZipCode";
+            txtZipCode.Size = new Size(152, 27);
+            txtZipCode.TabIndex = 11;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(270, 247);
+            label6.Location = new Point(370, 247);
             label6.Name = "label6";
             label6.Size = new Size(64, 20);
             label6.TabIndex = 10;
             label6.Text = "Zipcode";
             // 
-            // textBox6
+            // txtAddress
             // 
-            textBox6.Location = new Point(100, 244);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(152, 27);
-            textBox6.TabIndex = 9;
+            txtAddress.Location = new Point(100, 244);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(152, 27);
+            txtAddress.TabIndex = 9;
             // 
             // label7
             // 
@@ -155,22 +155,13 @@
             label7.TabIndex = 12;
             label7.Text = "Adress";
             // 
-            // listBox1
+            // comboBoxShipping
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(557, 93);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(203, 284);
-            listBox1.TabIndex = 13;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(100, 319);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 14;
+            comboBoxShipping.FormattingEnabled = true;
+            comboBoxShipping.Location = new Point(100, 319);
+            comboBoxShipping.Name = "comboBoxShipping";
+            comboBoxShipping.Size = new Size(151, 28);
+            comboBoxShipping.TabIndex = 14;
             // 
             // label8
             // 
@@ -181,54 +172,65 @@
             label8.TabIndex = 15;
             label8.Text = "Shipping";
             // 
-            // comboBox2
+            // comboBoxPayment
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(354, 319);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
-            comboBox2.TabIndex = 16;
+            comboBoxPayment.FormattingEnabled = true;
+            comboBoxPayment.Location = new Point(454, 319);
+            comboBoxPayment.Name = "comboBoxPayment";
+            comboBoxPayment.Size = new Size(151, 28);
+            comboBoxPayment.TabIndex = 16;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(270, 327);
+            label9.Location = new Point(370, 327);
             label9.Name = "label9";
             label9.Size = new Size(65, 20);
             label9.TabIndex = 17;
             label9.Text = "Payment";
             // 
-            // button1
+            // btnConfirm
             // 
-            button1.Location = new Point(232, 383);
-            button1.Name = "button1";
-            button1.Size = new Size(139, 43);
-            button1.TabIndex = 18;
-            button1.Text = "Confirm";
-            button1.UseVisualStyleBackColor = true;
+            btnConfirm.Location = new Point(264, 377);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new Size(139, 43);
+            btnConfirm.TabIndex = 18;
+            btnConfirm.Text = "Confirm";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
+            // 
+            // totalCostLabel
+            // 
+            totalCostLabel.AutoSize = true;
+            totalCostLabel.Font = new Font("Microsoft JhengHei", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            totalCostLabel.Location = new Point(454, 388);
+            totalCostLabel.Name = "totalCostLabel";
+            totalCostLabel.Size = new Size(123, 29);
+            totalCostLabel.TabIndex = 19;
+            totalCostLabel.Text = "Total cost:";
             // 
             // Checkout
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(totalCostLabel);
+            Controls.Add(btnConfirm);
             Controls.Add(label9);
-            Controls.Add(comboBox2);
+            Controls.Add(comboBoxPayment);
             Controls.Add(label8);
-            Controls.Add(comboBox1);
-            Controls.Add(listBox1);
+            Controls.Add(comboBoxShipping);
             Controls.Add(label7);
-            Controls.Add(textBox5);
+            Controls.Add(txtZipCode);
             Controls.Add(label6);
-            Controls.Add(textBox6);
-            Controls.Add(textBox3);
+            Controls.Add(txtAddress);
+            Controls.Add(txtPhone);
             Controls.Add(label4);
-            Controls.Add(textBox4);
+            Controls.Add(textEmail);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(txtLastName);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtFirstName);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Checkout";
@@ -241,22 +243,22 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtFirstName;
+        private TextBox txtLastName;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtPhone;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox textEmail;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtZipCode;
         private Label label6;
-        private TextBox textBox6;
+        private TextBox txtAddress;
         private Label label7;
-        private ListBox listBox1;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxShipping;
         private Label label8;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxPayment;
         private Label label9;
-        private Button button1;
+        private Button btnConfirm;
+        private Label totalCostLabel;
     }
 }
