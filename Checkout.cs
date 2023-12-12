@@ -17,18 +17,18 @@ namespace SOSFashion
         User User;
         OrderManager orderManager = new OrderManager();
         UserManager userManager = new UserManager();
-        List<Item> kundvagnList = new List<Item>();
-        public Checkout()
+        List<Item> kundvagnList;
+        public Checkout(List<Item> list)
         {
             InitializeComponent();
             LoadShippingPaymentOptions();
-
+            this.kundvagnList = list;
 
         }
-        public void GetList(List<Item> list)
-        {
-            kundvagnList = list;
-        }
+       //public void GetList(List<Item> list)
+       //{
+       //    kundvagnList = list;
+       //}
 
 
         private void LoadShippingPaymentOptions()
@@ -81,7 +81,7 @@ namespace SOSFashion
 
             int OrderNo = orderManager.CreateNewOrder(User);
             orderManager.CreateItemList(OrderNo, kundvagnList);
-
+            kundvagnList.Clear();
             MessageBox.Show("Order confirmed! Thank you for your purchase.", "Order Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Close();

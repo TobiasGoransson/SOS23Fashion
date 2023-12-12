@@ -201,15 +201,16 @@ namespace SOSFashion
                 //MessageBox.Show($"Thank you for your purchase! Total Cost: {totalCost} kr");
                 //
                 
-                Checkout checkout = new Checkout();
-                checkout.GetList(kundvagnList);
+                Checkout checkout = new Checkout(kundvagnList);
+                
                 checkout.CalculateTotalCost();
                 checkout.userButton.Text = logInButton.Text;
                 checkout.GetUser();
                 checkout.Show();
-                kundvagnList.Clear();
-                UpdateTotalCostLabel();
+                
             }
+            KundvagnlistBox.Items.Clear();
+            UpdateTotalCostLabel();
         }
 
 

@@ -29,8 +29,9 @@ namespace SOSFashion
                     string[] variables = nextLine.Split(';');
                     int orderNo = int.Parse(variables[0]);
                     DateTime date = DateTime.Parse(variables[2]);
+                    string finishedOrder = variables[3];
 
-                    Order order = new Order(orderNo, variables[1], date, variables[3]);
+                    Order order = new Order(orderNo, variables[1], date, finishedOrder);
                     orders.Add(order);
 
                     nextLine = sr.ReadLine();
@@ -118,7 +119,7 @@ namespace SOSFashion
 
         public void CreateItemList (int OrderNo, List<Item> cart) 
         {
-            OrderFilePath = "OrderLists/OrderDetail" + OrderNo + ".csv";
+            OrderFilePath = "OrderLists/OrderDetail/" + OrderNo + ".csv";
 
             foreach (Item item in cart)
             {
