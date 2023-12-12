@@ -143,10 +143,11 @@
             OrderHistory.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point);
             OrderHistory.FormattingEnabled = true;
             OrderHistory.ItemHeight = 18;
-            OrderHistory.Location = new Point(431, 36);
+            OrderHistory.Location = new Point(396, 32);
             OrderHistory.Name = "OrderHistory";
             OrderHistory.Size = new Size(300, 328);
             OrderHistory.TabIndex = 34;
+            OrderHistory.MouseDown += OrderHistory_MouseDown;
             // 
             // cityLable
             // 
@@ -264,16 +265,16 @@
             orderDetailsListBox.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point);
             orderDetailsListBox.FormattingEnabled = true;
             orderDetailsListBox.ItemHeight = 18;
-            orderDetailsListBox.Location = new Point(809, 36);
+            orderDetailsListBox.Location = new Point(702, 33);
             orderDetailsListBox.Name = "orderDetailsListBox";
-            orderDetailsListBox.Size = new Size(300, 328);
+            orderDetailsListBox.Size = new Size(495, 328);
             orderDetailsListBox.TabIndex = 46;
             // 
             // UserPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1141, 450);
+            ClientSize = new Size(1223, 450);
             Controls.Add(orderDetailsListBox);
             Controls.Add(leaveUserPageButton);
             Controls.Add(showPasswordButton);

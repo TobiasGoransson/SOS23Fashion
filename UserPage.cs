@@ -72,17 +72,25 @@ namespace SOSFashion
 
         private void OrderHistory_MouseDown(object sender, MouseEventArgs e)
         {
+            orderDetailsListBox.Items.Clear();
             int index = OrderHistory.IndexFromPoint(e.Location);
 
             if (index != ListBox.NoMatches)
             {
                 OrderHistory.SelectedIndex = index;
                 List<Order> orders = orderManager.GetOrders(User.UserName);
-                for (int i = 0; i < orders.Count; i++)
+                for (int j = 0; j < orders.Count; j++)
                 {
-                    if (index == i)
+                    if (index == j)
                     {
-                        List<Item> items = orderManager.GetItems(orders[i].OrderNo);
+                        List<Item> items = orderManager.GetItems(orders[j].OrderNo);
+                        for (int i = 0; i < items.Count; i++)
+                        {
+                            double price = items[i].Price; price.ToString();
+                            int quantity = items[i].Quantity; quantity.ToString();
+                            string formattedText = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, items[i].Category);
+                            orderDetailsListBox.Items.Add(formattedText);
+                        }
                     }
                 }
             }
