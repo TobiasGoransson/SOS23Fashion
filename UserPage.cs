@@ -35,17 +35,24 @@ namespace SOSFashion
             streetLable.Text = user.Street;
             zipLable.Text = user.Zip;
             cityLable.Text = user.City;
-
-            List<Order> orders = orderManager.GetOrders(user.UserName);
-            foreach (Order order in orders)
+            try
             {
-                int orderNo = order.OrderNo;
-                orderNo.ToString();
-                DateTime dateTime = order.Placedtime;
-                dateTime.ToString();
+                List<Order> orders = orderManager.GetOrders(user.UserName);
+                foreach (Order order in orders)
+                {
+                    int orderNo = order.OrderNo;
+                    orderNo.ToString();
+                    DateTime dateTime = order.Placedtime;
+                    dateTime.ToString();
 
-                OrderHistory.Items.Add(orderNo + "\t" + dateTime);
+                    OrderHistory.Items.Add(orderNo + "\t" + dateTime);
+                }
             }
+            catch
+            {
+                //MessageBox.Show("You dont have any orders yet!");
+            }
+            
 
         }
 
