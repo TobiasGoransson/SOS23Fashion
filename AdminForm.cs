@@ -665,7 +665,9 @@ namespace SOSFashion
 
         private void logOutAdminLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.ShowDialog();
         }
 
         private void sendOrderButton_Click(object sender, EventArgs e)
