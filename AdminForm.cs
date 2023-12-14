@@ -219,6 +219,8 @@ namespace SOSFashion
 
         private void registerNewItemkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            totaltSoldLabel.Visible = false;
+            soldLabel.Visible = false;
             sendOrderButton.Visible = false;
             removeButton.Visible = false;
             editItemButton.Visible = false;
@@ -232,10 +234,23 @@ namespace SOSFashion
         {
             OneSize();
         }
+        private void SetTotalLabel()
+        {
+            int totalSold = 0;
+            List<Item> items = ItemManager.GetItemList();
+            foreach (Item item in items)
+            {
+                int intPrice = Convert.ToInt32(item.Price);
+                totalSold += intPrice * item.SoldTotal;
+            }
+            totaltSoldLabel.Text = totalSold.ToString() + " KR";
+        }
 
         private void productlistLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             adminListBox1.Items.Clear();
+            totaltSoldLabel.Visible = true;
+            soldLabel.Visible = true;
             sendOrderButton.Visible = false;
             registerNewItemPanel.Visible = false;
             removeButton.Visible = true;
@@ -244,6 +259,7 @@ namespace SOSFashion
             mainPanel.Visible = true;
             mainPanel.BringToFront();
             PopulateListBoxItem();
+            SetTotalLabel();
         }
         public void PopulateListBoxItem()
         {
@@ -264,6 +280,8 @@ namespace SOSFashion
         {
             orderHistoryAdminlistBox.Items.Clear();
             adminListBox1.Items.Clear();
+            totaltSoldLabel.Visible = false;
+            soldLabel.Visible = false;
             sendOrderButton.Visible = true;
             registerNewItemPanel.Visible = false;
             removeButton.Visible = false;
@@ -346,6 +364,8 @@ namespace SOSFashion
         }
         private void costumorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            totaltSoldLabel.Visible = false;
+            soldLabel.Visible = false;
             sendOrderButton.Visible = false;
             registerNewItemPanel.Visible = false;
             mainPanel.Visible = true;
@@ -475,6 +495,8 @@ namespace SOSFashion
 
                     if (adminListBox1.SelectedItem.ToString() == item)
                     {
+                        totaltSoldLabel.Visible = false;
+                        soldLabel.Visible = false;
                         mainPanel.Visible = false;
                         sendOrderButton.Visible = false;
                         removeButton.Visible = false;
@@ -526,6 +548,8 @@ namespace SOSFashion
                     string selection = adminListBox1.SelectedItem.ToString();
                     if (selection == item)
                     {
+                        totaltSoldLabel.Visible = false;
+                        soldLabel.Visible = false;
                         mainPanel.Visible = false;
                         removeButton.Visible = false;
                         editItemButton.Visible = false;
@@ -686,13 +710,14 @@ namespace SOSFashion
                         if (item.ItemName == orderItem.ItemName && item.Size == orderItem.Size && item.Color == orderItem.Color)
                         {
                             item.Quantity -= orderItem.Quantity;
+                            item.SoldTotal++;
                             success = true;
                         }
                     }
                 }
                 if (success == true)
                 {
-                    
+
                     foreach (Order order in orders)
                     {
                         if (order.OrderNo == orderNo)
@@ -713,11 +738,13 @@ namespace SOSFashion
             {
                 MessageBox.Show("Pick an order");
             }
-            
+
         }
 
         private void finishedOrdersLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            totaltSoldLabel.Visible = false;
+            soldLabel.Visible = false;
             switchLists = false;
             orderNoLabel.Text = string.Empty;
             orderDetailsAdminListBox.Items.Clear();

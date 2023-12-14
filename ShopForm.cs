@@ -27,6 +27,7 @@ namespace SOSFashion
         public ShopForm(MainForm mainForm)
         {
             InitializeComponent();
+            this.BackgroundImage = Image.FromFile("Pics/ShopForm.png");
             this.mainForm = mainForm;
             using (StreamReader reader = new StreamReader(itemsFilePath))
             {
@@ -200,14 +201,14 @@ namespace SOSFashion
                 //double totalCost = CalculateTotalCost();
                 //MessageBox.Show($"Thank you for your purchase! Total Cost: {totalCost} kr");
                 //
-                
+
                 Checkout checkout = new Checkout(kundvagnList);
-                
+
                 checkout.CalculateTotalCost();
                 checkout.userButton.Text = logInButton.Text;
                 checkout.GetUser();
                 checkout.Show();
-                
+
             }
             KundvagnlistBox.Items.Clear();
             UpdateTotalCostLabel();
@@ -263,6 +264,7 @@ namespace SOSFashion
             }
         }
 
+
         private void addButton_Click(object sender, EventArgs e)
         {
             foreach (Item item in itemsList)
@@ -270,15 +272,19 @@ namespace SOSFashion
                 if (item.ItemName == nameLabel.Text && item.Color == colorLabel.Text && item.Size == sizeLabel.Text)
                 {
                     KundvagnlistBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
-                    kundvagnList.Add(item);
+                    int newQuantity = 1;
+                    Item newItem = new Item(item.ItemName, item.Price, newQuantity, item.Size, item.Color, item.Category, item.PicturePath);
 
+                    kundvagnList.Add(newItem);
                     UpdateTotalCostLabel();
-
                     break;
                 }
             }
         }
 
+        private void ShopForm_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -22,13 +22,14 @@ namespace SOSFashion
         {
             InitializeComponent();
             LoadShippingPaymentOptions();
+            this.BackgroundImage = Image.FromFile("Pics/CheckOut.png");
             this.kundvagnList = list;
 
         }
-       //public void GetList(List<Item> list)
-       //{
-       //    kundvagnList = list;
-       //}
+        //public void GetList(List<Item> list)
+        //{
+        //    kundvagnList = list;
+        //}
 
 
         private void LoadShippingPaymentOptions()

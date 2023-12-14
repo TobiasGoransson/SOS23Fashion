@@ -97,11 +97,13 @@
             editItemButton = new Button();
             stockUpButton = new Button();
             orderHistoryPanel = new Panel();
+            orderNoLabel = new Label();
+            orderLabel = new Label();
             orderDetailsAdminListBox = new ListBox();
             orderHistoryAdminlistBox = new ListBox();
             sendOrderButton = new Button();
-            orderLabel = new Label();
-            orderNoLabel = new Label();
+            soldLabel = new Label();
+            totaltSoldLabel = new Label();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             editItemPanel.SuspendLayout();
@@ -937,6 +939,25 @@
             orderHistoryPanel.Size = new Size(1000, 350);
             orderHistoryPanel.TabIndex = 27;
             // 
+            // orderNoLabel
+            // 
+            orderNoLabel.AutoSize = true;
+            orderNoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            orderNoLabel.Location = new Point(579, 11);
+            orderNoLabel.Name = "orderNoLabel";
+            orderNoLabel.Size = new Size(0, 21);
+            orderNoLabel.TabIndex = 3;
+            // 
+            // orderLabel
+            // 
+            orderLabel.AutoSize = true;
+            orderLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            orderLabel.Location = new Point(498, 11);
+            orderLabel.Name = "orderLabel";
+            orderLabel.Size = new Size(75, 21);
+            orderLabel.TabIndex = 2;
+            orderLabel.Text = "OrderNo:";
+            // 
             // orderDetailsAdminListBox
             // 
             orderDetailsAdminListBox.FormattingEnabled = true;
@@ -967,40 +988,44 @@
             sendOrderButton.UseVisualStyleBackColor = true;
             sendOrderButton.Click += sendOrderButton_Click;
             // 
-            // orderLabel
+            // soldLabel
             // 
-            orderLabel.AutoSize = true;
-            orderLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            orderLabel.Location = new Point(498, 11);
-            orderLabel.Name = "orderLabel";
-            orderLabel.Size = new Size(75, 21);
-            orderLabel.TabIndex = 2;
-            orderLabel.Text = "OrderNo:";
+            soldLabel.AutoSize = true;
+            soldLabel.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            soldLabel.Location = new Point(608, 382);
+            soldLabel.Name = "soldLabel";
+            soldLabel.Size = new Size(193, 24);
+            soldLabel.TabIndex = 1;
+            soldLabel.Text = "Totalt amount sold:";
+            soldLabel.Visible = false;
             // 
-            // orderNoLabel
+            // totaltSoldLabel
             // 
-            orderNoLabel.AutoSize = true;
-            orderNoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            orderNoLabel.Location = new Point(579, 11);
-            orderNoLabel.Name = "orderNoLabel";
-            orderNoLabel.Size = new Size(0, 21);
-            orderNoLabel.TabIndex = 3;
+            totaltSoldLabel.AutoSize = true;
+            totaltSoldLabel.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            totaltSoldLabel.Location = new Point(807, 382);
+            totaltSoldLabel.Name = "totaltSoldLabel";
+            totaltSoldLabel.Size = new Size(0, 24);
+            totaltSoldLabel.TabIndex = 51;
+            totaltSoldLabel.Visible = false;
             // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1230, 451);
+            Controls.Add(totaltSoldLabel);
+            Controls.Add(soldLabel);
             Controls.Add(sendOrderButton);
             Controls.Add(stockUpButton);
             Controls.Add(editItemButton);
             Controls.Add(removeButton);
             Controls.Add(panel1);
-            Controls.Add(orderHistoryPanel);
             Controls.Add(mainPanel);
             Controls.Add(stockUpPanel);
             Controls.Add(registerNewItemPanel);
             Controls.Add(editItemPanel);
+            Controls.Add(orderHistoryPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -1019,6 +1044,7 @@
             orderHistoryPanel.ResumeLayout(false);
             orderHistoryPanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1097,5 +1123,7 @@
         private LinkLabel finishedOrdersLinkLabel;
         private Label orderLabel;
         private Label orderNoLabel;
+        private Label soldLabel;
+        private Label totaltSoldLabel;
     }
 }
