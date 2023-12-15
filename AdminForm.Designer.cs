@@ -93,7 +93,7 @@
             priceTextBox = new TextBox();
             itemPriceLable = new Label();
             itemNamelable = new Label();
-            removeButton = new Button();
+            removeCostumerButton = new Button();
             editItemButton = new Button();
             stockUpButton = new Button();
             orderHistoryPanel = new Panel();
@@ -104,6 +104,7 @@
             sendOrderButton = new Button();
             soldLabel = new Label();
             totaltSoldLabel = new Label();
+            removeItemButton = new Button();
             panel1.SuspendLayout();
             mainPanel.SuspendLayout();
             editItemPanel.SuspendLayout();
@@ -125,6 +126,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(finishedOrdersLinkLabel);
             panel1.Controls.Add(logOutAdminLable);
@@ -135,17 +137,17 @@
             panel1.Controls.Add(productlistLable);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(158, 451);
+            panel1.Size = new Size(158, 256);
             panel1.TabIndex = 4;
             // 
             // finishedOrdersLinkLabel
             // 
             finishedOrdersLinkLabel.AutoSize = true;
-            finishedOrdersLinkLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            finishedOrdersLinkLabel.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
             finishedOrdersLinkLabel.LinkColor = Color.Black;
-            finishedOrdersLinkLabel.Location = new Point(3, 184);
+            finishedOrdersLinkLabel.Location = new Point(0, 178);
             finishedOrdersLinkLabel.Name = "finishedOrdersLinkLabel";
-            finishedOrdersLinkLabel.Size = new Size(117, 21);
+            finishedOrdersLinkLabel.Size = new Size(125, 18);
             finishedOrdersLinkLabel.TabIndex = 7;
             finishedOrdersLinkLabel.TabStop = true;
             finishedOrdersLinkLabel.Text = "Finished orders";
@@ -154,11 +156,11 @@
             // logOutAdminLable
             // 
             logOutAdminLable.AutoSize = true;
-            logOutAdminLable.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            logOutAdminLable.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
             logOutAdminLable.LinkColor = Color.Black;
             logOutAdminLable.Location = new Point(3, 213);
             logOutAdminLable.Name = "logOutAdminLable";
-            logOutAdminLable.Size = new Size(113, 21);
+            logOutAdminLable.Size = new Size(121, 18);
             logOutAdminLable.TabIndex = 6;
             logOutAdminLable.TabStop = true;
             logOutAdminLable.Text = "Log out Admin";
@@ -167,21 +169,21 @@
             // label31
             // 
             label31.AutoSize = true;
-            label31.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label31.Location = new Point(24, 16);
             label31.Name = "label31";
-            label31.Size = new Size(59, 25);
+            label31.Size = new Size(60, 24);
             label31.TabIndex = 3;
             label31.Text = "Meny";
             // 
             // registerNewItemkLabel
             // 
             registerNewItemkLabel.AutoSize = true;
-            registerNewItemkLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            registerNewItemkLabel.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
             registerNewItemkLabel.LinkColor = Color.Black;
             registerNewItemkLabel.Location = new Point(3, 148);
             registerNewItemkLabel.Name = "registerNewItemkLabel";
-            registerNewItemkLabel.Size = new Size(138, 21);
+            registerNewItemkLabel.Size = new Size(144, 18);
             registerNewItemkLabel.TabIndex = 5;
             registerNewItemkLabel.TabStop = true;
             registerNewItemkLabel.Text = "Register New Item";
@@ -190,11 +192,11 @@
             // costumorLabel
             // 
             costumorLabel.AutoSize = true;
-            costumorLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            costumorLabel.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
             costumorLabel.LinkColor = Color.Black;
             costumorLabel.Location = new Point(3, 116);
             costumorLabel.Name = "costumorLabel";
-            costumorLabel.Size = new Size(85, 21);
+            costumorLabel.Size = new Size(82, 18);
             costumorLabel.TabIndex = 4;
             costumorLabel.TabStop = true;
             costumorLabel.Text = "Costumers";
@@ -203,11 +205,11 @@
             // placedOrdersLabel
             // 
             placedOrdersLabel.AutoSize = true;
-            placedOrdersLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            placedOrdersLabel.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
             placedOrdersLabel.LinkColor = Color.Black;
             placedOrdersLabel.Location = new Point(3, 86);
             placedOrdersLabel.Name = "placedOrdersLabel";
-            placedOrdersLabel.Size = new Size(104, 21);
+            placedOrdersLabel.Size = new Size(107, 18);
             placedOrdersLabel.TabIndex = 3;
             placedOrdersLabel.TabStop = true;
             placedOrdersLabel.Text = "Placed orders";
@@ -216,11 +218,11 @@
             // productlistLable
             // 
             productlistLable.AutoSize = true;
-            productlistLable.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            productlistLable.Font = new Font("Modern No. 20", 11.9999981F, FontStyle.Bold, GraphicsUnit.Point);
             productlistLable.LinkColor = Color.Black;
             productlistLable.Location = new Point(3, 53);
             productlistLable.Name = "productlistLable";
-            productlistLable.Size = new Size(88, 21);
+            productlistLable.Size = new Size(96, 18);
             productlistLable.TabIndex = 0;
             productlistLable.TabStop = true;
             productlistLable.Text = "Product list";
@@ -894,16 +896,16 @@
             itemNamelable.Text = "Item Name";
             itemNamelable.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // removeButton
+            // removeCostumerButton
             // 
-            removeButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            removeButton.Location = new Point(167, 378);
-            removeButton.Name = "removeButton";
-            removeButton.Size = new Size(105, 32);
-            removeButton.TabIndex = 47;
-            removeButton.Text = "Remove";
-            removeButton.UseVisualStyleBackColor = true;
-            removeButton.Click += removeButton_Click;
+            removeCostumerButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            removeCostumerButton.Location = new Point(167, 378);
+            removeCostumerButton.Name = "removeCostumerButton";
+            removeCostumerButton.Size = new Size(105, 32);
+            removeCostumerButton.TabIndex = 47;
+            removeCostumerButton.Text = "Remove";
+            removeCostumerButton.UseVisualStyleBackColor = true;
+            removeCostumerButton.Click += removeButton_Click;
             // 
             // editItemButton
             // 
@@ -1009,23 +1011,37 @@
             totaltSoldLabel.TabIndex = 51;
             totaltSoldLabel.Visible = false;
             // 
+            // removeItemButton
+            // 
+            removeItemButton.Font = new Font("Modern No. 20", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            removeItemButton.Location = new Point(167, 378);
+            removeItemButton.Name = "removeItemButton";
+            removeItemButton.Size = new Size(105, 32);
+            removeItemButton.TabIndex = 52;
+            removeItemButton.Text = "Remove";
+            removeItemButton.UseVisualStyleBackColor = true;
+            removeItemButton.Visible = false;
+            removeItemButton.Click += removeItemButton_Click;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(1230, 451);
             Controls.Add(totaltSoldLabel);
             Controls.Add(soldLabel);
             Controls.Add(sendOrderButton);
             Controls.Add(stockUpButton);
             Controls.Add(editItemButton);
-            Controls.Add(removeButton);
             Controls.Add(panel1);
             Controls.Add(mainPanel);
             Controls.Add(stockUpPanel);
             Controls.Add(registerNewItemPanel);
             Controls.Add(editItemPanel);
             Controls.Add(orderHistoryPanel);
+            Controls.Add(removeCostumerButton);
+            Controls.Add(removeItemButton);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -1077,7 +1093,7 @@
         private CheckBox coatsCheckBox;
         private CheckBox dressesCheckBox;
         private CheckBox hatCheckBox;
-        private Button removeButton;
+        private Button removeCostumerButton;
         private Panel editItemPanel;
         private Label label6;
         private TextBox quantityTextBox;
@@ -1125,5 +1141,6 @@
         private Label orderNoLabel;
         private Label soldLabel;
         private Label totaltSoldLabel;
+        private Button removeItemButton;
     }
 }

@@ -14,12 +14,12 @@ Short-Heel Shoe;959;2;L;Striped;0;Accessories;Pics/BlackGreyShoes
 Dress;699;4;S;Grey;1;Dresses;Pics/GreyDress
 Dress;699;4;M;Grey;0;Dresses;Pics/GreyDress
 Dress;699;5;L;Grey;0;Dresses;Pics/GreyDress
-Shirt;399;5;S;White;0;Suits;Pics/WhiteShirt
+Shirt;399;4;S;White;1;Suits;Pics/WhiteShirt
 Shirt;399;3;M;White;0;Suits;Pics/WhiteShirt
 Shirt;399;2;L;White;1;Suits;Pics/WhiteShirt
 Suit-Pants;899;3;S;Navy Blue;0;Suits;Pics/NavyPants
 Suit-Pants;899;3;M;Navy Blue;0;Suits;Pics/NavyPants
-Suit-Pants;899;3;L;Navy Blue;0;Suits;Pics/NavyPants
+Suit-Pants;899;2;L;Navy Blue;1;Suits;Pics/NavyPants
 Suit-Pants;899;2;S;Grey;0;Suits;Pics/GreyPants
 Suit-Pants;899;3;M;Grey;0;Suits;Pics/GreyPants
 Suit-Pants;899;4;L;Grey;0;Suits;Pics/GreyPants
@@ -35,4 +35,4 @@ Vest;569;4;L;Navy Blue;0;Suits;Pics/BlackVest
 Vest;569;3;S;Grey;0;Suits;Pics/BrownVest
 Vest;569;2;M;Grey;0;Suits;Pics/BrownVest
 Vest;569;4;L;Grey;0;Suits;Pics/BrownVest
-Tie;54;0;One Size;Blue;0;Accessories;Pics/NoImage
+Tie;54;4;One Size;Blue;1;Accessories;Pics/NoImage

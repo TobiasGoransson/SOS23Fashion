@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,13 +19,14 @@ namespace SOSFashion
         OrderManager orderManager = new OrderManager();
         UserManager userManager = new UserManager();
         List<Item> kundvagnList;
-        public Checkout(List<Item> list)
+        MainForm mainform;
+        public Checkout(List<Item> list, MainForm mainForm)
         {
             InitializeComponent();
             LoadShippingPaymentOptions();
             this.BackgroundImage = Image.FromFile("Pics/CheckOut.png");
             this.kundvagnList = list;
-
+            this.mainform = mainForm;
         }
         //public void GetList(List<Item> list)
         //{
@@ -84,9 +86,9 @@ namespace SOSFashion
             orderManager.CreateItemList(OrderNo, kundvagnList);
             kundvagnList.Clear();
             MessageBox.Show("Order confirmed! Thank you for your purchase.", "Order Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            UserPage userPage = new UserPage(User, mainform);
+            userPage.Show();
             this.Close();
-
         }
 
 

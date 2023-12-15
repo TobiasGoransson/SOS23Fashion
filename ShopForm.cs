@@ -175,15 +175,28 @@ namespace SOSFashion
         {
             logOutButton.Hide();
             logInButton.Text = "Log In";
-            MainForm mainForm = new MainForm();
+            
             mainForm.mainLogInButton.Text = "Log In";
             mainForm.logOutButton.Hide();
+            mainForm.Show();
+            this.Close();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            mainForm.Show();
-            this.Hide();
+            if (logInButton.Text == "Log In")
+            {
+                mainForm.mainLogInButton.Text = "Log In";
+                mainForm.logOutButton.Visible = false;
+                mainForm.Show();
+                this.Close();
+            }
+            else
+            {
+                mainForm.Show();
+                this.Close();
+            }
+            
         }
 
         private void purchasebutton_Click(object sender, EventArgs e)
@@ -202,13 +215,13 @@ namespace SOSFashion
                 //MessageBox.Show($"Thank you for your purchase! Total Cost: {totalCost} kr");
                 //
 
-                Checkout checkout = new Checkout(kundvagnList);
+                Checkout checkout = new Checkout(kundvagnList, mainForm);
 
                 checkout.CalculateTotalCost();
                 checkout.userButton.Text = logInButton.Text;
                 checkout.GetUser();
                 checkout.Show();
-
+                this.Close();
             }
             KundvagnlistBox.Items.Clear();
             UpdateTotalCostLabel();
@@ -267,18 +280,27 @@ namespace SOSFashion
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            foreach (Item item in itemsList)
+            if (logInButton.Text != "Log In")
             {
-                if (item.ItemName == nameLabel.Text && item.Color == colorLabel.Text && item.Size == sizeLabel.Text)
-                {
-                    KundvagnlistBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
-                    int newQuantity = 1;
-                    Item newItem = new Item(item.ItemName, item.Price, newQuantity, item.Size, item.Color, item.Category, item.PicturePath);
 
-                    kundvagnList.Add(newItem);
-                    UpdateTotalCostLabel();
-                    break;
+
+                foreach (Item item in itemsList)
+                {
+                    if (item.ItemName == nameLabel.Text && item.Color == colorLabel.Text && item.Size == sizeLabel.Text)
+                    {
+                        KundvagnlistBox.Items.Add(item.ItemName + " STL " + item.Size + " " + "Price: " + item.Price + "kr");
+                        int newQuantity = 1;
+                        Item newItem = new Item(item.ItemName, item.Price, newQuantity, item.Size, item.Color, item.Category, item.PicturePath);
+
+                        kundvagnList.Add(newItem);
+                        UpdateTotalCostLabel();
+                        break;
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("You must log in before adding to cart!");
             }
         }
 

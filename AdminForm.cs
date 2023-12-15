@@ -40,7 +40,7 @@ namespace SOSFashion
             mainPanel.Visible = false;
             registerNewItemPanel.Visible = false;
             editItemPanel.Visible = false;
-            removeButton.Visible = false;
+            removeCostumerButton.Visible = false;
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
             stockUpPanel.Visible = false;
@@ -219,10 +219,11 @@ namespace SOSFashion
 
         private void registerNewItemkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            removeItemButton.Visible = false;
             totaltSoldLabel.Visible = false;
             soldLabel.Visible = false;
             sendOrderButton.Visible = false;
-            removeButton.Visible = false;
+            removeCostumerButton.Visible = false;
             editItemButton.Visible = false;
             mainPanel.Visible = false;
             stockUpButton.Visible = false;
@@ -249,11 +250,12 @@ namespace SOSFashion
         private void productlistLable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             adminListBox1.Items.Clear();
+            removeItemButton.Visible = true;
             totaltSoldLabel.Visible = true;
             soldLabel.Visible = true;
             sendOrderButton.Visible = false;
             registerNewItemPanel.Visible = false;
-            removeButton.Visible = true;
+            removeCostumerButton.Visible = false;
             editItemButton.Visible = true;
             stockUpButton.Visible = true;
             mainPanel.Visible = true;
@@ -280,11 +282,12 @@ namespace SOSFashion
         {
             orderHistoryAdminlistBox.Items.Clear();
             adminListBox1.Items.Clear();
+            removeItemButton.Visible = false;
             totaltSoldLabel.Visible = false;
             soldLabel.Visible = false;
             sendOrderButton.Visible = true;
             registerNewItemPanel.Visible = false;
-            removeButton.Visible = false;
+            removeCostumerButton.Visible = false;
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
             mainPanel.Visible = false;
@@ -364,12 +367,13 @@ namespace SOSFashion
         }
         private void costumorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            removeItemButton.Visible = false;
             totaltSoldLabel.Visible = false;
             soldLabel.Visible = false;
             sendOrderButton.Visible = false;
             registerNewItemPanel.Visible = false;
             mainPanel.Visible = true;
-            removeButton.Visible = true;
+            removeCostumerButton.Visible = true;
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
             mainPanel.BringToFront();
@@ -403,8 +407,17 @@ namespace SOSFashion
                 List<User> users = UserManager.CreateUserList();
                 for (int i = 0; i < users.Count; i++)
                 {
-                    string user = users[i].UserName + "\t" + users[i].Password + "\t" + users[i].FirstName + "\t" + users[i].LastName + "\t" + users[i].Email + "\t" + users[i].Street + "\t" + users[i].Zip + "\t" + users[i].City;
-                    if (adminListBox1.SelectedItem.ToString() == user)
+                    //string user = users[i].UserName + "\t" + users[i].FirstName + "\t" + users[i].LastName + "\t" + users[i].Email + "\t" + users[i].Street + "\t" + users[i].Zip + "\t" + users[i].City;
+                    string user = string.Format("{0,-15}\t{1,-25}\t{2,-15}\t{3,-30}\t{4,-35}\t{5}\t{6}",
+                    users[i].UserName,
+                    users[i].FirstName,
+                    users[i].LastName,
+                    users[i].Email,
+                    users[i].Street,
+                    users[i].Zip,
+                    users[i].City);
+                    string selectedItem = adminListBox1.SelectedItem.ToString();
+                    if (selectedItem == user)
                     {
                         UserManager.RemoveUser(i);
                         adminListBox1.Items.Clear();
@@ -412,21 +425,6 @@ namespace SOSFashion
                     }
                 }
 
-                List<Item> items = ItemManager.GetItemList();
-                for (int i = 0; i < items.Count; i++)
-                {
-                    double price = items[i].Price; price.ToString();
-                    int quantity = items[i].Quantity; quantity.ToString();
-                    int soldtotal = items[i].SoldTotal; soldtotal.ToString();
-                    string item = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
-                    if (adminListBox1.SelectedItem.ToString() == item)
-                    {
-                        ItemManager.RemoveItem(i);
-                        adminListBox1.Items.Clear();
-                        PopulateListBoxItem();
-                        break;
-                    }
-                }
             }
             else
             {
@@ -499,7 +497,7 @@ namespace SOSFashion
                         soldLabel.Visible = false;
                         mainPanel.Visible = false;
                         sendOrderButton.Visible = false;
-                        removeButton.Visible = false;
+                        removeCostumerButton.Visible = false;
                         editItemButton.Visible = false;
                         stockUpButton.Visible = false;
                         editItemPanel.Visible = true;
@@ -551,7 +549,7 @@ namespace SOSFashion
                         totaltSoldLabel.Visible = false;
                         soldLabel.Visible = false;
                         mainPanel.Visible = false;
-                        removeButton.Visible = false;
+                        removeCostumerButton.Visible = false;
                         editItemButton.Visible = false;
                         stockUpButton.Visible = false;
 
@@ -604,7 +602,7 @@ namespace SOSFashion
             editItemPanel.Visible = false;
             mainPanel.Visible = true;
             mainPanel.BringToFront();
-            removeButton.Visible = true;
+            removeCostumerButton.Visible = true;
             editItemButton.Visible = true;
             stockUpButton.Visible = true;
         }
@@ -614,7 +612,7 @@ namespace SOSFashion
             stockUpPanel.Visible = false;
             mainPanel.Visible = true;
             mainPanel.BringToFront();
-            removeButton.Visible = true;
+            removeCostumerButton.Visible = true;
             editItemButton.Visible = true;
             stockUpButton.Visible = true;
         }
@@ -743,6 +741,7 @@ namespace SOSFashion
 
         private void finishedOrdersLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            removeItemButton.Visible = false;
             totaltSoldLabel.Visible = false;
             soldLabel.Visible = false;
             switchLists = false;
@@ -752,7 +751,7 @@ namespace SOSFashion
             adminListBox1.Items.Clear();
             sendOrderButton.Visible = false;
             registerNewItemPanel.Visible = false;
-            removeButton.Visible = false;
+            removeCostumerButton.Visible = false;
             editItemButton.Visible = false;
             stockUpButton.Visible = false;
             mainPanel.Visible = false;
@@ -776,6 +775,32 @@ namespace SOSFashion
         private void AdminForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void removeItemButton_Click(object sender, EventArgs e)
+        {
+            if (adminListBox1.SelectedIndex != -1)
+            {
+                List<Item> items = ItemManager.GetItemList();
+                for (int i = 0; i < items.Count; i++)
+                {
+                    double price = items[i].Price; price.ToString();
+                    int quantity = items[i].Quantity; quantity.ToString();
+                    int soldtotal = items[i].SoldTotal; soldtotal.ToString();
+                    string item = string.Format("{0,-20}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", items[i].ItemName, price, quantity, items[i].Size, items[i].Color, soldtotal, items[i].Category);
+                    if (adminListBox1.SelectedItem.ToString() == item)
+                    {
+                        ItemManager.RemoveItem(i);
+                        adminListBox1.Items.Clear();
+                        PopulateListBoxItem();
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingen rad markerad.", "Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
